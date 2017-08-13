@@ -1,6 +1,14 @@
 body {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
+p {
+	font-size: 15px;
+	line-height: 25px;
+	letter-spacing: 1px;
+}
+h1, h2 {
+	text-align: center;
+}
 .top {
     background-size: cover;
 	color: #fff;
@@ -14,11 +22,12 @@ body {
 	height: 50px;
 }
 .navbar p {
+	line-height: 0;
 	float: right;
 	font-size: 15px;
 	font-weight: bold;
 	letter-spacing: 5px;
-	margin: 20px 10px 0 10px;
+	margin: 30px 10px 0 10px;
 }
 .title {
 	background-color: rgba(0, 0, 0, 0.8);
@@ -39,12 +48,12 @@ body {
 }
 .title p {
 	letter-spacing: 5px;
-	margin-top: -20px;
+	margin-top: -25px;
 }
 .caption {
 	font-size: 20px;
 	letter-spacing: 2px;
-	margin-top: 300px;
+	margin-top: 325px;
 	text-shadow: 0px 0px 10px #333;
 }
 .contact {
@@ -62,4 +71,35 @@ body {
 }
 .contact:active {
 	box-shadow: none;
+}
+.extra {
+	color: #999;
+}
+.slide {
+	width: 500px;
+	height: 400px;
+	overflow: hidden;
+    background-size: cover;
+}
+.slide div {
+    background-size: cover;
+	width: 500px;
+	height: 400px;
+	transition: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+.slide-hide {
+	transform: translate(500px, 0);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+}
+.slide-show {
+	box-shadow: 0px 0px 10px #333;
+	transform: translate(0, 0);
+}
+.slide h2 {
+	color: #fff;
+	position: absolute;
+	text-shadow: 0px 0px 10px #333;
+	letter-spacing: 5px;
+	margin-left: 25px;
 }
