@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
 <div class="top" style="background-image: url(images/VERDUN-Front-AFTER.jpg)">
 	<div class="navbar">
 		<p>Contact</p>
@@ -20,18 +21,41 @@
 	<h2 class="caption">Let's create captivating spaces</h2>
 	<button class="contact">Contact</button>
 </div>
+
 <p class="extra">NatureWalk Landscapes designs and realizes outdoor spaces. Our craftsmanship and attention to detail ensure that your project will be built for a lifetime of enjoyment and your aesthetic expectations will be exceeded. The dual role of a designer and contractor is on one hand to protect the client by insuring their investment is not misspent by ensuring that the quality and visual beauty of the project exceeds our clients’ expectations.</p>
-<h1>Take a look at the before and after images!</h1>
-<div class="slide" id="s1" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(1)">
-	<h2>BEFORE</h2>
-	<div id="s1a" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
-		<h2>AFTER</h2>
+
+<h1>Click to switch between the before and after images!</h1>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(1)">
+		<h2>BEFORE</h2>
+		<div id="s1" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
+			<h2>AFTER</h2>
+		</div>
+	</div>
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(2)">
+		<h2>BEFORE</h2>
+		<div id="s2" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
+			<h2>AFTER</h2>
+		</div>
+	</div>
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(3)">
+		<h2>BEFORE</h2>
+		<div id="s3" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
+			<h2>AFTER</h2>
+		</div>
 	</div>
 </div>
 
 <script>
 	function toggle(x) {
-		var img = document.getElementById("s" + x + "a");
+		var img = document.getElementById("s" + x);
 		if (img.classList.contains("slide-show")) {
 			img.classList.remove("slide-show");
 		}
@@ -40,5 +64,6 @@
 		}
 	}
 </script>
+
 </body>
 </html>
