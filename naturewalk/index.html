@@ -61,6 +61,7 @@
 	<p>NatureWalk Landscapes is a design and build company based in Silicon Valley.</p>
 	<h1>We custom build thoughtful outdoor spaces by designing aesthetic, functional and sustainable gardens.</h1>
 </div>
+<p><br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br></p>
 
 <script>
 	function toggle(x) {
@@ -75,13 +76,13 @@
 	
 	var banner = document.getElementsByClassName("banner")[0];
 	window.onscroll = function() {
-		var rate = document.body.scrollTop * 100 / banner.offsetHeight;
-		banner.style.marginTop = rate + "%";
-		console.log(rate + "%");
+		var rate = document.body.scrollTop * 25 / banner.offsetHeight;
+		banner.style.transform = "translate(0%," + rate + "%)";
 		var children = banner.childNodes;
 		for (var i = 0; i < children.length; i++) {
 			if (children[i].style !== undefined) {
-				children[i].style.marginTop = -rate * 25 + "px";
+				children[i].style.opacity = 1 - rate / 25;
+				children[i].style.zoom = 100 - rate + "%";
 			}
 		}
 	}
