@@ -8,18 +8,22 @@
 
 <body>
 
-<div class="top" style="background-image: url(images/VERDUN-Front-AFTER.jpg)">
-	<div class="navbar">
-		<p>Contact</p>
-		<p>650.852.1408</p>
+<div class="parallax">
+	<div class="banner" style="background-image: url(images/VERDUN-Front-AFTER.jpg)">
+		<div class="navbar">
+			<p>Contact</p>
+			<p>650.852.1408</p>
+		</div>
+		<div class="title">
+			<img src="images/cnsotransparent.png">
+			<h1>NatureWalk</h1>
+			<p>Landscapes</p>
+		</div>
+		<div class="caption">
+			<h2 class="caption">Let's create captivating spaces</h2>
+			<button class="contact">Contact</button>
+		</div>
 	</div>
-	<div class="title">
-		<img src="images/cnsotransparent.png">
-		<h1>NatureWalk</h1>
-		<p>Landscapes</p>
-	</div>
-	<h2 class="caption">Let's create captivating spaces</h2>
-	<button class="contact">Contact</button>
 </div>
 
 <p class="extra">NatureWalk Landscapes designs and realizes outdoor spaces. Our craftsmanship and attention to detail ensure that your project will be built for a lifetime of enjoyment and your aesthetic expectations will be exceeded. The dual role of a designer and contractor is on one hand to protect the client by insuring their investment is not misspent by ensuring that the quality and visual beauty of the project exceeds our clients’ expectations.</p>
@@ -36,21 +40,26 @@
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(2)">
+	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-1BEFORE.jpeg)" onClick="toggle(2)">
 		<h2>BEFORE</h2>
-		<div id="s2" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
+		<div id="s2" style="background-image: url(images/Chimalus-Rear-Left-2AFTER.jpeg)" class="slide-hide">
 			<h2>AFTER</h2>
 		</div>
 	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(3)">
+	<div class="slide" style="background-image: url(images/VERDUN-Front-1BEFORE.jpg)" onClick="toggle(3)">
 		<h2>BEFORE</h2>
-		<div id="s3" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
+		<div id="s3" style="background-image: url(images/VERDUN-Front-AFTER.jpg)" class="slide-hide">
 			<h2>AFTER</h2>
 		</div>
 	</div>
+</div>
+
+<div class="blue">
+	<p>NatureWalk Landscapes is a design and build company based in Silicon Valley.</p>
+	<h1>We custom build thoughtful outdoor spaces by designing aesthetic, functional and sustainable gardens.</h1>
 </div>
 
 <script>
@@ -61,6 +70,19 @@
 		}
 		else {
 			img.classList.add("slide-show");
+		}
+	}
+	
+	var banner = document.getElementsByClassName("banner")[0];
+	window.onscroll = function() {
+		var rate = document.body.scrollTop * 100 / banner.offsetHeight;
+		banner.style.marginTop = rate + "%";
+		console.log(rate + "%");
+		var children = banner.childNodes;
+		for (var i = 0; i < children.length; i++) {
+			if (children[i].style !== undefined) {
+				children[i].style.marginTop = -rate * 25 + "px";
+			}
 		}
 	}
 </script>

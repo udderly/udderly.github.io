@@ -11,10 +11,18 @@ p {
 h1 {
 	font-size: 30px;
 }
+h2 {
+	font-size: 20px;
+}
 h1, h2 {
+	font-weight: 100;
+	letter-spacing: 1px;
 	text-align: center;
 }
-.top {
+.parallax {
+	overflow: hidden;
+}
+.banner {
     background-size: cover;
 	color: #fff;
 	height: 500px;
@@ -54,7 +62,7 @@ h1, h2 {
 	letter-spacing: 5px;
 	margin-top: -25px;
 }
-.caption {
+.caption h2 {
 	font-size: 20px;
 	letter-spacing: 2px;
 	margin-top: 325px;
@@ -78,6 +86,7 @@ h1, h2 {
 }
 .extra {
 	color: #999;
+	margin: 20px;
 }
 .third {
 	display: inline-block;
@@ -87,7 +96,7 @@ h1, h2 {
     background-size: cover;
 	box-shadow: 0px 0px 0px 5px #ddd;
 	height: 0px;
-	margin: auto;
+	margin: 10px auto;
 	overflow: hidden;
 	padding-top: 90%;
 	width: 90%;
@@ -118,4 +127,11 @@ h1, h2 {
 	text-shadow: 0px 0px 10px #333;
 	transition: 0.5s;
 	transition-timing-function: ease-in-out;
+}
+.blue {
+	background-color: #087;
+	color: #fff;
+	margin: 10px 0;
+	text-align: center;
+	padding: 10px;
 }
