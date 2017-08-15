@@ -3,7 +3,8 @@ body {
 	margin: 0;
 	font-size: 0px;
 }
-p {
+p, input, textarea {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	font-size: 15px;
 	line-height: 25px;
 	letter-spacing: 1px;
@@ -12,17 +13,36 @@ h1 {
 	font-size: 30px;
 }
 h2 {
+	font-size: 25px;
+}
+h3 {
 	font-size: 20px;
 }
-h1, h2 {
+h1, h2, h3 {
 	font-weight: 100;
 	letter-spacing: 1px;
 	text-align: center;
+}
+button {
+	border: none;
+	box-shadow: 0px 0px 5px #333;
+	color: #fff;
+	font-size: 20px;
+	letter-spacing: 1px;
+	padding: 10px 15px;
+	transition: 0.2s;
+}
+button:hover {
+	box-shadow: 0px 0px 10px #333;
+}
+button:active {
+	box-shadow: none;
 }
 .parallax {
 	overflow: hidden;
 }
 .banner {
+	background-image: url(images/VERDUN-Front-AFTER.jpg);
     background-size: cover;
 	color: #fff;
 	height: 500px;
@@ -54,6 +74,7 @@ h1, h2 {
 .title img {
 	margin-top: 10px;
 	width: 100px;
+	transition: 0.5s;
 }
 .title h1 {
 	letter-spacing: 5px;
@@ -70,19 +91,6 @@ h1, h2 {
 }
 .contact {
 	background-color: rgba(34, 187, 85, 0.8);
-	border: none;
-	box-shadow: 0px 0px 5px #333;
-	color: #fff;
-	font-size: 20px;
-	letter-spacing: 1px;
-	padding: 10px 15px;
-	transition: 0.2s;
-}
-.contact:hover {
-	box-shadow: 0px 0px 10px #333;
-}
-.contact:active {
-	box-shadow: none;
 }
 .extra {
 	color: #999;
@@ -96,7 +104,7 @@ h1, h2 {
     background-size: cover;
 	box-shadow: 0px 0px 0px 5px #ddd;
 	height: 0px;
-	margin: 10px auto;
+	margin: 20px auto;
 	overflow: hidden;
 	padding-top: 90%;
 	width: 90%;
@@ -118,9 +126,8 @@ h1, h2 {
 	box-shadow: 0px 0px 10px #333;
 	margin-left: 0;
 }
-.slide h2 {
+.slide h3 {
 	color: #fff;
-	font-size: 20px;
 	letter-spacing: 5px;
 	margin: -40px 0 0 25px;
 	position: absolute;
@@ -131,7 +138,70 @@ h1, h2 {
 .blue {
 	background-color: #087;
 	color: #fff;
-	margin: 10px 0;
 	text-align: center;
 	padding: 10px;
+}
+.links {
+	margin: auto;
+	width: 90%;
+}
+.fourth {
+	display: inline-block;
+	width: 25%;
+}
+.form {
+	background-image: url(images/Cezano_Rear_Patio_AFTER_done.jpg);
+	background-size: cover;
+	padding: 10px;
+}
+.blurb input, .blurb textarea {
+	border: none;
+	box-shadow: 0px 0px 5px #333;
+	padding: 10px;
+}
+.blurb input {
+	width: calc(50% - 25px);
+}
+.blurb input:first-child {
+	margin-right: 10px;
+}
+.blurb textarea {
+	height: 200px;
+	margin: 10px 0;
+	resize: none;
+	width: calc(100% - 20px);
+}
+.blurb {
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% / 3);
+}
+.blurb div {
+	background-color: #087;
+	color: #fff;
+	margin-top: 10px;
+	padding: 10px;
+	width: calc(100% - 20px);
+}
+.form img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	margin-left: calc(50% / 6 + 10px);
+	transition: 1s;
+}
+.blurb button {
+	background-color: #087;
+	float: right;
+}
+.blurb span {
+	color: rgba(255, 255, 255, 0);
+	float: right;
+	font-size: 30px;
+	margin-right: 20px;
+	transition: 0.2s;
+}
+.blurb button:hover ~ span {
+	color: rgba(255, 255, 255, 1);
+	margin-right: 10px;
 }

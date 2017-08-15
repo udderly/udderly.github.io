@@ -9,7 +9,7 @@
 <body>
 
 <div class="parallax">
-	<div class="banner" style="background-image: url(images/VERDUN-Front-AFTER.jpg)">
+	<div class="banner">
 		<div class="navbar">
 			<p>Contact</p>
 			<p>650.852.1408</p>
@@ -32,27 +32,27 @@
 
 <div class="third">
 	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(1)">
-		<h2>BEFORE</h2>
+		<h3>BEFORE</h3>
 		<div id="s1" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
-			<h2>AFTER</h2>
+			<h3>AFTER</h3>
 		</div>
 	</div>
 </div>
 
 <div class="third">
 	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-1BEFORE.jpeg)" onClick="toggle(2)">
-		<h2>BEFORE</h2>
+		<h3>BEFORE</h3>
 		<div id="s2" style="background-image: url(images/Chimalus-Rear-Left-2AFTER.jpeg)" class="slide-hide">
-			<h2>AFTER</h2>
+			<h3>AFTER</h3>
 		</div>
 	</div>
 </div>
 
 <div class="third">
 	<div class="slide" style="background-image: url(images/VERDUN-Front-1BEFORE.jpg)" onClick="toggle(3)">
-		<h2>BEFORE</h2>
+		<h3>BEFORE</h3>
 		<div id="s3" style="background-image: url(images/VERDUN-Front-AFTER.jpg)" class="slide-hide">
-			<h2>AFTER</h2>
+			<h3>AFTER</h3>
 		</div>
 	</div>
 </div>
@@ -60,8 +60,81 @@
 <div class="blue">
 	<p>NatureWalk Landscapes is a design and build company based in Silicon Valley.</p>
 	<h1>We custom build thoughtful outdoor spaces by designing aesthetic, functional and sustainable gardens.</h1>
+	<div class="links">
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>landscape design</h3>
+		</div>
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>retaining walls</h3>
+		</div>
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>landscape lighting</h3>
+		</div>
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>stonework &amp; masonry</h3>
+		</div>
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>flagstone</h3>
+		</div>
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>concrete &amp; pavers</h3>
+		</div>
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>grass &amp; turf</h3>
+		</div>
+		<div class="fourth">
+			<img src="images/star-300x286.png" width="75">
+			<h3>fencing &amp; gates</h3>
+		</div>
+	</div>
 </div>
-<p><br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br></p>
+
+<div class="form">
+	<div class="blurb">
+		<input placeholder="name">
+		<input placeholder="email"><br>
+		<textarea placeholder="message"></textarea><br>
+		<button>Submit</button>
+		<span>&raquo;</span>
+		<br>
+		<div class="blurb">
+			<h1>650.852.1408</h1>
+			<p>Serving clients in the Bay Area / Peninsula including, Palo Alto, Atherton, Menlo Park, Redwood City, San Carlos, Belmont, Burlingame, Hillsborough, Cupertino and Sunnyvale.</p>
+		</div>
+	</div>
+	<img src="images/map2.png" id="map">
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/VERDUN-Front-AFTER.jpg)"></div>
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-Sitting-AFTER-copy.jpg)"></div>
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/EDGEWOOD-Front-Entrance-AFTER.jpg)"></div>
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)"></div>
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-2AFTER.jpeg)"></div>
+</div>
+
+<div class="third">
+	<div class="slide" style="background-image: url(images/VERDUN-Front-AFTER.jpg)"></div>
+</div>
 
 <script>
 	function toggle(x) {
@@ -75,15 +148,24 @@
 	}
 	
 	var banner = document.getElementsByClassName("banner")[0];
+	var map = document.getElementById("map");
 	window.onscroll = function() {
 		var rate = document.body.scrollTop * 25 / banner.offsetHeight;
 		banner.style.transform = "translate(0%," + rate + "%)";
 		var children = banner.childNodes;
 		for (var i = 0; i < children.length; i++) {
-			if (children[i].style !== undefined) {
+			if (children[i].style !== undefined && !children[i].classList.contains("navbar")) {
 				children[i].style.opacity = 1 - rate / 25;
 				children[i].style.zoom = 100 - rate + "%";
 			}
+		}
+		if (window.innerHeight > map.getBoundingClientRect().top) {
+			map.style.transform = "translate(0, 0)";
+			map.style.opacity = 1;
+		}
+		else {
+			map.style.transform = "translate(50%, 0)";
+			map.style.opacity = 0;
 		}
 	}
 </script>
