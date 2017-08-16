@@ -152,6 +152,7 @@ button:active {
 .form {
 	background-image: url(images/Cezano_Rear_Patio_AFTER_done.jpg);
 	background-size: cover;
+	overflow:hidden;
 	padding: 10px;
 }
 .blurb input, .blurb textarea {
@@ -204,4 +205,22 @@ button:active {
 .blurb button:hover ~ span {
 	color: rgba(255, 255, 255, 1);
 	margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+	.third {
+		display: block;
+		margin: auto;
+		width: 75%;
+	}	
+	.fourth {
+		width: 50%;
+	}
+}
+@media only screen and (max-width: 425px) {
+	.third, .fourth, .blurb, .form img {
+		width: 100%;
+	}
+	.form img {
+		margin: 10px 0 0 0;
+	}
 }
