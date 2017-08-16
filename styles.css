@@ -1,0 +1,45 @@
+html, body {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+iframe {
+	border: none;
+}
+.blur {
+	filter: blur(10px);
+	height: 100%;
+	opacity: 0.5;
+	position: absolute;
+	width: 100%;
+}
+.blur iframe {
+	height: 100%;
+	width: 100%;
+}
+.content {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: calc(100% - 40px);
+	left: 50%;
+	max-width: 960px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+	width: calc(100% - 40px);
+}
+h1 {
+	color: #fff;
+	font-size: 30px;
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: 5px;
+}
+.content iframe {
+	background-color: #fff;
+	height: calc(100% - 100px);
+	margin: 0 20px;
+	width: calc(100% - 40px);
+}
