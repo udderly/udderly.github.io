@@ -1,7 +1,19 @@
+/* All */
 body {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	margin: 0;
 	font-size: 0px;
+}
+body::-webkit-scrollbar-track {
+	background-color: #eee;
+}
+body::-webkit-scrollbar {
+	width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+	background: -webkit-linear-gradient(rgba(34, 187, 85, 0.8), rgba(34, 187, 85, 0.5) 50%, rgba(0, 136, 119, 0.8) 50%, rgba(0, 136, 119, 0.5));
+	background: -o-linear-gradient(rgba(34, 187, 85, 0.8), rgba(34, 187, 85, 0.5) 50%, rgba(0, 136, 119, 0.8) 50%, rgba(0, 136, 119, 0.5));
+	background: linear-gradient(rgba(34, 187, 85, 0.8), rgba(34, 187, 85, 0.5) 50%, rgba(0, 136, 119, 0.8) 50%, rgba(0, 136, 119, 0.5));
 }
 p, input, textarea {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
@@ -42,6 +54,7 @@ button:active {
 button:focus {
 	outline: none;
 }
+/* Top */
 .parallax {
 	overflow: hidden;
 }
@@ -96,10 +109,12 @@ button:focus {
 .contact {
 	background-color: rgba(34, 187, 85, 0.8);
 }
+/* Article */
 .extra {
 	color: #999;
 	margin: 20px;
 }
+/* Interactive */
 .third {
 	display: inline-block;
 	width: calc(100% / 3);
@@ -212,6 +227,7 @@ button:focus {
 	color: rgba(255, 255, 255, 1);
 	margin-right: 10px;
 }
+/* Other */
 .gallery {
 	background-color: rgba(0, 0, 0, 0.5);
 	height: 100%;
