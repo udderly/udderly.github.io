@@ -32,45 +32,45 @@
 <h1>Click to switch between the before and after images!</h1>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle(1)">
+	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-1BEFORE.png)" onClick="toggle('s1')">
 		<h3>BEFORE</h3>
 		<div id="s1" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" class="slide-hide">
 			<h3>AFTER</h3>
 		</div>
-		<button onClick="zoom(1, true)"><span>&#65291;</span></button>
+		<button onClick="zoom('s1', true, true)" class="zoom"><span>&#65291;</span></button>
 	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-1BEFORE.jpeg)" onClick="toggle(2)">
+	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-1BEFORE.jpeg)" onClick="toggle('s2')">
 		<h3>BEFORE</h3>
 		<div id="s2" style="background-image: url(images/Chimalus-Rear-Left-2AFTER.jpeg)" class="slide-hide">
 			<h3>AFTER</h3>
 		</div>
-		<button onClick="zoom(2, true)"><span>&#65291;</span></button>
+		<button onClick="zoom('s2', true, true)" class="zoom"><span>&#65291;</span></button>
 	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/VERDUN-Front-1BEFORE.jpg)" onClick="toggle(3)">
+	<div class="slide" style="background-image: url(images/VERDUN-Front-1BEFORE.jpg)" onClick="toggle('s3')">
 		<h3>BEFORE</h3>
 		<div id="s3" style="background-image: url(images/VERDUN-Front-AFTER.jpg)" class="slide-hide">
 			<h3>AFTER</h3>
 		</div>
-		<button onClick="zoom(3, true)"><span>&#65291;</span></button>
+		<button onClick="zoom('s3', true, true)" class="zoom"><span>&#65291;</span></button>
 	</div>
 </div>
 
 <div class="gallery" id="gallery">
 	<div class="full">
-		<div class="slide" style="background-image: url(images/VERDUN-Front-1BEFORE.jpg)" onClick="toggle(4)">
-			<h3>BEFORE</h3>
+		<div class="slide" style="background-image: url(images/VERDUN-Front-1BEFORE.jpg)" onClick="toggle('s4')">
+			<h3></h3>
 			<div id="s4" style="background-image: url(images/VERDUN-Front-AFTER.jpg)" class="slide-hide">
 				<h3>AFTER</h3>
 			</div>
 		</div>
 	</div>
-	<button onClick="zoom(0, false)">&#9587;</button>
+	<button onClick="zoom('s4', false, true)">&#9587;</button>
 </div>
 
 <div class="blue">
@@ -129,32 +129,44 @@
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/VERDUN-Front-AFTER.jpg)"></div>
+	<div class="slide" style="background-image: url(images/VERDUN-Front-AFTER.jpg)" id="i1">
+		<button onClick="zoom('i1', true, false)" class="zoom"><span>&#65291;</span></button>
+	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-Sitting-AFTER-copy.jpg)"></div>
+	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-Sitting-AFTER-copy.jpg)" id="i2">
+		<button onClick="zoom('i2', true, false)" class="zoom"><span>&#65291;</span></button>
+	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/EDGEWOOD-Front-Entrance-AFTER.jpg)"></div>
+	<div class="slide" style="background-image: url(images/EDGEWOOD-Front-Entrance-AFTER.jpg)" id="i3">
+		<button onClick="zoom('i3', true, false)" class="zoom"><span>&#65291;</span></button>
+	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)"></div>
+	<div class="slide" style="background-image: url(images/CHIMALUS-Front-Entrance-Final-AFTER-copy.jpeg)" id="i4">
+		<button onClick="zoom('i4', true, false)" class="zoom"><span>&#65291;</span></button>
+	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-2AFTER.jpeg)"></div>
+	<div class="slide" style="background-image: url(images/Chimalus-Rear-Left-2AFTER.jpeg)" id="i5">
+		<button onClick="zoom('i5', true, false)" class="zoom"><span>&#65291;</span></button>
+	</div>
 </div>
 
 <div class="third">
-	<div class="slide" style="background-image: url(images/VERDUN-Front-AFTER.jpg)"></div>
+	<div class="slide" style="background-image: url(images/VERDUN-Front-AFTER.jpg)" id="i6">
+		<button onClick="zoom('i6', true, false)" class="zoom"><span>&#65291;</span></button>
+	</div>
 </div>
 
 <script>
 	function toggle(a) {
-		var img = document.getElementById("s" + a);
+		var img = document.getElementById(a);
 		if (img.classList.contains("slide-show")) {
 			img.classList.remove("slide-show");
 		}
@@ -164,12 +176,19 @@
 	}
 	
 	var gallery = document.getElementById("gallery");
-	function zoom(a, b) {
+	function zoom(a, b, c) {
 		if (b) {
-			var slide = document.getElementById("s" + a);
-			gallery.children[0].children[0].style.backgroundImage = slide.parentElement.style.backgroundImage;
-			gallery.children[0].children[0].children[1].style.backgroundImage = slide.style.backgroundImage;
-			toggle(a);
+			var slide = document.getElementById(a);
+			if (c) {
+				gallery.children[0].children[0].style.backgroundImage = slide.parentElement.style.backgroundImage;
+				gallery.children[0].children[0].children[0].innerHTML = "BEFORE";
+				gallery.children[0].children[0].children[1].style.backgroundImage = slide.style.backgroundImage;
+				toggle(a);
+			}
+			else {
+				gallery.children[0].children[0].style.backgroundImage = slide.style.backgroundImage;
+				gallery.children[0].children[0].children[0].innerHTML = "";
+			}
 			gallery.style.opacity = 1;
 			gallery.style.visibility = "visible";
 			gallery.children[0].style.transform = "rotateX(0)";
