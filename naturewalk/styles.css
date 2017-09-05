@@ -267,7 +267,7 @@ button:focus {
 	perspective: 1000px;
 	position: fixed;
 	top: 0;
-	transition: opacity 1s;
+	transition: 0.5s;
 	visibility: hidden;
 	width: 100%;
 	z-index: 1;
