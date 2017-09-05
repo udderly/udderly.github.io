@@ -21,6 +21,10 @@ p, input, textarea {
 	letter-spacing: 1px;
 	line-height: 25px;
 }
+a {
+	color: #3a5;
+	text-decoration: none;
+}
 h1 {
 	font-size: 30px;
 }
@@ -114,6 +118,14 @@ button:focus {
 .extra {
 	color: #999;
 	margin: 20px;
+}
+.footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+}
+.footer .third {
+	vertical-align: middle;
 }
 /* Interactive */
 .third {
