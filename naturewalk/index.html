@@ -22,7 +22,7 @@
 		</div>
 		<div class="caption">
 			<h2 class="caption">Let's create captivating spaces</h2>
-			<button class="contact">Contact</button>
+			<button class="contact" onClick="dothething()">Contact</button>
 		</div>
 	</div>
 </div>
@@ -112,7 +112,7 @@
 	</div>
 </div>
 
-<div class="form">
+<div class="form" id="contact">
 	<div class="blurb">
 		<input placeholder="name">
 		<input placeholder="email"><br>
@@ -201,6 +201,18 @@
 			map.style.transform = "translate(50%, 0)";
 			map.style.opacity = 0;
 		}
+	}
+	
+	var contact = document.getElementById("contact");
+	function dothething() {
+		if (contact.getBoundingClientRect().top <= 0) {
+			document.body.scrollTop += contact.getBoundingClientRect().top + 1;
+			return;
+		}
+		document.body.scrollTop += contact.getBoundingClientRect().top / 20 + 5;
+		setTimeout(function() {
+			dothething();
+		}, 10);
 	}
 </script>
 
