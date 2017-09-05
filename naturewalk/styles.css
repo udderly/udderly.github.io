@@ -1,8 +1,8 @@
 /* All */
 body {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	margin: 0;
 	font-size: 0px;
+	margin: 0;
 }
 body::-webkit-scrollbar-track {
 	background-color: #eee;
@@ -18,8 +18,8 @@ body::-webkit-scrollbar-thumb {
 p, input, textarea {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	font-size: 15px;
-	line-height: 25px;
 	letter-spacing: 1px;
+	line-height: 25px;
 }
 h1 {
 	font-size: 30px;
@@ -72,11 +72,11 @@ button:focus {
 	height: 50px;
 }
 .navbar p {
-	line-height: 0;
 	float: right;
 	font-size: 15px;
 	font-weight: bold;
 	letter-spacing: 5px;
+	line-height: 0;
 	margin: 30px 10px 0 10px;
 }
 .title {
@@ -90,8 +90,8 @@ button:focus {
 }
 .title img {
 	margin-top: 10px;
-	width: 100px;
 	transition: 0.5s;
+	width: 100px;
 }
 .title h1 {
 	letter-spacing: 5px;
@@ -155,10 +155,10 @@ button:focus {
 	transition-timing-function: ease-in-out;
 }
 .slide button {
-	color: #fff;
-	text-shadow: 0px 0px 10px #333;
 	background-color: rgba(0, 0, 0, 0);
 	box-shadow: none;
+	color: #fff;
+	text-shadow: 0px 0px 10px #333;
 	transform: translate(-100%, calc(-100% - 8px));
 	margin-left: 100%;
 }
@@ -175,10 +175,10 @@ button:focus {
 }
 .gallery .slide, .gallery .slide div {
 	height: 100%;
-	width: 100%;
-	transform: rotateX(0);
-	padding: 0;
 	margin-top: 0;
+	padding: 0;
+	transform: rotateX(0);
+	width: 100%;
 }
 .gallery .slide h3 {
 	margin: 40px;
@@ -202,7 +202,7 @@ button:focus {
 .form {
 	background-image: url(images/Cezano_Rear_Patio_AFTER_done.jpg);
 	background-size: cover;
-	overflow:hidden;
+	overflow: hidden;
 	padding: 10px;
 }
 .blurb input, .blurb textarea {
@@ -235,13 +235,13 @@ button:focus {
 	width: calc(100% - 20px);
 }
 .map {
-	display: inline-block;
-	vertical-align: middle;
-	padding-top: 37.5%;
-	width: 50%;
-	margin-left: calc(50% / 6 + 10px);
-	transition: 1s;
   	background-size: cover;
+	display: inline-block;
+	margin-left: calc(50% / 6 + 10px);
+	padding-top: 37.5%;
+	transition: 1s;
+	vertical-align: middle;
+	width: 50%;
 }
 .blurb button {
 	background-color: #087;
@@ -263,21 +263,22 @@ button:focus {
 	background-color: rgba(0, 0, 0, 0.5);
 	height: 100%;
 	left: 0;
+	opacity: 0;
+	perspective: 1000px;
 	position: fixed;
 	top: 0;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
 	transition: opacity 1s;
-	perspective: 1000px;
+	visibility: hidden;
+	width: 100%;
+	z-index: 1;
 }
 .full {
 	background-size: cover;
 	height: 80%;
 	margin: 10%;
-	width: 80%;
 	transform: rotateX(45deg);
 	transition: 0.5s;
+	width: 80%;
 }
 .gallery button {
 	background-color: rgba(0, 0, 0, 0);
@@ -306,7 +307,7 @@ button:focus {
 		width: 100%;
 	}
 	.map {
-		padding-top: 75%;
 		margin: 10px auto 0;
+		padding-top: 75%;
 	}
 }
