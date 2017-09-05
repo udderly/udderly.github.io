@@ -60,6 +60,7 @@ button:focus {
 }
 .banner {
 	background-image: url(images/VERDUN-Front-AFTER.jpg);
+	background-position: center top;
     background-size: cover;
 	color: #fff;
 	height: 500px;
@@ -120,6 +121,7 @@ button:focus {
 	width: calc(100% / 3);
 }
 .slide {
+	background-position: center;
     background-size: cover;
 	box-shadow: 0px 0px 0px 5px #ddd;
 	height: 0px;
@@ -129,6 +131,7 @@ button:focus {
 	width: 90%;
 }
 .slide div {
+	background-position: center;
     background-size: cover;
 	margin-top: -100%;
 	padding-top: 100%;
@@ -154,7 +157,7 @@ button:focus {
 	transition: 0.5s;
 	transition-timing-function: ease-in-out;
 }
-.slide button {
+.zoom {
 	background-color: rgba(0, 0, 0, 0);
 	box-shadow: none;
 	color: #fff;
@@ -162,14 +165,14 @@ button:focus {
 	transform: translate(-100%, calc(-100% - 8px));
 	margin-left: 100%;
 }
-.slide button span {
+.zoom span {
 	display: block;
 	transition: 0.5s;
 }
-.slide button:hover > span {
+.zoom:hover > span {
 	transform: rotate(180deg);
 }
-.slide button:hover {
+.zoom:hover {
 	background-color: rgba(0, 0, 0, 0.5);
 	border-radius: 100px 0 0 100px;
 }
@@ -201,6 +204,7 @@ button:focus {
 /* Contact */
 .form {
 	background-image: url(images/Cezano_Rear_Patio_AFTER_done.jpg);
+	background-position: center;
 	background-size: cover;
 	overflow: hidden;
 	padding: 10px;
@@ -235,6 +239,7 @@ button:focus {
 	width: calc(100% - 20px);
 }
 .map {
+	background-position: center;
   	background-size: cover;
 	display: inline-block;
 	margin-left: calc(50% / 6 + 10px);
@@ -273,12 +278,15 @@ button:focus {
 	z-index: 1;
 }
 .full {
+	background-position: center;
 	background-size: cover;
-	height: 80%;
-	margin: 10%;
+	position: absolute;
 	transform: rotateX(45deg);
 	transition: 0.5s;
-	width: 80%;
+	top: 10%;
+	bottom: 10%;
+	left: 10%;
+	right: 10%;
 }
 .gallery button {
 	background-color: rgba(0, 0, 0, 0);
