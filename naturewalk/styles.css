@@ -24,6 +24,10 @@ p, input, textarea {
 a {
 	color: #3a5;
 	text-decoration: none;
+	transition: 0.2s;
+}
+a:hover {
+	opacity: 0.8;
 }
 h1 {
 	font-size: 30px;
@@ -83,6 +87,9 @@ button:focus {
 	letter-spacing: 5px;
 	line-height: 0;
 	margin: 30px 10px 0 10px;
+}
+.navbar a {
+	color: #fff;
 }
 .title {
 	background-color: rgba(0, 0, 0, 0.8);
