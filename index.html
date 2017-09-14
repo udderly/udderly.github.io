@@ -1,20 +1,97 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Udderly Web Design</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>Udderly Web Design</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
 
-<body>
-<div class="blur">
-	<iframe src="naturewalk/index.html" scrolling="no"></iframe>
-</div>
-
-<div class="content">
-		<h1>NatureWalk Landscapes</h1>
-		<iframe src="naturewalk/index.html"></iframe>
-</div>
-</body>
+	<body>
+		<div id="s1" class="slide">
+			<h1>Slide ONE</h1>
+			<p>Filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler</p>
+		</div>
+		<div id="s2" class="slide">
+			<h1>Slide TWO</h1>
+		</div>
+		<div id="s3" class="slide">
+			<h1>Slide THREE</h1>
+		</div>
+		<div id="controls">
+			<button onClick="skip(0)"></button>
+			<button onClick="skip(1)"></button>
+			<button onClick="skip(2)"></button>
+		</div>
+		<script>
+			var scroll = 0;
+			window.addEventListener("wheel", mswhl);
+			
+			function skip(x) {
+				scroll = x * 32 + 16;
+				update();
+			}
+			
+			function update() {
+				if (scroll < 0) {
+					scroll = 0;
+				} else if (scroll > 95) {
+					scroll = 95;
+				}
+				var passed = -1;
+				for (var i = 0; i < 3; i++) {
+					var slide = document.getElementById("s" + (i + 1));
+					if (i === Math.floor(scroll / 32)) {
+						passed = 1;
+						slide.style.transform = "translate(0, 0)";
+						document.getElementById("controls").children[i].style.backgroundColor = "#999";
+					} else {
+						slide.style.transform = "translate(" + (passed * 100) + "%, 0)";
+						document.getElementById("controls").children[i].style.backgroundColor = "#666";
+					}
+				}
+			}
+			
+			function mswhl(e) {
+				scroll += Math.abs(event.deltaY) / event.deltaY;
+				update();
+			};
+			
+			update();
+			
+			/*
+			
+			alienate verb
+			make unfiendly; antagonize; to cause someone to fell isolated or estranged
+			
+			alleviate verb
+			make easier to endure; relieve; mitigate
+			
+			aloof adjective
+			not interested; reserved; apart
+			
+			altruistic adjective
+			thoughtful of the welfare of others
+			
+			ambiguous adjective
+			not clearly defined; open to more than one interpretation
+			
+			ambivalence noun
+			condition of having contradictory attites or feelings
+			
+			ameliorate verb
+			make something better or more tolerable
+			
+			analogous adjective
+			similar in certain qualities; comparable
+			
+			animosity noun
+			strong hostility; dislike; ill will
+			
+			anonymous adjective
+			by or from a person whose name is not known
+			
+			*/
+		</script>
+	</body>
 </html>
