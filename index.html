@@ -2,30 +2,65 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Udderly Web Design</title>
+		<title>udderly web design</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
 	<body>
 		<div id="s1" class="slide">
-			<h1>Slide ONE</h1>
-			<p>Filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler</p>
+			<div>
+				<h1>udderly web design</h1>
+				<p>Filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler.</p>
+				<p>Use scroll, arrow keys, or buttons to read more.</p>
+			</div>
 		</div>
 		<div id="s2" class="slide">
-			<h1>Slide TWO</h1>
+			<div>
+				<h1>Slide TWO</h1>
+				<p>Filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler.</p>
+				<p>Use scroll, arrow keys, or buttons to read more.</p>
+				<p>Filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler.</p>
+				<p>Use scroll, arrow keys, or buttons to read more.</p>
+			</div>
 		</div>
 		<div id="s3" class="slide">
-			<h1>Slide THREE</h1>
+			<div>
+				<h1>Slide THREE</h1>
+			</div>
+		</div>
+		<div id="s4" class="slide">
+			<div>
+				<h1>Slide FOUR</h1>
+			</div>
+		</div>
+		<div id="s5" class="slide">
+			<div>
+				<h1>Slide FIVE</h1>
+			</div>
 		</div>
 		<div id="controls">
 			<button onClick="skip(0)"></button>
 			<button onClick="skip(1)"></button>
 			<button onClick="skip(2)"></button>
+			<button onClick="skip(3)"></button>
+			<button onClick="skip(4)"></button>
 		</div>
 		<script>
 			var scroll = 0;
 			window.addEventListener("wheel", mswhl);
+			
+			
+			document.onkeydown = checkKey;
+
+			function checkKey(e) {
+				if (e.keyCode == "37") {
+					scroll -= 32;
+				} else if (e.keyCode == "39") {
+					scroll += 32;
+				}
+				update();
+			}
 			
 			function skip(x) {
 				scroll = x * 32 + 16;
@@ -35,18 +70,19 @@
 			function update() {
 				if (scroll < 0) {
 					scroll = 0;
-				} else if (scroll > 95) {
-					scroll = 95;
+				} else if (scroll > 5 * 32 - 1) {
+					scroll = 5 * 32 - 1;
 				}
 				var passed = -1;
-				for (var i = 0; i < 3; i++) {
+				for (var i = 0; i < 5; i++) {
 					var slide = document.getElementById("s" + (i + 1));
 					if (i === Math.floor(scroll / 32)) {
 						passed = 1;
 						slide.style.transform = "translate(0, 0)";
 						document.getElementById("controls").children[i].style.backgroundColor = "#999";
 					} else {
-						slide.style.transform = "translate(" + (passed * 100) + "%, 0)";
+						var x = i - Math.floor(scroll / 32);
+						slide.style.transform = "translate(" + (25 * (x + 3 * Math.abs(x) / x)) + "%, 0)";
 						document.getElementById("controls").children[i].style.backgroundColor = "#666";
 					}
 				}
