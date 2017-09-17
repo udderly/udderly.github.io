@@ -35,6 +35,7 @@ p {
 	bottom: 0;
 	left: 0;
 	position: absolute;
+	transition: 0.5s;
 	right: 0;
 }
 #controls button {
@@ -51,13 +52,26 @@ p {
 #controls button:focus {
 	outline: none;
 }
+#scroll {
+	position: absolute;
+}
+#scroll button {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 25px;
+	transition: 0.5s;
+}
+#scroll button:hover {
+	color: #000;
+}
 .slide {
 	align-items: center;
 	display: flex;
 	height: 100%;
 	justify-content: center;
 	position: absolute;
-	transition: 1s;
+	transition: 0.5s;
 	transition-timing-function: ease-out;
 	width: 100%;
 }

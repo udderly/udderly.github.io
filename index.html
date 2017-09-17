@@ -37,7 +37,12 @@
 		<div id="s5" class="slide">
 			<div>
 				<h1>Slide FIVE</h1>
+				<p>Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. </p>
 			</div>
+		</div>
+		<div id="scroll">
+			<button>&#9650;</button>
+			<button>&#9660;</button>
 		</div>
 		<div id="controls">
 			<button onClick="skip(0)"></button>
@@ -46,50 +51,7 @@
 			<button onClick="skip(3)"></button>
 			<button onClick="skip(4)"></button>
 		</div>
-		<script>
-			var scroll = 0;
-			document.onkeydown = checkKey;
-
-			function checkKey(e) {
-				if (e.keyCode == "37") {
-					scroll--;
-				} else if (e.keyCode == "39") {
-					scroll++;
-				}
-				update();
-			}
-			
-			function skip(x) {
-				scroll = x;
-				update();
-			}
-			
-			function update() {
-				if (scroll < 0) {
-					scroll = 0;
-				} else if (scroll > 4) {
-					scroll = 4;
-				}
-				var passed = -1;
-				for (var i = 0; i < 5; i++) {
-					var slide = document.getElementById("s" + (i + 1));
-					if (i === Math.floor(scroll)) {
-						passed = 1;
-						slide.style.transform = "translate(0, 0)";
-						document.getElementById("controls").children[i].style.backgroundColor = "#999";
-					} else {
-						var x = i - Math.floor(scroll);
-						if (x > 0) {
-							x++;
-						}
-						slide.style.transform = "translate(" + (50 * x) + "%, 0)";
-						document.getElementById("controls").children[i].style.backgroundColor = "#666";
-					}
-				}
-			}
-			
-			update();
-			
+		<script src="slide.js">
 			/*
 			
 			alienate verb
