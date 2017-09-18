@@ -1,9 +1,17 @@
 var scroll = 0;
+
+var position = 0;
+var velocity = 0;
+var tid = 0;
+var time = 0;
+var on = 0;
+
 var current = document.getElementById("s1");
 document.onkeydown = checkKey;
 window.onresize = overflow;
 
 var controls = document.getElementById("controls");
+var bar = document.getElementById("bar");
 
 function checkKey(e) {
 	"use strict";
@@ -53,10 +61,48 @@ function overflow() {
 	"use strict";
 	if (current.children[0].offsetTop * 2 < controls.offsetHeight) {
 		controls.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+		bar.style.visibility = "visible";
+		bar.style.opacity = "1";
+		
 	} else {
 		controls.style.backgroundColor = "rgba(0, 0, 0, 0)";
+		bar.style.visibility = "hidden";
+		bar.style.opacity = "0";
 	}
 	console.log();
+}
+
+function move(x) {
+	"use strict";
+	velocity = x;
+	time = 0;
+	on = 2;
+	if (tid == 0) {
+		tid = setInterval(repeat, 1000 / 60);
+	}
+}
+
+function stop() {
+	"use strict";
+	on = 0;
+}
+
+function repeat() {
+	"use strict";
+	time -= 1 - on;
+	console.log(time);
+	position += time * velocity;
+	var limit = window.innerHeight - controls.offsetHeight - current.children[0].scrollHeight;
+	if (position > 0) {
+		position = 0;
+	} else if (position < limit) {
+		position = limit;
+	}
+	current.children[0].style.transform = "translate(0, " + position + "px)";
+	if (time === 0 || position === 0 || position === limit) {
+        clearInterval(tid);
+        tid = 0;
+	}
 }
 
 update();

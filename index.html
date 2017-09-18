@@ -40,16 +40,16 @@
 				<p>Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. Lorem ipsum overflow. </p>
 			</div>
 		</div>
-		<div id="scroll">
-			<button>&#9650;</button>
-			<button>&#9660;</button>
-		</div>
 		<div id="controls">
 			<button onClick="skip(0)"></button>
 			<button onClick="skip(1)"></button>
 			<button onClick="skip(2)"></button>
 			<button onClick="skip(3)"></button>
 			<button onClick="skip(4)"></button>
+		</div>
+		<div id="bar">
+			<button id="up" onMouseDown="move(1)" onMouseUp="stop()">&#9650;</button>
+			<button id="down" onMouseDown="move(-1)" onMouseUp="stop()">&#9660;</button>
 		</div>
 		<script src="slide.js">
 			/*

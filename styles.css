@@ -5,6 +5,15 @@
 	padding: 0;
 	text-align: center;
 }
+*::-webkit-scrollbar {
+	display: none;
+}
+*::-webkit-scrollbar-thumb {
+	display: none;
+}
+*::-webkit-scrollbar-track {
+	display: none;
+}
 html,
 body {
 	height: 100%;
@@ -49,21 +58,37 @@ p {
 #controls button:hover {
 	background-color: #ccc !important;
 }
-#controls button:focus {
+button:focus {
 	outline: none;
 }
-#scroll {
-	position: absolute;
+#bar {
+	transition: opacity 0.5s, visibility 0.5s 0s;
+	visibility: hidden;
 }
-#scroll button {
+#bar button {
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
 	color: rgba(0, 0, 0, 0.5);
 	font-size: 25px;
+	margin: 5px 10px;
+	position: absolute;
+	right: 0;
 	transition: 0.5s;
 }
-#scroll button:hover {
+#bar button:hover {
 	color: #000;
+}
+#bar button:active {
+	transition: 0.125s;
+}
+#up:active {
+	transform: translate(0, -5px);
+}
+#down:active {
+	transform: translate(0, 5px);
+}
+#down {
+	bottom: 0;
 }
 .slide {
 	align-items: center;
