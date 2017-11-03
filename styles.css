@@ -5,14 +5,8 @@
 	padding: 0;
 	text-align: center;
 }
-*::-webkit-scrollbar {
-	display: none;
-}
-*::-webkit-scrollbar-thumb {
-	display: none;
-}
-*::-webkit-scrollbar-track {
-	display: none;
+*::selection {
+	background: rgba(255, 255, 255, 0.5);
 }
 html,
 body {

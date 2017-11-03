@@ -59,17 +59,18 @@ function update() {
 
 function overflow() {
 	"use strict";
+	console.log("d");
 	if (current.children[0].offsetTop * 2 < controls.offsetHeight) {
 		controls.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
 		bar.style.visibility = "visible";
 		bar.style.opacity = "1";
-		
 	} else {
 		controls.style.backgroundColor = "rgba(0, 0, 0, 0)";
 		bar.style.visibility = "hidden";
 		bar.style.opacity = "0";
 	}
-	console.log();
+	position = 0;
+	current.children[0].style.transform = "translate(0, 0)";
 }
 
 function move(x) {
@@ -80,17 +81,37 @@ function move(x) {
 	if (tid == 0) {
 		tid = setInterval(repeat, 1000 / 60);
 	}
+	
 }
 
 function stop() {
 	"use strict";
-	on = 0;
+	if (time > 0) {
+		on = 0;
+		console.log(on);
+	}
 }
+
+document.getElementById("up").addEventListener("touchstart", function() {
+	"use strict";
+	move(1);
+});
+document.getElementById("down").addEventListener("touchstart", function() {
+	"use strict";
+	move(-1);
+});
+document.getElementById("up").addEventListener("touchend", function() {
+	"use strict";
+	stop();
+});
+document.getElementById("down").addEventListener("touchend", function() {
+	"use strict";
+	stop();
+});
 
 function repeat() {
 	"use strict";
 	time -= 1 - on;
-	console.log(time);
 	position += time * velocity;
 	var limit = window.innerHeight - controls.offsetHeight - current.children[0].scrollHeight;
 	if (position > 0) {
