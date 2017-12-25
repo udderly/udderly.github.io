@@ -21,9 +21,12 @@ body, html {
     height: 100%;
 }
 a {
+	color: #099;
 	text-decoration: none;
-	color: #cff;
 	padding: 0 !important;
+}
+.footer a {
+	color: #cff;
 }
 .full {
     background-color: #333;
@@ -53,17 +56,40 @@ a {
 .tile div {
 	background-size: cover;
 	background-position: center;
-	padding: 10px;
+	padding: 20px;
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 }
 .tile * {
-	padding: 10px;
+	padding: 20px;
 }
 .img {
 	padding-top: 50% !important;
-	width: calc(100% - 20px) !important;
+	width: calc(100% - 40px) !important;
+	margin-bottom: 20px;
+}
+.img:hover > div {
+	opacity: 1;
+}
+.img div {
+	background-color: rgba(255, 255, 255, 0.75);
+	height: calc(100% - 40px);
+	left: 0;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: calc(100% - 40px);
+	transition: 0.25s;
+	opacity: 0;
+}
+.img a {
+	color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	font-size: 20px;
 }
 .footer {
 	background-color: #333;
