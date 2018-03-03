@@ -45,8 +45,8 @@ html, body {
 	position: absolute;
 	left: 10px;
 	right: 10px;
-	bottom: 10px;
-	top: 10px;
+	bottom: 0;
+	top: 0;
 	transition: 1s;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -59,10 +59,10 @@ html, body {
 	padding: 10px;
 	z-index: 1;
 	background-color: rgba(255, 255, 255, 0.9);
-	margin-top: 10px;
+	margin: 10px 0;
 	width: calc(100% - 40px);
 }
-.navigation a {
+.circle {
 	width: 20px;
 	border-radius: 50%;
 	height: 20px;
