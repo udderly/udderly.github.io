@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/camera.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" type="text/css" rel="stylesheet" id="main-style">
+<script src="js/jquery-1.js" type="text/javascript"></script>
+<script src="js/custom.js" type="text/javascript"></script> 
+    <style>
+		html,body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			color: #09f;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		#back_to_camera {
+			background: rgba(255,255,255,.9);
+			clear: both;
+			display: block;
+			height: 40px;
+			line-height: 40px;
+			padding: 20px;
+			position: relative;
+			z-index: 1;
+		}
+		.fluid_container {
+			
+			height: 405px; margin:10px 0 0 0; width:100%;
+			
+			
+		}
+		#camera_wrap_4 {
+			
+			height: 100%;
+			
+			
+		}
+		.camera_bar {
+			z-index: 2;
+		}
+		.camera_thumbs {
+			margin-top: -100px;
+			position: relative;
+			z-index: 1;
+		}
+		.camera_thumbs_cont {
+			border-radius: 0;
+			-moz-border-radius: 0;
+			-webkit-border-radius: 0;
+		}
+		.camera_overlayer {
+			opacity: .1;
+		}
+	</style>
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //		Scripts
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    
+    
+    <script src="js/js2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile.customized.min.js" type="text/javascript"></script>
+    <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="js/camera.min.js" type="text/javascript"></script>
+    
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_4').camera({
+				height: 'auto',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: true,
+				hover: false,
+				opacityOnGrid: false,
+				imagePath: '../images/'
+			});
+
+		});
+	</script>	
+    
+<script>
+		$(function() {   
+		
+			var theWindow        = $(window),
+			    $bner_main              = $("#bner_main"),
+			    aspectRatio      = $bner_main.width() / $bner_main.height();
+			    			    		
+			function resizeBg() {
+				
+				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+				    $bner_main
+				    	.removeClass()
+				    	.addClass('bner_mainheight');
+				} else {
+				    $bner_main
+				    	.removeClass()
+				    	.addClass('bner_mainwidth');
+				}
+							
+			}
+			                   			
+			theWindow.resize(function() {
+				resizeBg();
+			}).trigger("resize");
+		
+		});
+	</script>
+  
+<title>Riverview Principal Management</title>
+</head>
+
+<body>
+<div id="werp">
+	<div class="main_div">
+		<section>
+			<div class="soc_ic">
+				<article>
+					<div class="twitt" onclick="location.href='http://twitter.com';" style="cursor:pointer;"></div>
+					<div class="face" onclick="#" style="cursor:pointer;"></div>
+					<div class="gplus" onclick="#" style="cursor:pointer;"></div>
+					<div class="linked" onclick="#" style="cursor:pointer;"></div>
+				</article>
+			</div>
+		</section>
+		<header>
+			<div class="main_head">
+				<figure>
+					<div class="logo"><a href="index.html"><img src="images/logo.png" alt="" /></a></div>
+				</figure>
+				<nav>
+					<div class="menu">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="investment_strtegies.html">Investment Strategies</a></li>
+							<li><a href="our_portfolio.html">Our Portfolio</a></li>
+							<li><a href="thirdparty.html">Third Party Managers</a></li>
+							<li><a href="Contact.html">Contact</a></li>
+						</ul>
+
+					</div>
+				</nav>
+				<article>
+					<div class="search_bx">
+						<form id="search-form" action="search.php" method="get">
+							<input id="s" name="s" placeholder="Search …" style="display: none;" type="text">
+							<input id="search-submit" name="search-submit" value="" type="submit">
+						</form>
+					</div>
+				</article>
+			</div>
+		</header>
+	</div>
+	<div class="clear"></div>
+	<section>
+<img src="images/InvestmentStrategies.jpg" alt=""  id="bner_main" class="bner_mainwidth"/>
+	</section>
+	<section>
+		<div class="main_cantain">
+		  <article>
+<div class="cantain">
+					<h2>
+						Investment Strategies
+					</h2>
+                    
+			  </div>
+		  </article>
+            <article>
+            <div class="ab_cantain">
+				<p>At RPM, we take a two-pronged approach to our investment strategies: value-oriented and opportunity-driven.  </p>
+				<p>As a value investor, RPM seeks to invest in properties that are selling at prices below their intrinsic value.  RPM looks to take advantage of the undervalue anomalies due to markets being in distress or sellers opting to liquidate their properties for non-economic reasons.      </p>
+				<p>As an opportunistic investor, RPM endeavors to adopt alternate deal structures to invest directly or indirectly in real estate properties.  Structured lending with real estate collateral is an example for such strategy.  Purchasing debt instruments, either performing or non-performing, is another example.</p>
+            </div>
+            </article>
+		</div>
+	</section>
+	<footer>
+		<div class="main_foot">
+			<section>
+				<div class="foot_cantain">
+					<article>
+						<div class="foot_arow">
+						</div>
+					</article>
+					<article>
+						<div class="foot_work">
+							<article>
+								<div class="foot_work_lf">
+									<nav>
+										<div class="foot_menu">
+											<ul>
+												<li><a href="index.html">Home</a>|</li>
+												<li><a href="investment_strtegies.html">Investment Strategies</a>|</li>
+												<li><a href="our_portfolio.html">Our Portfolio</a>|</li>
+												<li><a href="thirdparty.html">Third Party Managers</a>|</li>
+												<li><a href="Contact.html">Contact</a></li>
+											</ul>
+										</div>
+									</nav>
+									<article>
+										<div class="sml_foot">
+											© 2013 Riverview Principal Management, LLC.    All Rights Reserved. 
+										</div>
+									</article>
+								</div>
+								<div class="foot_work_rg">
+									<article>
+										<div class="contect_head">
+											Contact Info
+										</div>
+									</article>
+									<article>
+										<div class="add">
+											<div class="add_pic"><img src="images/home.png" alt="" /></div>
+											<div class="add_left">Address:</div>
+											<div class="add_right"><p>19925 Stevens Creek Boulevard<br>Suite 100, Cupertino, CA 95014</p>
+											</div>
+										</div>
+									</article>
+									<article>
+										<div class="add">
+											<div class="add_mob"><img src="images/mob.png" alt="" /></div>
+											<div class="add_left_ph">Phone:</div>
+											<div class="add_right">(408) 217-0022</div>
+										</div>
+									</article>
+									<article>
+										<div class="add">
+											<div class="add_fax"><img src="images/fax.png" alt="" /></div>
+											<div class="add_left_fax">Fax:</div>
+											<div class="add_right">(408) 889-8189</div>
+										</div>
+									</article>
+								</div>
+							</article>
+						</div>
+					</article>
+				</div>
+			</section>
+		</div>
+	</footer>
+</div>
+  
+</body>
+</html>

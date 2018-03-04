@@ -1,0 +1,4 @@
+%% [Sun May  1 22:42:56 2016] GET /index.cgi HTTP/1.1
+%% 404 /z/dr/heichan/us15/index.cgi
+%error
+script not found or unable to stat

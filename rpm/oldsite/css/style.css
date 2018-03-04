@@ -1,0 +1,86 @@
+
+
+/* Search Form */
+
+#search-form {	
+	position: relative;
+	margin-top: 36px;
+	float: right;
+	margin-left: 20px;
+}
+
+#search-submit {
+	width: 30px;
+	height: 30px;
+	background:url(../images/search.png) no-repeat left top;
+	border: none;
+	text-indent: -10000em;
+	cursor: pointer;
+}
+
+/* After Click */
+
+#s {
+	position: absolute;
+	top: 30px;
+	right: 0;	
+	padding: 6px 10px;
+	border: 1px solid #d9d9d9;
+	width: 150px;
+    z-index: 1000;
+    border-radius: 0;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1) inset;
+}
+
+#s:hover,
+#s:focus {
+	border-color: #ccc;	
+}
+
+/* Content Form */
+
+.content-form p {
+    margin-bottom: 10px;
+}
+
+.content-form input, .content-form textarea, .content-form select {
+	border: 1px solid #d9d9d9;
+	padding: 6px 10px;
+	border-radius: 0;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1) inset;
+}
+
+.content-form input:hover, .content-form textarea:hover, .content-form select:hover,
+.content-form input:focus, .content-form textarea:focus, .content-form select:focus {
+	border-color: #ccc;
+}
+
+.content-form input {
+	width: 50%;
+}
+
+.content-form label, .content-form input, .content-form textarea, .content-form select {
+    margin-bottom: 5px;
+}
+
+.content-form label {
+	display: block;
+	clear: both;
+}
+
+.content-form .error {
+	color: #E64141;
+}
+
+.content-form textarea, .content-form select {
+	width: 60%;
+}
+
+.content-form textarea {
+	height: 160px;
+}
+
+.content-form input[type="file"] {
+    padding: 0;
+    border: none;
+}
