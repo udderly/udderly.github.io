@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+* {
+    font-family: 'PT Sans';
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+strong {
+    font-size: 18px;
+    font-weight: 900;
+}
+hr {
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+    padding: 1px;
+}
+#nav {
+    align-items: flex-end;
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+    display: flex;
+    position: fixed;
+    width: 100%;
+}
+#nav div {
+    padding: 20px 50px 10px 10px;
+}
+#nav div h1 {
+    font-size: 24px;
+}
+#nav div h2 {
+    font-size: 18px;
+}
+#nav p {
+    font-variant: small-caps;
+    opacity: 0.5;
+    padding: 10px;
+    transition: 0.2s;
+}
+#nav p:hover {
+    opacity: 1;
+}
+#main {
+    margin: auto;
+    width: 768px;
+}
+#main h1 {
+    margin-bottom: 20px;
+}
+#main p {
+    padding: 10px;
+}
+.color {
+    background-color: #fed;
+    margin: 20px 0;
+}
+.color h2 {
+    font-size: 32px;
+}
+.color h3 {
+    font-size: 18px;
+    padding: 50px 0;
+}
+.color .third {
+    background-color: #edc;
+    padding: 20px;
+}
+.flex {
+    display: flex;
+}
+.third {
+    flex-basis: calc(100% / 3);
+}
+.two {
+    flex-basis: calc(200% / 3);
+    padding: 20px;
+}
+.image {
+    display: flex;
+}
+.front {
+    flex-basis: calc(200% / 3);
+}
+.back {
+    background-position: center;
+    background-size: cover;
+    flex-basis: calc(100% / 3);
+}
+.quote {
+    font-style: italic;
+}
+.quote .third:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
