@@ -17,30 +17,43 @@ hr {
     margin: 20px 0;
     padding: 1px;
 }
+#back {
+    background-image: url(clef.png);
+    background-size: 150%;
+    height: 100%;
+    opacity: 0.1;
+    position: fixed;
+    width: 200%;
+    z-index: -1;
+}
 #nav {
-    align-items: flex-end;
     background-color: #fff;
     border-bottom: 2px solid #000;
-    display: flex;
     position: fixed;
     width: 100%;
 }
-#nav div {
-    padding: 20px 50px 10px 10px;
+#inner {
+    align-items: flex-end;
+    display: flex;
+    margin: auto;
+    width: 768px;
 }
-#nav div h1 {
+#inner div {
+    padding: 20px 50px 10px 0;
+}
+#inner div h1 {
     font-size: 24px;
 }
-#nav div h2 {
+#inner div h2 {
     font-size: 18px;
 }
-#nav p {
+#inner p {
     font-variant: small-caps;
     opacity: 0.5;
     padding: 10px;
     transition: 0.2s;
 }
-#nav p:hover {
+#inner p:hover {
     opacity: 1;
 }
 #main {
