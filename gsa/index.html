@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gunn Science Alliance</title>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300');
+            * {
+                font-family: 'Josefin Sans';
+                margin: 0;
+            }
+            h1 {
+                font-size: 36px;
+                margin-bottom: 50px;
+            }
+            p,
+            li {
+                font-size: 24px;
+                line-height: 30px;
+            }
+            #image {
+                background-image: url(images/2016/IMG_8230.JPG);
+                background-position: center;
+                background-size: cover;
+                bottom: 0;
+                filter: blur(10px);
+                left: 0;
+                opacity: 0.5;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: -1;
+            }
+            #title {
+                background-color: rgba(0, 0, 0, 0.75);
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                margin: 100px 50% 0 calc((100% - 960px) / 2);
+                padding: 100px 50px;
+            }
+            .tile {
+                background-color: #fff;
+                overflow: hidden;
+                position: relative;
+            }
+            #background {
+                background-image: url(images/2016/IMG_8259.JPG);
+                background-position: center;
+                background-size: cover;
+                bottom: 0;
+                filter: blur(50px);
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .container {
+                display: flex;
+                margin: auto;
+                position: relative;
+                width: 960px;
+            }
+            .half {
+                display: flex;
+                flex-basis: calc(50% - 100px);
+                flex-direction: column;
+                flex-grow: 1;
+            }
+            .content {
+                background-color: rgba(0, 0, 0, 0.75);
+                color: #fff;
+                padding: 100px 50px;
+            }
+            .pic {
+                background-position: center;
+                background-size: cover;
+                height: 500px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="image"></div>
+        <div id="title">
+            <h1>Gunn Science Alliance</h1>
+            <p>Science Alliance is a group of students from Gunn High School who present science demos to third, fourth, and fifth graders. We visit elementary schools in the Palo Alto Unified School District and are passionate about science. Our goal is to excite younger children about the subject.<br><br>Started in 2008 by former Gunn student <strong>Anand Gupta</strong>, five years later the alliance continues to uphold its original mission to share the joys of science with elementary school students.<br><br>Tell us if you’re interested in having Science Alliance come to your school for a physics or chemistry demo! Send us your available hours, and we will get back to you as soon as possible with the dates and times that work best for us.<br><br>Email: <a href="mailto:gunn.science.alliance@gmail.com">gunn.science.alliance@gmail.com</a></p>
+        </div>
+        <div class="tile">
+            <div id="background"></div>
+            <div class="container">
+                <div class="half">
+                    <div class="content">
+                        <h1>Physics</h1>
+                        <ul>
+                            <li>Electric Motor</li>
+                            <li>Plasma Ball</li>
+                            <li>Egg in a Bottle</li>
+                            <li>Electric motor</li>
+                            <li>Van de Graff Generator (Closing)</li>
+                        </ul>
+                        <br><br>
+                        <p>For the first 40 minutes, students split up into four groups and rotate through the stations. Each station takes approximately 10 minutes. The closing demonstration is presented in front of the entire class and for about 10 minutes.<br><br>Total duration: about 1 hour</p>
+                    </div>
+                    <div class="pic" style="background-image: url(images/2016/IMG_8245.JPG)"></div>
+                </div>
+                <div class="half">
+                    <div class="pic" style="background-image: url(images/2016/IMG_8234.JPG)"></div>
+                    <div class="content">
+                        <h1>Chemistry</h1>
+                        <ul>
+                            <li>Stoplight Reaction (Opening)</li>
+                            <li>Elephant Toothpaste</li>
+                            <li>Glowsticks</li>
+                            <li>Burning Cotton Balls</li>
+                            <li>Milk and Food Coloring</li>
+                            <li>Polymers</li>
+                            <li>Burning Salts (Closing)</li>
+                        </ul>
+                        <br><br>
+                        <p>The first 10 minutes are set aside for the opening demonstration. Then for the next 50 minutes, students split up into five groups and rotate through the stations. Each station takes approximately 10 minutes. The closing demonstration is presented in front of the entire class and lasts for about 10 minutes.<br><br>Total duration: about 1.5 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
