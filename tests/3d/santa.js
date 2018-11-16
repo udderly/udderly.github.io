@@ -5,13 +5,20 @@ class Box {
         this.color = color;
         
         var geometry = new THREE.BoxGeometry( size.x, size.y, size.z );
-        var material = new THREE.MeshLambertMaterial( { color: color } );
+        var material = new THREE.MeshLambertMaterial( { color: color, side: THREE.DoubleSide } );
         this.obj = new THREE.Mesh( geometry, material );
         scene.add( this.obj );
         
         this.obj.position.set( pos.x, pos.y, pos.z );
+        
+        obstacles.push(this.obj);
+        
+        //test
+        this.obj.rotation.x=1;
     }
 }
+
+var obstacles = [];
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -29,7 +36,7 @@ var sky = new THREE.Mesh( skyg, skym );
 scene.add( sky );
 
 var geometry = new THREE.PlaneGeometry( 50, 50, 50 );
-var material = new THREE.MeshLambertMaterial( {color: 0x669933, side: THREE.DoubleSide} );
+var material = new THREE.MeshLambertMaterial( { color: 0x669933, side: THREE.DoubleSide } );
 var plane = new THREE.Mesh( geometry, material );
 scene.add( plane );
 
@@ -42,22 +49,22 @@ var cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 cube.position.set(0, -1, -10);
 
-var test = new Box( { x: 0, y: -2, z: -10 }, { x: 2, y: 2, z: 2 }, 0xffff00 )
+var test = new Box( { x: 0, y: -5, z: 0 }, { x: 2, y: 2, z: 2 }, 0xffff00 )
 
-var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+var geometry = new THREE.BoxGeometry( 1, -1, 1 );
 var material = new THREE.MeshLambertMaterial( { color: 0x00ffff } );
 var cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 cube.position.set(0, -1, 10);
 
-var pos = { x: 0, y: 0, z: 0 };
+var pos = { x: 0, y: 10, z: 0 };
 var vel = { x: 0, y: 0, z: 0 };
 
 function animate() {
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
     
-    vel.y -= 0.1;
+    vel.y -= 0.05;
     
     vel.x *= 0.9;
     vel.y *= 0.9;
@@ -67,33 +74,42 @@ function animate() {
     pos.y += vel.y;
     pos.z += vel.z;
     
-    if (pos.y < -9) {
+    if ( pos.y < -9 ) {
         pos.y = -9;
         vel.y = 0;
     }
     
     camera.position.set( pos.x, pos.y, pos.z );
     sky.position = camera.position;
+    
+    var point = new THREE.Vector3( pos.x, pos.y - 1, pos.z );
+    var raycaster = new THREE.Raycaster();
+    raycaster.set( point, new THREE.Vector3( 1, 1, 1 ) );
+    var intersects = raycaster.intersectObject( obstacles[0] );
+    if ( intersects.length % 2 === 1 ) {
+        pos.y -= vel.y;
+        vel.y *= - 0.1;
+    }
 }
 animate();
 
-document.addEventListener('click', lock);
+document.addEventListener( 'click', lock );
 function lock() {
     document.body.requestPointerLock();
 }
 
-document.addEventListener('mousemove', update);
+document.addEventListener( 'mousemove', update );
 
 camera.rotation.order = 'YXZ';
 
 var lx = 0;
 
-function update(event) {
-    if (event.movementX < lx * 1.1 || event.movementX < 250) {
+function update( event ) {
+    if ( event.movementX < lx * 1.5 || event.movementX < 250 ) {
         camera.rotation.x -= event.movementY / 1000;
         
-        camera.rotation.x = Math.min(Math.PI / 2, camera.rotation.x);
-        camera.rotation.x = Math.max(-Math.PI / 2, camera.rotation.x);
+        camera.rotation.x = Math.min( Math.PI / 2, camera.rotation.x );
+        camera.rotation.x = Math.max( -Math.PI / 2, camera.rotation.x );
         
         camera.rotation.y -= event.movementX / 500;
     } //prevent stupid chrome spikes
