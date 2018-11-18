@@ -1,47 +1,50 @@
 class Box {
-    constructor(pos, size, color) {
-        this.pos = pos;
-        this.size = size;
-        this.color = color;
+    constructor(args) {
+        this.args = args;
         
-        var geometry = new THREE.BoxGeometry( size.x, size.y, size.z );
-        var material = new THREE.MeshLambertMaterial( { color: color, side: THREE.DoubleSide } );
+        var geometry = new THREE.BoxGeometry( args.size.x, args.size.y, args.size.z );
+        var material = new THREE.MeshLambertMaterial( { color: args.color, side: THREE.DoubleSide } );
         this.obj = new THREE.Mesh( geometry, material );
         scene.add( this.obj );
         
-        this.obj.position.set( pos.x, pos.y, pos.z );
         
         obstacles.push(this.obj);
         
-        //test
-        this.obj.rotation.x=1;
+        if (args.pos) {
+            this.obj.position.set( args.pos.x, args.pos.y, args.pos.z );
+        }
+        if (args.rot) {
+            this.obj.rotation.set( args.rot.x, args.rot.y, args.rot.z );
+        }
+        
+        var ghost = this.obj.clone();
+        ghost.material = new THREE.MeshBasicMaterial({wireframe:true,color:0xffffff});
+        scene.add(ghost);
     }
 }
 
 var obstacles = [];
 
 var scene = new THREE.Scene();
+scene.background = new THREE.Color( 0xcceeff );
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 var renderer = new THREE.WebGLRenderer( {antialias: true} );
 renderer.setSize( window.innerWidth * 2, window.innerHeight * 2 );
 document.body.appendChild( renderer.domElement );
 
-var hlight = new THREE.HemisphereLight( 0xffffff, 0x999999, 1 );
-scene.add( hlight );
+var hemiLight = new THREE.HemisphereLight( 0xeeeeee, 0xcccccc, 1 );
+scene.add( hemiLight );
 
-var skyg = new THREE.SphereGeometry( 100, 10, 10 );
-var skym = new THREE.MeshLambertMaterial( { color: 0x99ddff, side: THREE.BackSide } );
-var sky = new THREE.Mesh( skyg, skym );
-scene.add( sky );
+var dirLight = new THREE.DirectionalLight( 0xffffff, 0.6 );
+scene.add( dirLight );
 
-var geometry = new THREE.PlaneGeometry( 50, 50, 50 );
-var material = new THREE.MeshLambertMaterial( { color: 0x669933, side: THREE.DoubleSide } );
-var plane = new THREE.Mesh( geometry, material );
-scene.add( plane );
+scene.fog = new THREE.Fog( 0xcceeff, 1, 100 );
 
-plane.rotation.set(Math.PI / 2, 0, 0);
-plane.position.set(0, -10, 0);
+var gridHelper = new THREE.GridHelper( 10, 100 );
+scene.add( gridHelper );
+
+gridHelper.position.set(0, -9.9, 0);
 
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 var material = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
@@ -49,7 +52,8 @@ var cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 cube.position.set(0, -1, -10);
 
-var test = new Box( { x: 0, y: -5, z: 0 }, { x: 2, y: 2, z: 2 }, 0xffff00 )
+var test = new Box( { pos: { x: 0, y: -4, z: 0 }, size: { x: 5, y: 5, z: 5 }, color: 0x333333, rot: { x: 1, y: 0, z: 0} } )
+var t2 = new Box( { pos: { x: 0, y: -10.5, z: 0 }, size: { x: 20, y: 1, z: 20 }, color: 0x669933 } )
 
 var geometry = new THREE.BoxGeometry( 1, -1, 1 );
 var material = new THREE.MeshLambertMaterial( { color: 0x00ffff } );
@@ -105,7 +109,7 @@ camera.rotation.order = 'YXZ';
 var lx = 0;
 
 function update( event ) {
-    if ( event.movementX < lx * 1.5 || event.movementX < 250 ) {
+    if ( event.movementX < lx * 1.01 || event.movementX < 250 ) {
         camera.rotation.x -= event.movementY / 1000;
         
         camera.rotation.x = Math.min( Math.PI / 2, camera.rotation.x );
