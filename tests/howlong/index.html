@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>When Can I Leave?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+        * {
+            font-family: 'Open Sans';
+            font-weight: 100;
+        }
+        .bar {
+            background-color: #eee;
+            width: 100%;
+            height: 50px;
+            position: relative;
+        }
+        .bar div {
+            bottom: 0;
+            position: absolute;
+            top: 0;
+        }
+        .last {
+            background-color: #000;
+            bottom: calc(100% / 3) !important;
+            opacity: 0.5;
+            top: calc(100% / 3) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Gunn / Paly Progress Bar</h1>
+    <h2>This Year</h2>
+    <p>Quarter: <span id = "0p"></span></p>
+    <div class="bar" id="0b">
+        <div id="0f"></div>
+    </div>
+    <p>Semester: <span id = "1p"></span></p>
+    <div class="bar" id="1b">
+        <div id="1f"></div>
+    </div>
+    <p>Year: <span id = "2p"></span></p>
+    <div class="bar" id="2b">
+        <div id="2f"></div>
+    </div>
+    <h2>High School</h2>
+    <p>Freshmen: <span id = "3p"></span></p>
+    <div class="bar" id="3b">
+        <div id="3f"></div>
+    </div>
+    <p>Sophomores: <span id = "4p"></span></p>
+    <div class="bar" id="4b">
+        <div id="4f"></div>
+    </div>
+    <p>Juniors: <span id = "5p"></span></p>
+    <div class="bar" id="5b">
+        <div id="5f"></div>
+    </div>
+    <p>Seniors: <span id = "6p"></span></p>
+    <div class="bar" id="6b">
+        <div id="6f"></div>
+    </div>
+    <script>
+        let start = [new Date('2018-10-15T15:25:00'),
+                     new Date('2018-08-13T15:25:00'), 
+                     new Date('2018-08-13T15:25:00'),
+                     new Date('2018-08-13T15:25:00'),
+                     new Date('2017-08-14T15:25:00'),
+                     new Date('2016-08-15T15:25:00'),
+                     new Date('2015-08-17T15:25:00')
+                    ];
+        let end = [new Date('2018-12-21T20:10:00'),
+                   new Date('2018-12-21T20:10:00'), 
+                   new Date('2019-05-31T19:10:00'),
+                   new Date('2022-06-03T19:10:00'),
+                   new Date('2021-06-04T19:10:00'),
+                   new Date('2020-05-29T19:10:00'),
+                   new Date('2019-05-31T19:10:00')
+                  ];
+        let colors = ['#4c8', '#4aa', '#48c', '#66c', '#84c', '#a4a', '#c48'];
+        
+        function loop() {
+            let now = new Date();
+            
+            for (let i = 0; i < start.length; i++) {
+                var thing = document.getElementById(i + 'b');
+                while (thing.children.length > 1) {
+                    thing.removeChild(thing.lastChild);
+                }
+                
+                let percent = (now - start[i]) / (end[i] - start[i]);
+                let display = Math.round(1000000000 * percent) / 10000000;
+                display = (display < 10 ? '0' + display : display) + '';
+                document.getElementById(i + 'p').innerHTML = display + '0'.repeat(10 - display.length) + '%';
+                
+                document.getElementById(i + 'f').style.left = 0;
+                document.getElementById(i + 'f').style.right = 100 * (1 - percent) + '%';
+                document.getElementById(i + 'f').style.backgroundColor = colors[i];
+                
+                if (i > 0) {
+                    let back = i > 2 ? 2 : i - 1;
+                    
+                    let begin = (start[back] - start[i]) / (end[i] - start[i]);
+                    let finish = (end[i] - end[back]) / (end[i] - start[i]);
+                    let bar = document.createElement('div');
+                    bar.classList.add('last');
+                    bar.style.left = begin * 100 + '%';
+                    bar.style.right = finish * 100 + '%';
+                    thing.appendChild(bar);
+                }
+            }
+            
+            window.requestAnimationFrame(loop);
+        }
+        
+        loop();
+    </script>
+</body>
+</html>
