@@ -13,14 +13,13 @@
         h1,
         h2 {
             font-size: 50px;
-            margin: 50px 25px 10px;
+            margin: 50px 25px 25px;
         }
         h2 {
             font-size: 30px;
         }
         p {
-            font-size: 20px;
-            margin: 10px 50px 20px;
+            font-size: 15px;
         }
         .bar {
             background-color: #eee;
@@ -53,6 +52,22 @@
             opacity: 0.125;
             top: calc(100% / 3) !important;
         }
+        .bottom {
+            display: flex;
+            margin: 10px 50px 20px;
+        }
+        .bottom p {
+            margin: 0 10px;
+            width: 50%;
+        }
+        .bottom p:first-child {
+            text-align: right;
+        }
+        .bottom span {
+            display: inline-block;
+            font-size: 20px;
+            width: 60px;
+        }
     </style>
 </head>
 
@@ -65,21 +80,30 @@
         <div id="0f"></div>
         <div class="last" id="0l"></div>
     </div>
-    <p id="0m"></p>
+    <div class="bottom">
+        <p id="0ml"></p>
+        <p id="0mr"></p>
+    </div>
     <div class="bar" id="1b">
         <p>Semester</p>
         <p id="1p"></p>
         <div id="1f"></div>
         <div class="last" id="1l"></div>
     </div>
-    <p id="1m"></p>
+    <div class="bottom">
+        <p id="1ml"></p>
+        <p id="1mr"></p>
+    </div>
     <div class="bar" id="2b">
         <p>Year</p>
         <p id="2p"></p>
         <div id="2f"></div>
         <div class="last" id="2l"></div>
     </div>
-    <p id="2m"></p>
+    <div class="bottom">
+        <p id="2ml"></p>
+        <p id="2mr"></p>
+    </div>
     <h2>High School</h2>
     <div class="bar" id="3b">
         <p>Freshmen</p>
@@ -87,28 +111,40 @@
         <div id="3f"></div>
         <div class="last" id="3l"></div>
     </div>
-    <p id="3m"></p>
+    <div class="bottom">
+        <p id="3ml"></p>
+        <p id="3mr"></p>
+    </div>
     <div class="bar" id="4b">
         <p>Sophmores</p>
         <p id="4p"></p>
         <div id="4f"></div>
         <div class="last" id="4l"></div>
     </div>
-    <p id="4m"></p>
+    <div class="bottom">
+        <p id="4ml"></p>
+        <p id="4mr"></p>
+    </div>
     <div class="bar" id="5b">
         <p>Juniors</p>
         <p id="5p"></p>
         <div id="5f"></div>
         <div class="last" id="5l"></div>
     </div>
-    <p id="5m"></p>
+    <div class="bottom">
+        <p id="5ml"></p>
+        <p id="5mr"></p>
+    </div>
     <div class="bar" id="6b">
         <p>Seniors</p>
         <p id="6p"></p>
         <div id="6f"></div>
         <div class="last" id="6l"></div>
     </div>
-    <p id="6m"></p>
+    <div class="bottom">
+        <p id="6ml"></p>
+        <p id="6mr"></p>
+    </div>
     <script>
         let sd = [[new Date('2018-10-15T08:25:00'), new Date('2019-01-08T08:25:00'), new Date('2019-03-12T08:25:00')],
                   [new Date('2018-08-13T08:25:00'), new Date('2019-01-08T08:25:00')], 
@@ -178,10 +214,11 @@
                 let lt = ld.getHours() % 12 === 0 ? 12 : ld.getHours() % 12;
                 let nt = nd.getHours() % 12 === 0 ? 12 : nd.getHours() % 12;
                 
-                document.getElementById(i + 'm').innerHTML = (last * 100) + '%: ' +
-                    mons[ld.getMonth()] + ' ' + ld.getDate() + ', ' + lt + ':' + ld.getMinutes() + ' ' + lh +
-                    '<br>' + ((percent === 1 ? 0 : next) * 100) + '%: ' +
-                    mons[nd.getMonth()] + ' ' + nd.getDate() + ', ' + nt + ':' + nd.getMinutes() + ' ' + nh;
+                document.getElementById(i + 'ml').innerHTML = mons[ld.getMonth()] + ' ' + ld.getDate() + ', ' +
+                    lt + ':' + ld.getMinutes() + ' ' + lh + '<span>' + (percent === 1 ? 'Last' : last * 100 + '%') + 
+                    '</span>';
+                document.getElementById(i + 'mr').innerHTML = '<span>' + (percent === 1 ? 'Next' : next * 100 + '%') +
+                    '</span>' + mons[nd.getMonth()] + ' ' + nd.getDate() + ', ' + nt + ':' + nd.getMinutes() + ' ' + nh;
                 
                 if (i > 0) {
                     let back = i > 2 ? 2 : i - 1;
