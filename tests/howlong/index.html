@@ -65,18 +65,21 @@
         <div id="0f"></div>
         <div class="last" id="0l"></div>
     </div>
+    <p id="0m"></p>
     <div class="bar" id="1b">
         <p>Semester</p>
         <p id="1p"></p>
         <div id="1f"></div>
         <div class="last" id="1l"></div>
     </div>
+    <p id="1m"></p>
     <div class="bar" id="2b">
         <p>Year</p>
         <p id="2p"></p>
         <div id="2f"></div>
         <div class="last" id="2l"></div>
     </div>
+    <p id="2m"></p>
     <h2>High School</h2>
     <div class="bar" id="3b">
         <p>Freshmen</p>
@@ -84,24 +87,28 @@
         <div id="3f"></div>
         <div class="last" id="3l"></div>
     </div>
+    <p id="3m"></p>
     <div class="bar" id="4b">
         <p>Sophmores</p>
         <p id="4p"></p>
         <div id="4f"></div>
         <div class="last" id="4l"></div>
     </div>
+    <p id="4m"></p>
     <div class="bar" id="5b">
         <p>Juniors</p>
         <p id="5p"></p>
         <div id="5f"></div>
         <div class="last" id="5l"></div>
     </div>
+    <p id="5m"></p>
     <div class="bar" id="6b">
         <p>Seniors</p>
         <p id="6p"></p>
         <div id="6f"></div>
         <div class="last" id="6l"></div>
     </div>
+    <p id="6m"></p>
     <script>
         let start = [new Date('2019-01-08T08:25:00'),
                      new Date('2018-08-13T08:25:00'), 
@@ -137,6 +144,25 @@
                 document.getElementById(i + 'f').style.left = 0;
                 document.getElementById(i + 'f').style.right = 100 * (1 - percent) + '%';
                 document.getElementById(i + 'f').style.backgroundColor = colors[i];
+                
+                let last = Math.floor(percent * 20) / 20;
+                let ld = new Date(last * (end[i].getTime() - start[i].getTime()) + start[i].getTime());
+                let next = Math.ceil(percent * 20) / 20;
+                let nd = new Date(next * (end[i].getTime() - start[i].getTime()) + start[i].getTime());
+                
+                let lh = ld.getHours() === 0 || ld.getHours() > 11 ? 'PM' : 'AM';
+                let nh = nd.getHours() === 0 || nd.getHours() > 11 ? 'PM' : 'AM';
+                
+                let mons = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                           ];
+                
+                document.getElementById(i + 'm').innerHTML = (last * 100) + '%: ' +
+                    mons[ld.getMonth()] + ' ' + ld.getDate() +
+                    ', ' + (ld.getHours() % 12) + ':' + ld.getMinutes() + ' ' + lh +
+                    '<br>' + (next * 100) + '%: ' +
+                    mons[nd.getMonth()] + ' ' + nd.getDate() +
+                    ', ' + (nd.getHours() % 12) + ':' + nd.getMinutes() + ' ' + nh;
                 
                 if (i > 0) {
                     let back = i > 2 ? 2 : i - 1;
