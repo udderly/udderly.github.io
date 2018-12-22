@@ -8,22 +8,49 @@
         * {
             font-family: 'Open Sans';
             font-weight: 100;
+            margin: 0;
+        }
+        h1,
+        h2 {
+            font-size: 50px;
+            margin: 50px 25px 10px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        p {
+            font-size: 20px;
+            margin: 10px 50px 20px;
         }
         .bar {
             background-color: #eee;
-            width: 100%;
             height: 50px;
+            margin: 0 25px;
             position: relative;
+            width: calc(100% - 50px);
+            z-index: 0;
+        }
+        .bar p {
+            bottom: 8.75px;
+            font-size: 25px;
+            margin: 0;
+            opacity: 0.625;
+            position: absolute;
+            right: 10px;
+        }
+        .bar p:first-child {
+            left: 10px;
         }
         .bar div {
             bottom: 0;
             position: absolute;
             top: 0;
+            z-index: -1;
         }
         .last {
             background-color: #000;
             bottom: calc(100% / 3) !important;
-            opacity: 0.5;
+            opacity: 0.125;
             top: calc(100% / 3) !important;
         }
     </style>
@@ -32,34 +59,48 @@
 <body>
     <h1>The Gunn / Paly Progress Bar</h1>
     <h2>This Year</h2>
-    <p>Quarter: <span id = "0p"></span></p>
     <div class="bar" id="0b">
+        <p>Quarter</p>
+        <p id="0p"></p>
         <div id="0f"></div>
+        <div class="last" id="0l"></div>
     </div>
-    <p>Semester: <span id = "1p"></span></p>
     <div class="bar" id="1b">
+        <p>Semester</p>
+        <p id="1p"></p>
         <div id="1f"></div>
+        <div class="last" id="1l"></div>
     </div>
-    <p>Year: <span id = "2p"></span></p>
     <div class="bar" id="2b">
+        <p>Year</p>
+        <p id="2p"></p>
         <div id="2f"></div>
+        <div class="last" id="2l"></div>
     </div>
     <h2>High School</h2>
-    <p>Freshmen: <span id = "3p"></span></p>
     <div class="bar" id="3b">
+        <p>Freshmen</p>
+        <p id="3p"></p>
         <div id="3f"></div>
+        <div class="last" id="3l"></div>
     </div>
-    <p>Sophomores: <span id = "4p"></span></p>
     <div class="bar" id="4b">
+        <p>Sophmores</p>
+        <p id="4p"></p>
         <div id="4f"></div>
+        <div class="last" id="4l"></div>
     </div>
-    <p>Juniors: <span id = "5p"></span></p>
     <div class="bar" id="5b">
+        <p>Juniors</p>
+        <p id="5p"></p>
         <div id="5f"></div>
+        <div class="last" id="5l"></div>
     </div>
-    <p>Seniors: <span id = "6p"></span></p>
     <div class="bar" id="6b">
+        <p>Seniors</p>
+        <p id="6p"></p>
         <div id="6f"></div>
+        <div class="last" id="6l"></div>
     </div>
     <script>
         let start = [new Date('2019-01-08T08:25:00'),
@@ -84,15 +125,14 @@
             let now = new Date();
             
             for (let i = 0; i < start.length; i++) {
-                var thing = document.getElementById(i + 'b');
-                while (thing.children.length > 1) {
-                    thing.removeChild(thing.lastChild);
-                }
-                
                 let percent = (now - start[i]) / (end[i] - start[i]);
                 let display = Math.round(1000000000 * percent) / 10000000;
                 display = (display < 10 ? '0' + display : display) + '';
-                document.getElementById(i + 'p').innerHTML = display + '0'.repeat(10 - display.length) + '%';
+                if (percent > 0 && percent < 1) {
+                    document.getElementById(i + 'p').innerHTML = display + '0'.repeat(10 - display.length) + '%';
+                } else {
+                    document.getElementById(i + 'p').innerHTML = percent <= 0 ? 'Not started' : 'Done!';
+                }
                 
                 document.getElementById(i + 'f').style.left = 0;
                 document.getElementById(i + 'f').style.right = 100 * (1 - percent) + '%';
@@ -103,11 +143,9 @@
                     
                     let begin = (start[back] - start[i]) / (end[i] - start[i]);
                     let finish = (end[i] - end[back]) / (end[i] - start[i]);
-                    let bar = document.createElement('div');
-                    bar.classList.add('last');
+                    let bar = document.getElementById(i + 'l');
                     bar.style.left = begin * 100 + '%';
                     bar.style.right = finish * 100 + '%';
-                    thing.appendChild(bar);
                 }
             }
             
