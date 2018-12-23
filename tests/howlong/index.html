@@ -147,7 +147,7 @@
     </div>
     <script>
         let sd = [[new Date('2018-10-15T08:25:00'), new Date('2019-01-08T08:25:00'), new Date('2019-03-12T08:25:00')],
-                  [new Date('2018-08-13T08:25:00'), new Date('2019-01-08T08:25:00')], 
+                  [new Date('2018-08-13T08:25:00'), new Date('2019-01-08T08:25:00')],
                   [new Date('2018-08-13T08:25:00')],
                   [new Date('2018-08-13T08:25:00')],
                   [new Date('2017-08-14T08:25:00')],
@@ -155,7 +155,7 @@
                   [new Date('2015-08-17T08:25:00')]
                  ];
         let ed = [[new Date('2018-12-21T12:10:00'), new Date('2019-03-08T03:35:00'), new Date('2019-05-31T12:10:00')],
-                  [new Date('2018-12-21T12:10:00'), new Date('2019-05-31T12:10:00')], 
+                  [new Date('2018-12-21T12:10:00'), new Date('2019-05-31T12:10:00')],
                   [new Date('2019-05-31T12:10:00')],
                   [new Date('2022-06-03T12:10:00')],
                   [new Date('2021-06-04T12:10:00')],
@@ -167,7 +167,7 @@
         let start = [];
         let end = [];
         let again = [];
-        
+
         for (let i = 0; i < sd.length; i++) {
             for (let j = sd[i].length - 1; j > -1; j--) {
                 if (new Date() - sd[i][j] > 0) {
@@ -178,10 +178,10 @@
                 }
             }
         }
-        
+
         function loop() {
             let now = new Date();
-            
+
             for (let i = 0; i < start.length; i++) {
                 let percent = (now - start[i]) / (end[i] - start[i]);
                 let display = Math.round(1000000000 * percent) / 10000000;
@@ -192,37 +192,37 @@
                     document.getElementById(i + 'p').innerHTML = 'Done!';
                     percent = 1;
                 }
-                
+
                 document.getElementById(i + 'f').style.left = 0;
                 document.getElementById(i + 'f').style.right = 100 * (1 - percent) + '%';
                 document.getElementById(i + 'f').style.backgroundColor = colors[i];
-                
+
                 let last = Math.floor(percent * 20) / 20;
                 let ld = new Date(last * (end[i].getTime() - start[i].getTime()) + start[i].getTime());
                 let next = Math.ceil(percent * 20) / 20;
                 let nd = new Date(next * (end[i].getTime() - start[i].getTime()) + start[i].getTime());
-                
+
                 nd = percent === 1 ? new Date(again[i]) : nd;
-                
+
                 let lh = ld.getHours() === 0 || ld.getHours() > 11 ? 'PM' : 'AM';
                 let nh = nd.getHours() === 0 || nd.getHours() > 11 ? 'PM' : 'AM';
-                
+
                 let mons = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
                            ];
-                
+
                 let lt = ld.getHours() % 12 === 0 ? 12 : ld.getHours() % 12;
                 let nt = nd.getHours() % 12 === 0 ? 12 : nd.getHours() % 12;
-                
+
                 document.getElementById(i + 'ml').innerHTML = mons[ld.getMonth()] + ' ' + ld.getDate() + ', ' +
-                    lt + ':' + ld.getMinutes() + ' ' + lh + '<span>' + (percent === 1 ? 'Last' : last * 100 + '%') + 
+                    lt + ':' + ld.getMinutes() + ' ' + lh + '<span>' + (percent === 1 ? 'Last' : last * 100 + '%') +
                     '</span>';
                 document.getElementById(i + 'mr').innerHTML = '<span>' + (percent === 1 ? 'Next' : next * 100 + '%') +
                     '</span>' + mons[nd.getMonth()] + ' ' + nd.getDate() + ', ' + nt + ':' + nd.getMinutes() + ' ' + nh;
-                
+
                 if (i > 0) {
                     let back = i > 2 ? 2 : i - 1;
-                    
+
                     let begin = (start[back] - start[i]) / (end[i] - start[i]);
                     let finish = (end[i] - end[back]) / (end[i] - start[i]);
                     let bar = document.getElementById(i + 'l');
@@ -230,10 +230,10 @@
                     bar.style.right = finish * 100 + '%';
                 }
             }
-            
+
             window.requestAnimationFrame(loop);
         }
-        
+
         loop();
     </script>
 </body>
