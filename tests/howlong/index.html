@@ -68,6 +68,39 @@
             font-size: 20px;
             width: 60px;
         }
+        #cover {
+            background-color: #000;
+            opacity: 0;
+            position: fixed;
+            top: 0; bottom: 0; left: 0; right: 0;
+            transition: 0.2s;
+        }
+        #modal {
+            background-color: #fff;
+            position: fixed;
+            top: 150%; left: 50%;
+            transition: 0.4s;
+            transform: translate(-50%, -50%);
+        }
+        .confetti {
+            width: 25px;
+            height: 25px;
+            position: fixed;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #eee;
+            border: none;
+            margin-bottom: 50px;
+            margin-left: 5px;
+            padding: 10px;
+            transition: 0.2s;
+        }
+        #colors {
+            color: #fff;
+            margin-left: 30px;
+        }
     </style>
 </head>
 
@@ -145,7 +178,39 @@
         <p id="6ml"></p>
         <p id="6mr"></p>
     </div>
+    <div id="cover"></div>
+    <div id="modal">
+        <h2>The year is 50% Done!!</h2>
+        <button id="colors" onclick="startParty()">More Confetti!</button>
+        <button>Close This</button>
+    </div>
     <script>
+        function showModal() {
+            document.body.style.overflow = "hidden";
+            document.getElementById('modal').style.top = '50%';
+            document.getElementById('cover').style.opacity = 0.75;
+            startParty();
+        }
+
+        let confetti = [];
+        function startParty() {
+            endParty();
+            for (let i = 0; i < 10; i++) {
+                let c = document.createElement('div');
+                c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                c.classList.add('confetti');
+                document.body.appendChild(c);
+                confetti.push([c,
+                    [Math.random() * 100, -50, Math.random() * 360, Math.random() * 360],
+                    [Math.random() - 0.5, Math.random() * 100 - 50, Math.random() - 0.5,  Math.random() - 0.5],
+                    Math.floor(Math.random() * 2), true
+                ]);
+            }
+        }
+        function endParty() {
+            confetti = [];
+        }
+
         let sd = [[new Date('2018-10-15T08:25:00'), new Date('2019-01-08T08:25:00'), new Date('2019-03-12T08:25:00')],
                   [new Date('2018-08-13T08:25:00'), new Date('2019-01-08T08:25:00')],
                   [new Date('2018-08-13T08:25:00')],
@@ -163,10 +228,11 @@
                   [new Date('2019-05-31T12:10:00')]
                  ];
         let colors = ['#4c8', '#4aa', '#48c', '#66c', '#84c', '#a4a', '#c48'];
-        
+
         let start = [];
         let end = [];
         let again = [];
+            showModal();
 
         for (let i = 0; i < sd.length; i++) {
             for (let j = sd[i].length - 1; j > -1; j--) {
@@ -178,8 +244,50 @@
                 }
             }
         }
+        //showModal();
 
         function loop() {
+            if (Math.floor(Math.random() * 50) === 0) {
+                document.getElementById('colors').style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
+            }
+            for (let i = 0; i < confetti.length; i++) {
+                let party = confetti[i];
+                if (party[0] === null) {
+                    continue;
+                }
+                party[2][0] += (Math.random() - 0.5);
+                party[2][1] += Math.random();
+                party[2][2] += (Math.random() - 0.5);
+                party[2][3] += (Math.random() - 0.5);
+                party[1][0] += party[2][0] / 100;
+                party[1][1] += party[2][1] / 100;
+                party[1][2] += party[2][2];
+                party[1][3] += party[2][3];
+                if (party[3] === 0) {
+                    party[0].style.left = '' + (party[1][0]) + '%';
+                } else {
+                    party[0].style.right = '' + (party[1][0]) + '%';
+                }
+                party[0].style.top = (party[1][1]) + '%';
+                //party[0].style.transform = 'rotateY(' + party[1][2] + 'deg)';
+                party[0].style.transform = 'rotateX('+party[1][2]+'deg)rotateY('+party[1][3]+'deg)'
+                //console.log(party[1][2])
+                if (party[1][1] > 100) {
+                    if (party[4]) {for(let j = 0; j < 10; j++) {
+                    let c = document.createElement('div');
+                    c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    c.classList.add('confetti');
+                    document.body.appendChild(c);
+                    confetti.push([c,
+                        [Math.random() * 100, -50, Math.random() * 360, Math.random() * 360],
+                        [Math.random() - 0.5, Math.random() * 100 - 50, Math.random() - 0.5,  Math.random() - 0.5],
+                        Math.floor(Math.random() * 2), false
+                    ]);}}
+                    document.body.removeChild(party[0]);
+                    party[0] = null;
+                }
+            }
+
             let now = new Date();
 
             for (let i = 0; i < start.length; i++) {
