@@ -49,7 +49,7 @@ blight2.position.set(-2, 1, 0);
 
 //scene.fog = new THREE.Fog(0xcceeff, 1, 100);
 
-let test = new Box({pos: {x: 0, y: -7, z: 0}, size: {x: 10, y: 10, z: 10}, color: 0x333333, rot: {x: 0, y: 1, z: 0}});
+let test = new Box({pos: {x: 0, y: -7, z: 0}, size: {x: 10, y: 10, z: 10}, color: 0x333333, rot: {x: 0.05, y: 1, z: 0}});
 for (let j = 0; j < 10; j++) {
     let t2 = new Box(
         {pos: {x: 0, y: -10.5 - j, z: 0}, size: {x: 20, y: 1, z: 20}, color: 0x669933, rot: {x: 0, y: 0, z: 0}});
@@ -67,7 +67,7 @@ let pressed = {};
 let ground = false;
 
 let dg = new THREE.SphereGeometry(0.1, 8, 2);
-let material = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true})
+let material = new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true});
 let dummy = new THREE.Mesh(dg, material);
 scene.add(dummy);
 
@@ -76,6 +76,14 @@ scene.add(arrows);
 
 function animate() {
     requestAnimationFrame(animate);
+    
+    
+    
+    vel.x *= 0.9;
+    vel.y *= 0.9;
+    vel.z *= 0.9;
+    
+    vel.y -= ground? 0.025 : 0.025;
     
     if (pressed[87]) {
         camera.getWorldDirection(direction);
@@ -92,16 +100,9 @@ function animate() {
         vel.z -= direction.z / 50;
     }
     
-    
-    vel.x *= 0.9;
-    vel.y *= 0.9;
-    vel.z *= 0.9;
-    vel.y -= 0.05;
-    
     if (pressed[32] && ground) {
-        vel.y = 1;
+        vel.y = 0.5;
         ground = false;
-        jumped = true;
     }
     
     function isPointInMesh(point, dir, mesh) {
@@ -121,36 +122,40 @@ function animate() {
     
     arrows.position.set(pos.x, pos.y + 0.01, pos.z);
     arrows.setDirection(vel);
-    let fakevel = {x: vel.x, y: vel.y, z: vel.z};
-    let check = false;
+    
+    ground = false;
+    
     for (let i = 0; i < obstacles.length; i++) {
         let isIn = isPointInMesh(
-            new THREE.Vector3(pos.x - fakevel.x, pos.y - fakevel.y, pos.z - fakevel.z),
-            new THREE.Vector3(fakevel.x, fakevel.y, fakevel.z).normalize(), obstacles[i]);
+            new THREE.Vector3(pos.x - vel.x, pos.y - vel.y, pos.z - vel.z),
+            new THREE.Vector3(vel.x, vel.y, vel.z).normalize(), obstacles[i]);
         
-        let vellength = Math.sqrt(fakevel.x * fakevel.x + fakevel.y * fakevel.y + fakevel.z * fakevel.z);
+        let vellength = Math.sqrt(vel.x * vel.x + vel.y * vel.y + vel.z * vel.z);
         
         if (i === 0) {document.getElementById('a').innerHTML = isIn.length;}
         
-        if (isIn[0] && isIn[0].distance < vellength * 2 && isIn.length !==1) {
+        if (isIn[0] && isIn[0].distance < vellength * 2 && isIn.length !== 1) {
             let nor = isIn[0].face.normal.clone();
             nor.applyEuler(obstacles[i].rotation);
+            
+            ground = nor.y > 0.75 ? true : ground;
+            //console.log(nor);
             let onpoint = isIn[0].point;
             let real = projectPoint(new THREE.Vector3(pos.x, pos.y, pos.z), nor, onpoint);
             pos = {x: real.x, y: real.y, z: real.z};
-            let point = new THREE.Vector3(pos.x + fakevel.x, pos.y + fakevel.y, pos.z + fakevel.z);
+            let point = new THREE.Vector3(pos.x + vel.x, pos.y + vel.y, pos.z + vel.z);
             
-            let projected = projectPoint(new THREE.Vector3(pos.x + fakevel.x, pos.y + fakevel.y, pos.z + fakevel.z), 
+            let projected = projectPoint(new THREE.Vector3(pos.x + vel.x, pos.y + vel.y, pos.z + vel.z), 
                                          nor, pos);
             
             dummy.position.set(projected.x, projected.y, projected.z);
             
-            fakevel = {x: projected.x - pos.x, y: projected.y - pos.y, z: projected.z - pos.z};
-            if (i === 0) {console.log(pos); check = true;}
+            vel = {x: projected.x - pos.x, y: projected.y - pos.y, z: projected.z - pos.z};
         }
     }
     
-    vel = {x: fakevel.x, y: fakevel.y, z: fakevel.z};
+    vel = {x: vel.x, y: vel.y, z: vel.z};
+    
     pos.x += vel.x;
     pos.y += vel.y;
     pos.z += vel.z;
