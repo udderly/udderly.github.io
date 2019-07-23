@@ -37,10 +37,17 @@ h2 {
     font-weight: 900;
     padding-top: 25px;
 }
-p {
+p,
+li {
     font-size: 16px;
     line-height: 35px;
     margin-top: 35px;
+}
+li {
+    margin-top: 0;
+}
+ul {
+    list-style: square;
 }
 div {
     background-position: center;
@@ -305,7 +312,7 @@ div {
 .fullimage {
     box-shadow: 10px 10px 0 0 #eee;
     height: 600px;
-    margin: 0 200px -100px 0;
+    margin: 50px 200px -100px 0;
     transition: 0.1s;
 }
 .fullpanel {
@@ -316,7 +323,7 @@ div {
 }
 @media only screen and (max-width: 1024px) {
     .fullimage {
-        margin: 0 150px -100px 0;
+        margin: 50px 150px -100px 0;
     }
     .fullpanel {
         margin-left: 150px;
@@ -324,7 +331,7 @@ div {
 }
 @media only screen and (max-width: 896px) {
     .fullimage {
-        margin: 0 100px -100px 0;
+        margin: 50px 100px -100px 0;
     }
     .fullpanel {
         margin-left: 100px;
@@ -424,10 +431,12 @@ div {
 .album {
     flex-grow: 1;
     height: 400px;
+    margin-top: 50px;
     transition: 0.1s;
 }
 .albumtext {
     flex-basis: calc(100% - 450px);
+    margin-top: 50px;
     padding-left: 50px;
     transition: 0.1s;
 }
