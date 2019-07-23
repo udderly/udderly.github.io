@@ -1,0 +1,617 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Quadre &ndash; Home</title>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Raleway:200,300,900');
+            * {
+                font-family: Raleway;
+                margin: 0;
+            }
+            
+            *::-webkit-scrollbar-track
+            {
+	            background-color: #eee;
+            }
+
+            *::-webkit-scrollbar
+            {
+                width: 10px;
+            }
+
+            *::-webkit-scrollbar-thumb
+            {
+                border-radius: 5px;
+                background-color: #ddd;
+            }
+            
+            html,
+            body {
+                height: 100%;
+            }
+            h1 {
+                font-size: 50px;
+                font-weight: 900;
+                padding-top: 50px;
+            }
+            h2 {
+                font-size: 35px;
+                font-weight: 900;
+                padding-top: 25px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 35px;
+                margin-top: 35px;
+            }
+            div {
+                background-position: center;
+                background-size: cover;
+            }
+            
+            #loader {
+                align-items: center;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: fixed;
+                top: 0; bottom: 0; left: 0; right: 0;
+                z-index: 100;
+            }
+            #loadlogo {
+                font-size: 200px;
+                font-weight: 300;
+                opacity: 0;
+            }
+            .gan {
+                animation-duration: 5s;
+                animation-name: gan;
+            }
+            @keyframes gan {
+                10% {
+                    opacity: 0;
+                    font-size: 150px;
+                }
+                30% {
+                    opacity: 1;
+                    font-size: 200px;
+                }
+                50% {
+                    opacity: 1;
+                }
+                70% {
+                    opacity: 0;
+                }
+            }
+            
+            .loadanimation {
+                animation-duration: 5s;
+                animation-name: lan;
+            }
+            @keyframes lan {
+                70% {
+                    top: 0;
+                }
+                90% {
+                    top: 100%;
+                }
+            }
+            
+            #landingbanner {
+                height: 100%;
+                position: relative;
+            }
+            #landingimage {
+                background-image: url("images/car.jpg");
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                transition: 1s;
+                z-index: -1;
+            }
+            #landingtitle {
+                color: #fff;
+                font-size: 180px;
+                font-weight: 100;
+                position: absolute;
+                bottom: 100px; right: 50px;
+                transition: 0.1s;
+            }
+            #landingsub {
+                color: #fff;
+                font-size: 50px;
+                font-weight: 100;
+                position: absolute;
+                bottom: 50px; right: 50px;
+                transition: 0.1s;
+            }
+            @media only screen and (max-width: 1024px) {
+                #landingtitle {
+                    font-size: 144px;
+                    bottom: 88px;
+                }
+                #landingsub {
+                    font-size: 40px;
+                    bottom: 45px;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                #landingtitle {
+                    font-size: 108px;
+                    bottom: 76px;
+                }
+                #landingsub {
+                    font-size: 30px;
+                    bottom: 40px;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                #landingtitle {
+                    font-size: 72px;
+                    bottom: 64px;
+                }
+                #landingsub {
+                    font-size: 20px;
+                    bottom: 35px;
+                }
+            }
+            #landingcover {
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.125) 75%, rgba(0, 0, 0, 0.5));
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                z-index: -1;
+            }
+            
+            .flex {
+                display: flex;
+            }
+            .flex .image {
+                flex-grow: 1;
+            }
+            .flextext {
+                flex-basis: calc(100% - 425px);
+                padding-left: 50px;
+            }
+            .flex .right {
+                flex-basis: calc(100% - 425px);
+                padding-left: 0;
+                padding-right: 50px;
+            }
+            .flexhalf {
+                width: 50%;
+            }
+            .fullcont {
+                padding: 50px 100px 0;
+                transition: 0.1s;
+            }
+            @media only screen and (max-width: 1024px) {
+                .fullcont {
+                    padding: 62.5px 75px 0;
+                }
+                .flextext {
+                    flex-basis: calc(100% - 350px);
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                .fullcont {
+                    padding: 25px 50px 0;
+                }
+                .flextext {
+                    flex-basis: calc(100% - 275px);
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                .fullcont {
+                    padding: 12.5px 25px 0;
+                }
+                .flextext {
+                    flex-basis: calc(100% - 200px);
+                }
+            }
+            
+            .section {
+                display: flex;
+                margin-top: 100px;
+            }
+            .sectionimage {
+                flex-basis: 840px;
+            }
+            .sectiontitle {
+                font-size: 100px;
+                margin-top: 100px;
+                writing-mode: vertical-rl;
+            }
+            
+            #portraits {
+                display: flex;
+                height: 400px;
+                margin-top: 100px;
+                padding: 0 100px;
+            }
+            #portraits div {
+                background-position: top;
+                background-repeat: no-repeat;
+                flex-grow: 1;
+                margin: 0 -100px;
+                mix-blend-mode: multiply;
+            }
+            
+            .about {
+                background-color: #f7f7f7;
+                padding: 100px 0;
+                position: relative;
+                z-index: -2;
+            }
+            .aboutimage {
+                height: 900px;
+                position: absolute;
+                top: 0; left: 0; right: 0;
+                z-index: -1;
+            }
+            .abouttext {
+                background-color: #fff;
+                box-shadow: 10px 10px 0 0 #eee;
+                margin-left: 50px;
+                padding: 50px;
+                width: 480px;
+            }
+            
+            .fullimage {
+                box-shadow: 10px 10px 0 0 #eee;
+                height: 600px;
+                margin: 0 200px -150px 0;
+            }
+            
+            .fullpanel {
+                background-color: #fff;
+                box-shadow: -10px -10px 0 0 #eee;
+                margin-left: 200px;
+                padding: 50px;
+            }
+            
+            .album {
+                flex-grow: 1;
+                height: 400px;
+            }
+            .albumtext {
+                flex-basis: calc(100% - 450px);
+                padding-left: 50px;
+            }
+            
+            .navigation {
+                align-items: center;
+                background-color: #fff;
+                box-shadow: 0 10px 0 0 #eee;
+                display: flex;
+                height: 25px;
+                justify-content: center;
+                padding: 25px;
+                position: fixed;
+                top: 0; left: 0; right: 0;
+                z-index: 99;
+            }
+            .navtitle {
+                font-size: 30px;
+                font-weight: 300;
+                margin-right: 30px;
+            }
+            .navigation p {
+                margin: 10px 10px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="loader">
+            <h1 id="loadlogo">Quadre</h1>
+        </div>
+        
+        <div id="landingbanner">
+            <div id="landingimage"></div>
+            <h1 id="landingtitle">Quadre</h1>
+            <p id="landingsub">The Voice of Four Horns</p>
+            <div id="landingcover"></div>
+        </div>
+        
+        <div class="navigation">
+            <h3 class="navtitle">Quadre</h3>
+            <p>About</p>
+            <p>Events</p>
+            <p>Our Mission</p>
+            <p>Albums</p>
+            <p style="margin-right: 0">Donate</p>
+        </div>
+        
+        <div class="fullcont">
+            <h1>About</h1>
+            <p>
+                Described as the ensemble that &quot;zaps the myth that classical stuff's stuffy&quot;, Quadre connects with their audiences everywhere, from concert halls and music festivals to soup kitchens and school auditoriums. With their vibrant music and artistic warmth, this innovative ensemble is well recognized not only for its virtuosic French horn mastery, but also for its humorous element of surprise. Their fresh and intellectually charming works make audiences resoundingly agree that experiencing a Quadre concert is a listening adventure not be missed as their music and message touches the heart and resonates deeply with the soul.
+                <br><br>
+                Selected by the National Endowment for the Arts and Chamber Music America as one of only a handful of chamber music ensembles for a rural residency, Quadre began its professional calling in Alabama in 1999. As musical ambassadors, Quadre traveled throughout the state, reaching citizens of all ages and backgrounds to make serious &quot;classical&quot; music accessible, meaningful and just plain fun. Following their successful immersion in Southern society and hospitality, the group returned to California to record the first of their four albums, titled The Voice of Four Horns.
+                <br><br>
+                In the course of releasing their subsequent three albums (Citrus, Our Time and Horns for the Holidays), Quadre actively commissions new works for the horn quartet genre. The ensemble draws on the compositional talents of members Nathan Pawelek and Daniel Wood as well as renowned composers David Garner, Mark Adam Watkins and Christopher Wiggins.
+            </p>
+        </div>
+        
+        <div class="fullcont">
+            <div class="flex">
+                <div class="image" style="background-image: url('images/hornsclose.jpg')"></div>
+                <div class="flextext">
+                    <p style="padding-bottom: 50px;">
+                        Quadre is equally dedicated to collaborating with other musicians, ensembles and composers to further the creation of innovative pieces, such as their work with Grammy award-winning flutist, Molly Barth; Los Angeles studio legend, James Thatcher; and Philadelphia phenom, soprano Elizabeth Weigle.
+                        <br><br>
+                        In over 1000 performances, Quadre has been featured as artists and lecturers with the Manhattan School of Music; Music Academy of the West; the 2008, 2011 and 2013 International Horn Conferences in California, Colorado and Tennessee respectively; and the Alabama Institute for Education in the Arts. Communities from Grand Forks, North Dakota to San Jose, California have invited Quadre to be concerto soloists. The group is honored to have performed for the Helen Keller School for the Deaf and Blind and the Weingarten Children's Center for the Deaf. In many ways, these experiences remind the ensemble how the connection to the arts is vital to everyone.
+                        <br><br>
+                        Quadre keenly embraces its leadership role as music ambassadors into the hearts of the communities where the ensemble performs and visits. Equally at home in schools, senior settings and universities, Quadre's interactive, interdisciplinary and lively community engagement programs have reached over 50,000 people across the United States. In 2000 and 2002, the San Francisco Symphony selected Quadre to participate in its unique educational outreach program, Adventures in Music. Performing for every 1st and 2nd grader in San Francisco, Quadre created engaging shows that captivated the young audiences from the start. The group creatively incorporates music, choreography and drama for wonderfully positive musical experiences that stimulate the senses and make lasting impressions upon audiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" style="background-color: #f7f7f7;">
+            <div class="sectionimage" style="background-image: url('images/family.jpg')"></div>
+            <h1 class="sectiontitle">Our Story</h1>
+        </div>
+        
+        <div class="fullcont" style="background-color: #f7f7f7;">
+            <p>
+                &quot;Wouldn't it be nice if&hellip;
+                <br><br>
+                &quot;As horn players and more fundamentally musicians, we want to succeed but are always running into the 'if' statements. If only I could clean up my lip trills&hellip; play the Reynold's etudes at tempo&hellip; play higher, faster, softer, smoother &ndash; I'd be something. I want to offer you an ensemble where you can discard the ‘ifs' and let your true voice shine.&quot;
+                <br><br>
+                Daniel sent fifty letters with these words to horn players all across Los Angeles. Twenty replies were received and after a few weeks of rehearsals, four French horn players committed to establishing Quadre &ndash; The Voice of Four Horns.
+                <br><br>
+                From the start, Quadre's sound emanated from music and ideas beyond the traditional French horn experience. Our perpetually buoyant founder, Daniel, caught a bug when he watched in youthful awe, the off-beat musical &quot;Forever Plaid.&quot; That propelled him into the world of what he describes as &quot;solo boy bands&quot; (an oxymoron he explains &ndash; &quot;They were four guys in a band but together they created one singular voice, a singular vocal entity&quot;) of the 50s and 60s, like the Hi-Lo's and the Four Freshmen. With that, he was inspired to create music with a similarly unique &quot;solo band&quot; sound for the French horn. We are the Voice (not Voices) of Four Horns. Not a typo.
+                <br><br>
+                Within a year of our inception, our humble efforts resulted in a few videos, a demo recording, and to our excitement, a Chamber Music America grant with funding from the National Endowment for the Arts for a rural residency in Selma, Alabama. After our year long stay in the Heart of the South, we recorded our inaugural album, which captured our early sense of humor and earnestness to do something different.
+            </p>
+        </div>
+        <div class="fullcont" style="background-color: #f7f7f7;">
+            <div class="fullimage" style="background-image: url('images/windowside.jpg')"></div>
+            <p class="fullpanel">
+                In the years that have followed, Quadre's sound and repertoire has evolved as has its membership. Everyone involved over the years (Eric, Melissa, Armando, Meredith, Alex, Carrie and others) has truly made Quadre what it is today. The percolating of ideas and concepts from so many gifted musicians solidified the group's sound, approach and character. Around 2008, everything finally clicked into place on a world-class level. Quadre's singular voice reached new heights with the members we have now.
+            </p>
+            <p style="padding-bottom: 50px">
+                Quadre's members are Amy Jo, Lydia, Nate and Daniel. Nate and his cerebral self-deprecating disposition. Lydia and her cool, sophisticated demeanor. Amy Jo and her grounded view of the world. And the driving force behind the group, Daniel and his quirky, yet passionate wit.
+                <br><br>
+                We continue to do what chamber groups do: record albums, tour, collaborate with other artists & ensembles, commission new work, and engage in educational and community programs. But what drives us onwards is our vision: to create and perform music as a means to enact transformable change.
+                <br><br>
+                We don't need to play at the most prestigious or biggest concert halls to accomplish this. We just need to touch one person at a time.
+            </p>
+        </div>
+        
+        <div id="portraits">
+            <div style="background-image: url('images/lydiaportrait.png'); margin-top: 12.5px;"></div>
+            <div style="background-image: url('images/amyjoportrait.png')"></div>
+            <div style="background-image: url('images/danielportrait.png'); margin-top: 25px;"></div>
+            <div style="background-image: url('images/nateportrait.png'); margin-top: 37.5px;"></div>
+        </div>
+        
+        <div class="fullcont" style="background-color: #f7f7f7; padding-top: 0; padding-bottom: 50px">
+            <h1>Members</h1>
+        </div>
+        <div class="about">
+            <div class="aboutimage" style="background-image: url('images/amyjolandscape.jpg')"></div>
+            <div class="abouttext">
+                <h2>Amy Jo Rhine</h2>
+                <p>
+                    Amy Jo Rhine is a seasoned orchestral performer who has held principal positions with the Colorado Music Festival since 1997 and the Memphis-based IRIS Orchestra since 2001. She currently is the third horn with the Los Angeles Philharmonic where her husband, Greg Roosa is second horn. Rhine is active in the Los Angeles recording studios and can be heard on some of Hollywood's latest blockbuster releases. She collaborated with famed studio horn player, James Thatcher on his album, Now Playing.
+                    <br><br>
+                    Prior to her family's move to sunny SoCal, they spent 9 years in St Louis, MO where she enjoyed a diverse professional life teaching from her home private studio, held the adjunct faculty positions at both Webster and Maryville Universities and played regularly with the St Louis Symphony. From 1996-2001, Rhine was the Assistant Professor of Horn at Wichita State University and Principal Horn with the Wichita Symphony Orchestra. Prior to that she held the Principal Horn position with the Louisiana Philharmonic in New Orleans to which she made significant administrative contributions in that cooperative ensemble.
+                    <br><br>
+                    A chamber music enthusiast, she has performed throughout the United States, Europe, Japan and Panama with the Lieurance Wind Quintet, the Wichita Brass Quintet, the Wilson Wind Quintet and Quadre. Rhine joined Quadre in 2008. Rhine received her training from Verne Reynolds at the Eastman School of Music earning a BM degree and Performer's Certificate. She continued her education with James Decker at the University of Southern California graduating with a MM degree.
+                    <br><br>
+                    Rhine plays a Geyer model horn by Karl Hill. Amidst busy performance schedules, Amy and Greg reserve ample time to discover the finer points of Supercars and Super Heroes with their sons, Norty and Sutton.
+                </p>
+            </div>
+        </div>
+        <div class="about">
+            <div class="aboutimage" style="background-image: url('images/lydialandscape.jpg')"></div>
+            <div class="abouttext">
+                <h2>Lydia Van Dreel</h2>
+                <p>
+                    Lydia Van Dreel, Professor of Horn at the University of Oregon, has a varied career as an orchestral, solo, chamber and recording artist. Currently, Lydia is a member of the Oregon Bach Festival Orchestra, The IRIS Orchestra (Memphis, TN), Quadre—The Voice of Four Horns, the Eugene Symphony Orchestra, Orchestra Next, the Oregon Wind Quintet, and the Oregon Brass Quintet. Previously, Van Dreel performed as a member of the Colorado Music Festival Orchestra, the Britt Music Festival Orchestra, The Spoleto Festival Orchestra, The New World Symphony Orchestra, The Florida Wind Quintet, The Madison Symphony Orchestra, and the Oregon Mozart Players. Prior to joining the faculty at the University of Oregon, Van Dreel held a ten-year tenured position as Co-Principal Horn of the Sarasota Orchestra in Sarasota, Florida.
+                    <br><br>
+                    A frequent concerto soloist, Professor Van Dreel has been a featured performer with the Peninsula Symphony, The Sarasota Orchestra, The Colorado Music Festival Orchestra, the Salem Philharmonia, the Willamette Valley Symphony, The University of Oregon Symphony Orchestra and Wind Ensemble, the Salem Concert Band, and the San Jose Wind Ensemble, and others.
+                    <br><br>
+                    Professor Van Dreel collaborates on a wide variety of chamber music and recording projects. Notable recent projects include their first solo CD, &quot;New Millennium Music for Horn&quot;, released in 2014 on the Quadre Records Label, &quot;Red Desert&quot;, music of David Crumb, released on the BRIDGE record label in 2015, a featured performance in the 2012 Superbowl Chrysler commercial &quot;It's Halftime in America&quot;, and a world premier performance at the 47th annual International Horn Symposium in Los Angeles of &quot;Gjallarhorn&quot;, an electro-acoustic piece for natural horn and electronics controlled by motion detector, created in collaboration with composer, inventor and intermedia technology instructor, Chester Udell.
+                    <br><br>
+                    As an educator, Van Dreel has presented master classes and topics for students of all ages, both as an individual educator and as a chamber musician. Recent presentations include events at the University of Seoul, Dankook University, EwhaWomen's University, Keimyung University (South Korea), the Kenya Conservatoire in Nairobi, Kenya, The Makimura Cultural Arts Center, TumainiUniversity, Tanzania, The University of Southern California, San Francisco Conservatory of Music, Imperial College (London, UK), Ball State University, Lawrence Conservatory, The University of Wisconsin-Madison, University of Missouri-Kansas City, Willamette University, Arizona State University, Northern Arizona University, Interlochen Arts Academy, Central Washington University, University of South Florida, Butler University, and numerous junior highs, high schools, and community music schools.
+                    <br><br>
+                    A tireless advocate for music and musicians, Van Dreel hosted the 2015 and 2010 Northwest Horn Symposium, serves on the Advisory Council for the International Horn Society, and as the recording reviews editor for The Horn Call (journal of the International Horn Society). Van Dreel also serves or has served on the board of directors of Chamber Music at Beall, the Eugene-Springfield Youth Symphony, and the American Federation of Musicians Local 689 and Local 427-721.
+                </p>
+            </div>
+        </div>
+        <div class="about">
+            <div class="aboutimage" style="background-image: url('images/natelandscape.jpg')"></div>
+            <div class="abouttext">
+                <h2>Nate Pawelek</h2>
+                <p>
+                    Former principal horn of the South Dakota Symphony Orchestra, Nathan joined Quadre in 2003 and enjoys a freelance horn career in New England. A composer and horn player, Nathan attended Oberlin College and Conservatory where he received double degrees in horn performance and English. He earned a Master of Horn Performance from Yale University and a Master of Fine Arts in creative writing from Goddard College in Vermont. Nathan played principal horn with the South Dakota Symphony and Dakota Wind Quintet for ten seasons before moving back to New England to raise his family near family.
+                    <br><br>
+                    He has worked with nationally-recognized artists,(such as) and an occasional international VIP (can we know the name?) . Nathan attended the Tanglewood Music Festival, the European Mozart Academy in Poland, The National Repertory Orchestra in Breckenridge, CO and played under the baton of Michael Tilson-Thomas with the New World Symphony. Nathan has been a regular of the horn section of the Colorado Music Festival Orchestra in Boulder, and is a member of the Iris Chamber Orchestra in Germantown, TN under the direction of Michael Stern.
+                    <br><br>
+                    As a composer, Nathan has written works for orchestra including a symphony, a clarinet concerto, several song cycles, and a children's program for narrator and orchestra, as well as chamber music for various ensembles including woodwind quintet, and horn quartet. (maybe a sentence about why he composes or about his composition?) He composed a yet to be premiered chamber orchestra piece called &quot;Elegy&quot; in memory of the Sandy Hook school shootings, and his latest composition &quot;Irremediable Breakdown&quot; for horn and piano recently was commissioned by hornist, Denise Tryon, of the Philadelphia Orchestra. His wife is Karen and his children are Aidan and Zachary, and they live in Guilford, CT (maybe something fun or interesting to add?).
+                </p>
+            </div>
+        </div>
+        <div class="about">
+            <div class="aboutimage" style="background-image: url('images/daniellandscape.jpg')"></div>
+            <div class="abouttext">
+                <h2>Daniel Wood</h2>
+                <p>
+                    An accomplished performer, composer, and educator, Daniel founded Quadre in 1998. He is the executive director for the organization's nonprofit and handles all aspects of the business including marketing, development, and client engagement.
+                    <br><br>
+                    Compositionally, Daniel's works favor intimate groups &ndash; including brass, wind and string chamber music, steel drum ensembles and jazz combos. His pieces evoke a sense of time and place, leading listeners to reflect, cherish, and oftentimes, smile. Most notable commissions include &quot;Our Hot Date with Destiny&quot; for wind quintet from Avenue Winds; &quot;Space Available&quot; for horn duet from musicians of the Los Angeles Philharmonic; &quot;Shaking It Up&quot; for brass quintet from CSMA Brass; and &quot;Blinding Light&quot; from the Presidio String Trio. Daniel has also composed for all four of Quadre's albums, collaborating with guest horn player James Thatcher, Grammy award-winning flutist, Molly Barth, and soprano Elizabeth Weigle.
+                    <br><br>
+                    Daniel has performed with numerous chamber ensembles, opera and ballet companies, new music ensembles and orchestras including California, Oakland, Monterey, Napa, Berkeley, Santa Cruz, Fremont, and Vallejo Symphonies and Symphony Silicon Valley. He has toured extensively as a member of Quadre as well as the Mark GrowdenQuintet, Avenue Winds Quintet, and Teal Crane Trio.
+                    <br><br>
+                    A multi-faceted artist, Daniel has written and performed improvisational solo shows for the horn, piano, and electronics. After his nine month residency with Quadre in 1999-2000 in Alabama, Daniel became deeply drawn to the issues of access to the arts, the environment, and society's insatiable consumption of products. Examining the theme of music and diversity in the United States, Daniel premiered his show, &quot;Life on an Island,&quot; in 2007 and followed that success in 2009 with his show, &quot;Brother, Can You Spare a Dime,&quot; a depression-era musical retrospective. More recently in 2012, Daniel's &quot;East meets West&quot; addressed international collaboration between American jazz artists and improvisatory Iranian Persian musicians, which played for a sold-out house at Berkeley's Ashkenaz.
+                    <br><br>
+                    Daniel has lectured widely on the Business of Music for the American Federation of Musicians, San Francisco Conservatory, Eastman School of Music, University of Oregon, and International Horn conferences. As a champion of new works, he founded and manages Solid Wood Publishing, a horn music publishing company with over 130 titles of horn music.
+                    <br><br>
+                    In 2002, he founded the digital arts program for the Community School of Music and Arts in Mountain View, CA where he also taught horn and music composition until 2013. Currently, he is the chair of musicianship and composition at the San Francisco Conservatory of Music, Pre- College Division. He also maintains a private studio in his hometown of Mountain View, CA.
+                    <br><br>
+                    Daniel received his BA in music from UCLA with additional training in discipline-based arts education – a Getty Center curriculum. When not delving into the latest musical project, he enjoys spending time with his wife and three kids (triplets) on hikes, bike rides and trips to the beach and beyond.
+                </p>
+            </div>
+        </div>
+        
+        <div class="section" style="margin-top: 0">
+            <div class="sectionimage" style="background-image: url('images/street.jpg')"></div>
+            <h1 class="sectiontitle">Our Mission</h1>
+        </div>
+        <div class="fullcont">
+            <h2>Education</h2>
+            <p>
+                Quadre's core mission to make music more accessible extends far beyond the concert hall. Equally at home in K-12 classrooms and colleges or universities, our interactive interdisciplinary outreach activities have reached over 50,000 people across the United States. Quadre's nationwide education residencies in urban and rural environments have been supported by funding from prominent organizations including, The National Endowment for the Arts, Chamber Music America, The San Francisco Symphony and The Arts Council of Silicon Valley.
+                <br><br>
+                Any aspect of the following educational initiatives can be combined to create a unique multi-day residency in your community or school.
+            </p>
+        </div>
+        <div class="fullcont">
+            <div class="flex">
+                <div class="flextext right">
+                    <h2>Community Engagement</h2>
+                    <p>
+                        We strive to serve the communities where we live and are dedicated to engagement with the community. We recognize that this need exists throughout the nation and seek to serve every community we visit in the same manner. The purpose of our engagement is to reach out to underserved populations and the community at large. Venues for such events inclue, but are not limited to: Title IV schools, hospitals, eldercare facilities, hospices, homes for troubled youth, prisons, shopping ceners, train stations, downtown areas and sporting venues.
+                    </p>
+                    <h2>Commisions, Collaborations &amp; Competitions</h2>
+                    <p style="padding-bottom: 50px;">
+                        As our universal culture becomes more rich and diverse, we strive to make our presentations reflect the attitudes and desires of our listeners. Quadre believes that the creation and promotion of new music nurtures composers and opens the minds of young performers to new music that is essential to this cause. As we collaborate with artists of all disciplines, the synthesis of joint programs and presentations can add diversity to our own artistic expression and create new avenues to explore, which are vital to the artistic process.
+                    </p>
+                </div>
+                <div class="image" style="background-image: url('images/horns.jpg')"></div>
+            </div>
+        </div>
+        <div class="fullcont">
+            <div class="flex">
+                <div class="flexhalf">
+                    <h2>Commisions</h2>
+                    <p>
+                        All works available with/at Horn Publishing? (and give link). Where do we put original works by you and Nate?
+                        <br>
+                        &emsp;&emsp;Christopher Wiggins
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;Fanfare for Quadre (Citrus)
+                        <br>
+                        &emsp;&emsp;David Garner
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;Cuadro Cuadrangulos (Citrus)
+                        <br>
+                        &emsp;&emsp;Mark Adam Watkins
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;Fire in the Hole (Citrus)
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;Shepherd's Call (Citrus)
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;Falls Like Rain (The Voice of Four Horns)
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;Journey through a Wood (The Voice of Four Horns)
+                        <br>
+                        &emsp;&emsp;Jamie Keesecker
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;The Impetuous Winds (Our Time)
+                        <br>
+                        &emsp;&emsp;Mark Carlson
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;Night Music (Our Time)
+                    </p>
+                    <h2>Competitions</h2>
+                    <p style="padding-bottom: 50px">
+                        Winning works from the 2015 Quadre New Music for Horn Composition Contest were performed in public on Saturday, April 4, 2015 as part of Quadre's sponsored South Bay Horn Day in Mountain View, CA.
+                    </p>
+                </div>
+                <div class="flexhalf">
+                    <h2>Collaborations</h2>
+                    <p>
+                        College/university faculty and student ensembles
+                        <br>
+                        &emsp;&emsp;Brian Holmes (composer and physics professor),
+                        <br>
+                        &emsp;&emsp;Three Hunting Songs (Our Time)
+                        <br>
+                        &emsp;&emsp;Soloists with Peninsula Symphony Orchestra &amp; San Jose Wind Ensemble
+                        <br>
+                        &emsp;&emsp;Performed with Mountain View High School wind ensemble and choir, Graham Middle School band and chorus,
+                        <br>
+                        &emsp;&emsp;Still need to add a lot more
+                        <br>
+                        Noted professional musicians and soloists
+                        <br>
+                        &emsp;&emsp;Mark Adam Watkins, jazz pianist
+                        <br>
+                        &emsp;&emsp;Molly Barth, flute
+                        <br>
+                        &emsp;&emsp;James Kassis, percussion
+                        <br>
+                        &emsp;&emsp;Jill Painter, soprano
+                        <br>
+                        &emsp;&emsp;Elizabeth Wiegle, soprano
+                        <br>
+                        &emsp;&emsp;James Thatcher, horn
+                        <br>
+                        &emsp;&emsp;Adam Unsworth, horn
+                        <br>
+                        &emsp;&emsp;Richard King, horn
+                        <br>
+                        &emsp;&emsp;Douglas Hull, horn
+                        <br>
+                        &emsp;&emsp;Bellfire Bell Choir
+                        <br>
+                        &emsp;&emsp;Still need to add a lot more
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fullcont" style="background-color: #f7f7f7">
+            <h1>Albums</h1>
+        </div>
+        <div class="fullcont" style="background-color: #f7f7f7">
+            <div class="flex">
+                <div class="album" style="background-image: url('images/ourtimealbum.jpg')"></div>
+                <p class="albumtext">
+                    Our Time, Quadre's newest CD release, explores the intricate human condition through relationships with time and change. The culmination of a two-year journey to commission new composers and to collaborate with non horn-playing instrumental artists, the pieces reflect on life's profound moments of love, longing, aging and awakening. Grammy Award winning flutist Molly Barth, percussionist James Kassis and soprano Elizabeth Weigle join Quadre on the CD performing new music by Brian Holmes, Nathan Pawelek, Mark Carlson, Daniel Wood and Jamie Keesecker.
+                </p>
+            </div>
+        </div>
+        <div class="fullcont" style="background-color: #f7f7f7">
+            <div class="flex">
+                <div class="album" style="background-image: url('images/holidayalbum.jpg')"></div>
+                <p class="albumtext">
+                    Horns for the Holidays features original holiday arrangements from Quadre in collaboration with Hollywood superstar horn player, James Thatcher, percussionist James Kassis, and the Bellfire handbell choir. Nestle by the fireplace and enjoy these renditions that sparkle with the holiday spirit.
+                </p>
+            </div>
+        </div>
+        <div class="fullcont" style="background-color: #f7f7f7">
+            <div class="flex">
+                <div class="album" style="background-image: url('images/citrusalbum.png')"></div>
+                <p class="albumtext">
+                    Citrus features all original brass music influenced by jazz and world dance music. Quadre brings to life works by David Garner, Christopher Wiggins, Mark Adam Watkins, Nathan Pawelek and Daniel Wood with the nuance of a group that has come into its own. Listeners are treated to a feast of pieces filled with energy and vibe &ndash; the spirit of dancing the night away with a waltz, lander and conga.
+                </p>
+            </div>
+        </div>
+        <div class="fullcont" style="background-color: #f7f7f7">
+            <div class="flex">
+                <div class="album" style="background-image: url('images/vofhalbum.png')"></div>
+                <p class="albumtext">
+                    The Voice of Four Horns, Quadre's inaugural CD features classical repertoire for horn quartet, popular arrangements and original music commissioned by the ensemble. Warm, playful and agile &ndash; Quadre's distinct sound shines through. Listen and wander through this bright and lively musical excursion.
+                </p>
+            </div>
+        </div>
+        
+        <script>
+            window.onload = function() {
+                let loader = document.getElementById('loader');
+                loader.classList.add('loadanimation');
+                document.getElementById('loadlogo').classList.add('gan');
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 5000 * 0.9);
+            }
+        </script>
+    </body>
+</html>
