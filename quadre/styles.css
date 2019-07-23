@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,300,900');
+
 * {
     font-family: Raleway;
     margin: 0;
@@ -22,6 +23,9 @@
 html,
 body {
     height: 100%;
+}
+body {
+    overflow-x: hidden;
 }
 h1 {
     font-size: 50px;
@@ -56,12 +60,28 @@ div {
 #loadlogo {
     font-size: 200px;
     font-weight: 300;
+    transition: 0.1s;
     opacity: 0;
 }
 
 .loadanimation {
     animation-duration: 5s;
     animation-name: lan;
+}
+@media only screen and (max-width: 1024px) {
+    #loadlogo {
+        font-size: 150px;
+    }
+}
+@media only screen and (max-width: 896px) {
+    #loadlogo {
+        font-size: 100px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    #loadlogo {
+        font-size: 50px;
+    }
 }
 @keyframes lan {
     70% {
@@ -78,11 +98,11 @@ div {
 @keyframes gan {
     10% {
         opacity: 0;
-        font-size: 150px;
+        transform: scale(0.75);
     }
     30% {
         opacity: 1;
-        font-size: 200px;
+        transform: scale(1);
     }
     50% {
         opacity: 1;
@@ -156,7 +176,7 @@ div {
     }
 }
 
-.navigation {
+.nav {
     align-items: center;
     background-color: #fff;
     box-shadow: 0 10px 0 0 #eee;
@@ -169,12 +189,28 @@ div {
     z-index: 99;
 }
 .navtitle {
+    cursor: pointer;
     font-size: 30px;
     font-weight: 300;
     margin-right: 30px;
 }
-.navigation p {
-    margin: 10px 10px 0;
+.navtext {
+    cursor: pointer;
+    margin: 10px 20px 0;
+    transition: 0.1s;
+}
+@media only screen and (max-width: 1024px) {
+    .navtext {
+        margin: 10px 15px 0;
+    }
+}
+@media only screen and (max-width: 896px) {
+    .navtext {
+        margin: 10px 10px 0;
+    }
+}
+@media only screen and (max-width: 596px) {
+    /* special case */
 }
 
 .fullcont {
@@ -187,6 +223,7 @@ div {
 .flextext {
     flex-basis: calc(100% - 425px);
     padding-left: 50px;
+    transition: 0.1s;
 }
 .flex .right {
     flex-basis: calc(100% - 425px);
@@ -201,9 +238,10 @@ div {
 }
 @media only screen and (max-width: 1024px) {
     .fullcont {
-        padding: 62.5px 75px 0;
+        padding: 37.5px 75px 0;
     }
-    .flextext {
+    .flextext,
+    .flex .right {
         flex-basis: calc(100% - 350px);
     }
 }
@@ -211,7 +249,8 @@ div {
     .fullcont {
         padding: 25px 50px 0;
     }
-    .flextext {
+    .flextext,
+    .flex .right {
         flex-basis: calc(100% - 275px);
     }
 }
@@ -219,8 +258,9 @@ div {
     .fullcont {
         padding: 12.5px 25px 0;
     }
-    .flextext {
-        flex-basis: calc(100% - 200px);
+    .flextext,
+    .flex .right {
+        /* special case */
     }
 }
 
@@ -229,12 +269,74 @@ div {
     margin-top: 100px;
 }
 .sectionimage {
-    flex-basis: 840px;
+    flex-basis: calc(100% - 300px);
 }
 .sectiontitle {
     font-size: 100px;
     margin-top: 100px;
+    transition: 0.1s;
     writing-mode: vertical-rl;
+}
+@media only screen and (max-width: 1024px) {
+    .sectionimage {
+        flex-basis: calc(100% - 250px);
+    }
+    .sectiontitle {
+        font-size: 90px;
+    }
+}
+@media only screen and (max-width: 896px) {
+    .sectionimage {
+        flex-basis: calc(100% - 200px);
+    }
+    .sectiontitle {
+        font-size: 80px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    .sectionimage {
+        flex-basis: calc(100% - 150px);
+    }
+    .sectiontitle {
+        font-size: 70px;
+    }
+}
+
+.fullimage {
+    box-shadow: 10px 10px 0 0 #eee;
+    height: 600px;
+    margin: 0 200px -100px 0;
+    transition: 0.1s;
+}
+.fullpanel {
+    background-color: #fff;
+    box-shadow: -10px -10px 0 0 #eee;
+    margin-left: 200px;
+    padding: 50px;
+}
+@media only screen and (max-width: 1024px) {
+    .fullimage {
+        margin: 0 150px -100px 0;
+    }
+    .fullpanel {
+        margin-left: 150px;
+    }
+}
+@media only screen and (max-width: 896px) {
+    .fullimage {
+        margin: 0 100px -100px 0;
+    }
+    .fullpanel {
+        margin-left: 100px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    .fullimage {
+        margin: 0 50px -100px 0;
+    }
+    .fullpanel {
+        margin-left: 50px;
+    }
 }
 
 #portraits {
@@ -242,6 +344,7 @@ div {
     height: 400px;
     margin-top: 100px;
     padding: 0 100px;
+    transition: 0.1s;
 }
 #portraits div {
     background-position: top;
@@ -249,6 +352,37 @@ div {
     flex-grow: 1;
     margin: 0 -100px;
     mix-blend-mode: multiply;
+    transition: 0.1s;
+}
+@media only screen and (max-width: 1024px) {
+    #portraits {
+        height: 350px;
+        margin-top: 75px;
+        padding: 0 75px;
+    }
+    #portraits div {
+        margin: 0 -90px;
+    }
+}
+@media only screen and (max-width: 896px) {
+    #portraits {
+        height: 300px;
+        margin-top: 50px;
+        padding: 0 50px;
+    }
+    #portraits div {
+        margin: 0 -80px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    #portraits {
+        height: 250px;
+        margin-top: 25px;
+        padding: 0 25px;
+    }
+    #portraits div {
+        margin: 0 -70px;
+    }
 }
 
 .about {
@@ -258,9 +392,10 @@ div {
     z-index: -2;
 }
 .aboutimage {
-    height: 900px;
+    height: 1000px;
     position: absolute;
     top: 0; left: 0; right: 0;
+    transition: 0.1s;
     z-index: -1;
 }
 .abouttext {
@@ -268,26 +403,45 @@ div {
     box-shadow: 10px 10px 0 0 #eee;
     margin-left: 50px;
     padding: 50px;
-    width: 480px;
+    transition: 0.1s;
+    width: calc(100% - 600px);
 }
-
-.fullimage {
-    box-shadow: 10px 10px 0 0 #eee;
-    height: 600px;
-    margin: 0 200px -150px 0;
+@media only screen and (max-width: 1024px) {
+    .aboutimage {
+        height: 900px;
+    }
+    .abouttext {
+        width: calc(100% - 500px);
+    }
 }
-.fullpanel {
-    background-color: #fff;
-    box-shadow: -10px -10px 0 0 #eee;
-    margin-left: 200px;
-    padding: 50px;
+@media only screen and (max-width: 896px) {
+    /* special case */
+}
+@media only screen and (max-width: 596px) {
+    /* special case */
 }
 
 .album {
     flex-grow: 1;
     height: 400px;
+    transition: 0.1s;
 }
 .albumtext {
     flex-basis: calc(100% - 450px);
     padding-left: 50px;
+    transition: 0.1s;
+}
+@media only screen and (max-width: 1024px) {
+    .album {
+        height: 300px;
+    }
+    .albumtext {
+        flex-basis: calc(100% - 350px);
+    }
+}
+@media only screen and (max-width: 896px) {
+    /* special case */
+}
+@media only screen and (max-width: 596px) {
+    /* special case */
 }
