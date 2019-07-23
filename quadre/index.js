@@ -6,3 +6,10 @@ window.onload = function() {
         loader.style.display = 'none';
     }, 5000 * 0.9);
 }
+
+function goScrollTo(id) {
+    window.scroll({
+        top: document.getElementById(id).offsetTop - 85,
+        behavior: 'smooth'
+    });
+}

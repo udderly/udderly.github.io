@@ -20,14 +20,14 @@
         
         <div class="nav">
             <h3 class="navtitle">Quadre</h3>
-            <p class="navtext">About</p>
+            <p class="navtext" onclick="goScrollTo('secabout')">About</p>
             <p class="navtext">Events</p>
-            <p class="navtext">Our Mission</p>
-            <p class="navtext">Albums</p>
+            <p class="navtext" onclick="goScrollTo('secmission')">Our Mission</p>
+            <p class="navtext" onclick="goScrollTo('secalbums')">Albums</p>
             <p class="navtext" style="margin-right: 0">Donate</p>
         </div>
         
-        <div class="fullcont">
+        <div class="fullcont" id="secabout">
             <h1>About</h1>
             <p>
                 Described as the ensemble that &quot;zaps the myth that classical stuff's stuffy&quot;, Quadre connects with their audiences everywhere, from concert halls and music festivals to soup kitchens and school auditoriums. With their vibrant music and artistic warmth, this innovative ensemble is well recognized not only for its virtuosic French horn mastery, but also for its humorous element of surprise. Their fresh and intellectually charming works make audiences resoundingly agree that experiencing a Quadre concert is a listening adventure not be missed as their music and message touches the heart and resonates deeply with the soul.
@@ -167,7 +167,7 @@
             </div>
         </div>
         
-        <div class="section" style="margin-top: 0">
+        <div class="section" style="margin-top: 0" id="secmission">
             <div class="sectionimage" style="background-image: url('images/street.jpg')"></div>
             <h1 class="sectiontitle">Our Mission</h1>
         </div>
@@ -278,7 +278,7 @@
             </div>
         </div>
         
-        <div class="fullcont" style="background-color: #f7f7f7">
+        <div class="fullcont" style="background-color: #f7f7f7" id="secalbums">
             <h1>Albums</h1>
         </div>
         
