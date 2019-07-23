@@ -13,3 +13,10 @@ function goScrollTo(id) {
         behavior: 'smooth'
     });
 }
+
+const DISABLE_LOADER = false;
+
+if (DISABLE_LOADER) {
+    document.getElementById('loader').style.visibility = 'hidden';
+}
+
