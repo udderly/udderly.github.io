@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,900');
+* {
+    font-family: Raleway;
+    margin: 0;
+}
+
+*::-webkit-scrollbar-track
+{
+    background-color: #e6e6e6;
+}
+
+*::-webkit-scrollbar
+{
+    width: 10px;
+}
+
+*::-webkit-scrollbar-thumb
+{
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+html,
+body {
+    height: 100%;
+}
+h1 {
+    font-size: 50px;
+    font-weight: 900;
+    padding-top: 50px;
+}
+h2 {
+    font-size: 35px;
+    font-weight: 900;
+    padding-top: 25px;
+}
+p {
+    font-size: 16px;
+    line-height: 35px;
+    margin-top: 35px;
+}
+div {
+    background-position: center;
+    background-size: cover;
+}
+
+#loader {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 100;
+}
+#loadlogo {
+    font-size: 200px;
+    font-weight: 300;
+    opacity: 0;
+}
+.gan {
+    animation-duration: 5s;
+    animation-name: gan;
+}
+@keyframes gan {
+    10% {
+        opacity: 0;
+        font-size: 150px;
+    }
+    30% {
+        opacity: 1;
+        font-size: 200px;
+    }
+    50% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
+
+.loadanimation {
+    animation-duration: 5s;
+    animation-name: lan;
+}
+@keyframes lan {
+    70% {
+        top: 0;
+    }
+    90% {
+        top: 100%;
+    }
+}
+
+#landingbanner {
+    height: 100%;
+    position: relative;
+}
+#landingimage {
+    background-image: url("images/car.jpg");
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    transition: 1s;
+    z-index: -1;
+}
+#landingtitle {
+    color: #fff;
+    font-size: 180px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 100px; right: 50px;
+    transition: 0.1s;
+}
+#landingsub {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 50px; right: 50px;
+    transition: 0.1s;
+}
+@media only screen and (max-width: 1024px) {
+    #landingtitle {
+        font-size: 144px;
+        bottom: 88px;
+    }
+    #landingsub {
+        font-size: 40px;
+        bottom: 45px;
+    }
+}
+@media only screen and (max-width: 896px) {
+    #landingtitle {
+        font-size: 108px;
+        bottom: 76px;
+    }
+    #landingsub {
+        font-size: 30px;
+        bottom: 40px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    #landingtitle {
+        font-size: 72px;
+        bottom: 64px;
+    }
+    #landingsub {
+        font-size: 20px;
+        bottom: 35px;
+    }
+}
+#landingcover {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.125) 75%, rgba(0, 0, 0, 0.5));
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -1;
+}
+
+.flex {
+    display: flex;
+}
+.flex .image {
+    flex-grow: 1;
+}
+.flextext {
+    flex-basis: calc(100% - 425px);
+    padding-left: 50px;
+}
+.flex .right {
+    flex-basis: calc(100% - 425px);
+    padding-left: 0;
+    padding-right: 50px;
+}
+.flexhalf {
+    width: 50%;
+}
+.fullcont {
+    padding: 50px 100px 0;
+    transition: 0.1s;
+}
+@media only screen and (max-width: 1024px) {
+    .fullcont {
+        padding: 62.5px 75px 0;
+    }
+    .flextext {
+        flex-basis: calc(100% - 350px);
+    }
+}
+@media only screen and (max-width: 896px) {
+    .fullcont {
+        padding: 25px 50px 0;
+    }
+    .flextext {
+        flex-basis: calc(100% - 275px);
+    }
+}
+@media only screen and (max-width: 596px) {
+    .fullcont {
+        padding: 12.5px 25px 0;
+    }
+    .flextext {
+        flex-basis: calc(100% - 200px);
+    }
+}
+
+.section {
+    display: flex;
+    margin-top: 100px;
+}
+.sectionimage {
+    flex-basis: 840px;
+}
+.sectiontitle {
+    font-size: 100px;
+    margin-top: 100px;
+    writing-mode: vertical-rl;
+}
+
+#portraits {
+    display: flex;
+    height: 400px;
+    margin-top: 100px;
+    padding: 0 100px;
+}
+#portraits div {
+    background-position: top;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+    margin: 0 -100px;
+    mix-blend-mode: multiply;
+}
+
+.about {
+    background-color: #f7f7f7;
+    padding: 100px 0;
+    position: relative;
+    z-index: -2;
+}
+.aboutimage {
+    height: 900px;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: -1;
+}
+.abouttext {
+    background-color: #fff;
+    box-shadow: 10px 10px 0 0 #eee;
+    margin-left: 50px;
+    padding: 50px;
+    width: 480px;
+}
+
+.fullimage {
+    box-shadow: 10px 10px 0 0 #eee;
+    height: 600px;
+    margin: 0 200px -150px 0;
+}
+
+.fullpanel {
+    background-color: #fff;
+    box-shadow: -10px -10px 0 0 #eee;
+    margin-left: 200px;
+    padding: 50px;
+}
+
+.album {
+    flex-grow: 1;
+    height: 400px;
+}
+.albumtext {
+    flex-basis: calc(100% - 450px);
+    padding-left: 50px;
+}
+
+.navigation {
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 10px 0 0 #eee;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    padding: 25px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 99;
+}
+.navtitle {
+    font-size: 30px;
+    font-weight: 300;
+    margin-right: 30px;
+}
+.navigation p {
+    margin: 10px 10px 0;
+}
