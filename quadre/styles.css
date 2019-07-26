@@ -276,17 +276,19 @@ div {
     margin-top: 100px;
 }
 .sectionimage {
-    flex-basis: calc(100% - 300px);
+    flex-basis: calc(100% - 400px);
+    height: 600px;
+    transition: 0.1s;
 }
 .sectiontitle {
+    align-self: flex-end;
     font-size: 100px;
-    margin-top: 100px;
     transition: 0.1s;
     writing-mode: vertical-rl;
 }
 @media only screen and (max-width: 1024px) {
     .sectionimage {
-        flex-basis: calc(100% - 250px);
+        flex-basis: calc(100% - 300px);
     }
     .sectiontitle {
         font-size: 90px;
@@ -302,7 +304,7 @@ div {
 }
 @media only screen and (max-width: 596px) {
     .sectionimage {
-        flex-basis: calc(100% - 150px);
+        flex-basis: calc(100% - 100px);
     }
     .sectiontitle {
         font-size: 70px;
