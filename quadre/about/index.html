@@ -8,16 +8,17 @@
     </head>
 
     <body>
+        <div id="loader"></div>
+        
         <div class="nav">
-            <h3 class="navtitle">Quadre</h3>
-            <p class="navtext" onclick="goScrollTo('secabout')">About</p>
-            <p class="navtext">Events</p>
-            <p class="navtext" onclick="goScrollTo('secmission')">Our Mission</p>
-            <p class="navtext" onclick="goScrollTo('secalbums')">Albums</p>
-            <p class="navtext" style="margin-right: 0">Donate</p>
+            <h3 class="navtitle" onclick="goTo('../')">Quadre</h3>
+            <p class="navtext">About</p>
+            <p class="navtext" onclick="goTo('../music/')">Music</p>
+            <p class="navtext" onclick="goTo('../mission/')">Mission</p>
+            <p class="navtext" onclick="goTo('../connect/')" style="margin-right: 0">Connect</p>
         </div>
         
-        <div class="section secright" style="margin-top: 75px" id="secabout">
+        <div class="section secright" style="margin-top: 85px" id="secabout">
             <div class="sectionimage" style="background-image: url('../images/mural.jpg')"></div>
             <h1 class="sectiontitle">About</h1>
         </div>
@@ -47,7 +48,7 @@
             </div>
         </div>
         
-        <div class="section" style="background-color: #f7f7f7;">
+        <div class="section" style="background-color: #f7f7f7;" id="secstory">
             <div class="sectionimage" style="background-image: url('../images/family.jpg')"></div>
             <h1 class="sectiontitle">Our Story</h1>
         </div>
@@ -76,7 +77,7 @@
             <div style="background-image: url('../images/nateportrait.png'); margin-top: 37.5px;"></div>
         </div>
         
-        <div class="fullcont" style="background-color: #f7f7f7; padding-top: 0; padding-bottom: 50px">
+        <div class="fullcont" style="background-color: #f7f7f7; padding-top: 0; padding-bottom: 50px" id="secmembers">
             <h1>Members</h1>
         </div>
         
@@ -127,9 +128,11 @@
                     Compositionally, Daniel&rsquo;s works favor intimate groups in the classical and jazz mediums. His pieces evoke a sense of time and place, leading listeners to reflect, cherish, and oftentimes, smile.  In addition to his many works for Quadre, notable commissions include &ldquo;Our Hot Date with Destiny&rdquo; for wind quintet from Avenue Winds, &ldquo;Space Available&rdquo; for horn duet from musicians of the Los Angeles Philharmonic and &ldquo;Blinding Light&rdquo; from the Presidio String Trio.
                     <br><br>
                     An engaging performer, composer, and educator, Daniel founded Quadre in 1998. He plays a Ricco-Kuhn horn.  When not delving into the latest musical project, he enjoys spending time with his wife and three kids on hikes, bike rides and trips to the beach and beyond.
-
                 </p>
             </div>
         </div>
+        
+        <script>const SHOW_LOGO = false;</script>
+        <script src="../index.js"></script>
     </body>
 </html>

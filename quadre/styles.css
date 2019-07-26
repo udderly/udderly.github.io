@@ -60,20 +60,26 @@ div {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    pointer-events: none;
     position: fixed;
     top: 0; bottom: 0; left: 0; right: 0;
+    transition: 0.25s;
     z-index: 100;
 }
 #loadlogo {
     font-size: 200px;
     font-weight: 300;
-    transition: 0.1s;
+    transition: 1s;
     opacity: 0;
 }
 
 .loadanimation {
-    animation-duration: 5s;
+    animation-duration: 1s;
     animation-name: lan;
+}
+.loadout {
+    animation-duration: 1s;
+    animation-name: lot;
 }
 @media only screen and (max-width: 1024px) {
     #loadlogo {
@@ -90,31 +96,20 @@ div {
         font-size: 50px;
     }
 }
-@keyframes lan {
-    70% {
-        top: 0;
-    }
-    90% {
-        top: 100%;
-    }
-}
-.gan {
-    animation-duration: 5s;
+.logoanimation {
+    animation-duration: 1s;
     animation-name: gan;
 }
 @keyframes gan {
-    10% {
+    0% {
         opacity: 0;
-        transform: scale(0.75);
-    }
-    30% {
-        opacity: 1;
-        transform: scale(1);
+        transform: scale(0.9);
     }
     50% {
         opacity: 1;
+        transform: scale(1);
     }
-    70% {
+    100% {
         opacity: 0;
     }
 }

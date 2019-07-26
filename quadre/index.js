@@ -1,17 +1,20 @@
+let loader = document.getElementById('loader');
 window.onload = function() {
-    let loader = document.getElementById('loader');
-    loader.classList.add('loadanimation');
-    document.getElementById('loadlogo').classList.add('gan');
-    setTimeout(function() {
-        loader.style.display = 'none';
-    }, 5000 * 0.9);
+    if (SHOW_LOGO) {
+        document.getElementById('loadlogo').classList.add('logoanimation');
+        setTimeout(function() {
+            loader.style.opacity = 0;
+        }, 1000);
+    } else {
+        loader.style.opacity = 0;
+    }
 }
 
-function goScrollTo(id) {
-    window.scroll({
-        top: document.getElementById(id).offsetTop - 85,
-        behavior: 'smooth'
-    });
+function goTo(name) {
+    loader.style.opacity = 1;
+    setTimeout(function() {
+        window.location.href = './' + name;
+    }, 1000);
 }
 
 const DISABLE_LOADER = false;
@@ -19,4 +22,3 @@ const DISABLE_LOADER = false;
 if (DISABLE_LOADER) {
     document.getElementById('loader').style.visibility = 'hidden';
 }
-

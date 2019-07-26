@@ -8,16 +8,17 @@
     </head>
 
     <body>
+        <div id="loader"></div>
+        
         <div class="nav">
-            <h3 class="navtitle">Quadre</h3>
-            <p class="navtext" onclick="goScrollTo('secabout')">About</p>
-            <p class="navtext">Events</p>
-            <p class="navtext" onclick="goScrollTo('secmission')">Our Mission</p>
-            <p class="navtext" onclick="goScrollTo('secalbums')">Albums</p>
-            <p class="navtext" style="margin-right: 0">Donate</p>
+            <h3 class="navtitle" onclick="goTo('../')">Quadre</h3>
+            <p class="navtext" onclick="goTo('../about/')">About</p>
+            <p class="navtext">Music</p>
+            <p class="navtext" onclick="goTo('../mission/')">Mission</p>
+            <p class="navtext" onclick="goTo('../connect/')" style="margin-right: 0">Connect</p>
         </div>
         
-        <div class="section" style="margin-top: 0" id="secmission">
+        <div class="section" style="margin-top: 85px" id="secmusic">
             <div class="sectionimage" style="background-image: url('../images/window.jpg')"></div>
             <h1 class="sectiontitle">Music</h1>
         </div>
@@ -49,5 +50,8 @@
                 </p>
             </div>
         </div>
+        
+        <script>const SHOW_LOGO = false;</script>
+        <script src="../index.js"></script>
     </body>
 </html>
