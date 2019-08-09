@@ -53,6 +53,14 @@ div {
     background-position: center;
     background-size: cover;
 }
+button {
+    background-color: #fff;
+    border: 10px solid #eee;
+    border-radius: 5px;
+    font-size: 30px;
+    margin-top: 50px;
+    padding: 10px;
+}
 
 #loader {
     align-items: center;
@@ -264,6 +272,75 @@ div {
     .flex .right {
         /* special case */
     }
+}
+
+.landingtext {
+    border-bottom: 10px solid #eee;
+    flex-basis: calc(100% - 600px);
+    margin-bottom: -10px;
+    margin-right: 150px;
+    padding: 75px 0 50px 0;
+    transition: 0.1s;
+}
+.ltr {
+    flex-basis: calc(100% - 600px);
+    margin-left: 50px;
+    margin-right: 100px;
+}
+.landingtext p {
+    font-size: 25px;
+    line-height: 40px;
+    margin-left: 25px;
+    margin-right: -100px;
+    transition: 0.1s;
+}
+.ltr p {
+    margin-left: 25px;
+}
+.landingimage {
+    box-shadow: 10px 10px 0 0 #eee;
+    flex-grow: 1;
+}
+.lir {
+    box-shadow: -10px 10px 0 0 #eee;
+}
+@media only screen and (max-width: 1024px) {
+   .landingtext {
+        flex-basis: calc(100% - 500px);
+        padding: 50px 0 50px 0;
+    }
+    .ltr {
+        flex-basis: calc(100% - 400px);
+    }
+    .landingtext p {
+        font-size: 22.5px;
+        line-height: 36px;
+    }
+}
+@media only screen and (max-width: 896px) {
+   .landingtext {
+        flex-basis: calc(100% - 400px);
+        padding: 25px 0 50px 0;
+    }
+    .ltr {
+        flex-basis: calc(100% - 300px);
+    }
+    .landingtext p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    .sectionimage {
+        flex-basis: calc(100% - 100px);
+    }
+    .sectiontitle {
+        font-size: 70px;
+    }
+}
+
+.pad {
+    padding: 50px;
 }
 
 .section {
