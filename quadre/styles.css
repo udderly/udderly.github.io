@@ -54,7 +54,7 @@ div {
     background-size: cover;
 }
 button {
-    background-color: #fff;
+    background: none;
     border: 10px solid #eee;
     border-radius: 5px;
     font-size: 30px;
@@ -155,6 +155,13 @@ button {
     top: 0; bottom: 0; left: 0; right: 0;
     z-index: -1;
 }
+#landingquote {
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    bottom: 50px; left: 50px;
+    width: 500px;
+}
 @media only screen and (max-width: 1024px) {
     #landingtitle {
         font-size: 144px;
@@ -242,6 +249,9 @@ button {
 }
 .flexhalf {
     width: 50%;
+}
+.flexhalf p {
+    padding-right: 25px;
 }
 .fleximage {
     flex-grow: 1;
