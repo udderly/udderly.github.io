@@ -55,10 +55,10 @@ div {
 }
 button {
     background: none;
-    border: 10px solid #eee;
-    border-radius: 5px;
-    font-size: 30px;
-    margin-top: 50px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    font-size: 20px;
+    margin-top: 25px;
     padding: 10px;
 }
 
@@ -77,6 +77,8 @@ button {
 #loadlogo {
     font-size: 200px;
     font-weight: 300;
+    line-height: 100px;
+    text-align: center;
     transition: 1s;
     opacity: 0;
 }
@@ -465,15 +467,18 @@ button {
 }
 
 .about {
+    display: none;
+    opacity: 0;
     position: relative;
+    transition: 0.1s;
 }
 .aboutimage {
-    background-position: top;
+    background-position: top left;
     height: 1200px;
     position: absolute;
-    top: -300px; right: 100px;
+    top: -300px; right: 0;
     transition: 0.1s;
-    width: 400px;
+    width: 600px;
     z-index: -1;
 }
 .abouttext {
