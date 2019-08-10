@@ -531,3 +531,12 @@ button {
 @media only screen and (max-width: 596px) {
     /* special case */
 }
+
+#donatetext {
+    flex-basis: calc(100% - 200px);
+}
+#donatelist {
+    background-color: #f7f7f7;
+    flex-grow: 1;
+    padding: 25px;
+}
