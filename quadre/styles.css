@@ -435,63 +435,44 @@ button {
     }
 }
 
-#portraits {
-    display: flex;
-    height: 350px;
-    margin-top: 25px;
-    padding: 0 75px;
-    transition: 0.1s;
-}
-#portraits div {
-    background-position: top;
-    flex-grow: 1;
-    margin: 0 5px;
-    position: relative;
-    transition: 0.1s;
-}
-#portraits p {
-    position: absolute;
-    text-align: center;
-    bottom: -50px; left: 0; right: 0;
-}
-@media only screen and (max-width: 1024px) {
-    #portraits {
-        height: 325px;
-        padding: 0 50px;
-    }
-}
-@media only screen and (max-width: 896px) {
-    #portraits {
-        height: 300px;
-        padding: 0 25px;
-    }
-}
-@media only screen and (max-width: 596px) {
-    /* special case */
-}
-
 .about {
-    display: none;
-    opacity: 0;
     position: relative;
     transition: 0.1s;
 }
 .aboutimage {
     background-position: top left;
-    height: 1200px;
+    height: calc(100% + 300px);
     position: absolute;
     top: -300px; right: 0;
     transition: 0.1s;
     width: 600px;
     z-index: -1;
 }
+.abr .aboutimage {
+    background-position: top right;
+    left: 0;
+}
+.aboutcover {
+    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
+    height: calc(100% + 300px);
+    position: absolute;
+    top: -300px; right: 0;
+    transition: 0.1s;
+    width: 600px;
+    z-index: -1;
+}
+.abr .aboutcover {
+    left: 0;
+}
 .abouttext {
     background-color: #f7f7f7;
-    box-shadow: 10px 10px 0 0 #eee;
     margin: 400px 0 0 100px;
     padding: 50px;
     transition: 0.1s;
     width: calc(100% - 500px);
+}
+.abr .abouttext {
+    margin: 400px 0 0 calc(100% - 850px);
 }
 @media only screen and (max-width: 1024px) {
     .abouttext {

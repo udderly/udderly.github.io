@@ -46,12 +46,6 @@
             </div>
         </div>
         
-        <div class="fullcont">
-            <p>
-                This is our formal story of our professional work.  If you’d rather read about how we got started and get to know us a little better, click here to read our story!
-            </p>
-        </div>
-        
         <div class="section" style="background-color: #f7f7f7;" id="secstory">
             <div class="sectionimage" style="background-image: url('../images/family.jpg')"></div>
             <h1 class="sectiontitle">Our Story</h1>
@@ -64,7 +58,7 @@
                 Daniel sent letters with these words to horn players all across Los Angeles. Twenty replies were received and after a few weeks of rehearsals, four French horn players committed to establishing Quadre &ndash; The Voice of Four Horns.
                 <br><br>
                 From the start, Quadre&rsquo;s sound emanated from music and ideas beyond the traditional French horn experience. Our perpetually buoyant founder, Daniel, caught a bug when he watched in youthful awe, the off-beat musical &ldquo;Forever Plaid.&rdquo; That propelled him into the world of what he describes as &ldquo;solo boy bands&rdquo; (an oxymoron he explains &ndash; &ldquo;They were four guys in a band but together they created one singular voice&rdquo;) of the 50s and 60s, like the Hi-Lo&rsquo;s and the Four Freshmen.
-                We continue to do what chamber groups do: record albums, tour, collaborate with other artists &amp; ensembles, commission new work, and engage in educational and community programs. But what drives us onwards is our vision: to create and perform music as a means to enact transformable change.  We don’t need to play at the most prestigious or biggest concert halls to accomplish this. We just need to touch one person at a time.
+                We continue to do what chamber groups do: record albums, tour, collaborate with other artists &amp; ensembles, commission new work, and engage in educational and community programs. But what drives us onwards is our vision: to create and perform music as a means to enact transformable change. We don’t need to play at the most prestigious or biggest concert halls to accomplish this. We just need to touch one person at a time.
             </p>
         </div>
         
@@ -72,23 +66,9 @@
             <h1>Members</h1>
         </div>
         
-        <div id="portraits">
-            <div style="background-image: url('../images/amyjosmall.jpg')" onclick="showBio(0)">
-                <p>Amy Jo Rhine</p>
-            </div>
-            <div style="background-image: url('../images/lydiasmall.jpg')" onclick="showBio(1)">
-                <p>Lydia Van Dreel</p>
-            </div>
-            <div style="background-image: url('../images/natesmall.jpg')" onclick="showBio(2)">
-                <p>Nathan Pawelek</p>
-            </div>
-            <div style="background-image: url('../images/danielsmall.jpg')" onclick="showBio(3)">
-                <p>Daniel Wood</p>
-            </div>
-        </div>
-        
         <div class="about" id="bio0">
             <div class="aboutimage" style="background-image: url('../images/amyjoportrait.png')"></div>
+            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Amy Jo Rhine</h2>
                 <p>
@@ -100,8 +80,9 @@
             </div>
         </div>
         
-        <div class="about" id="bio1">
+        <div class="about abr" id="bio1">
             <div class="aboutimage" style="background-image: url('../images/lydiaportrait.png')"></div>
+            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Lydia Van Dreel</h2>
                 <p>
@@ -114,6 +95,7 @@
         
         <div class="about" id="bio2">
             <div class="aboutimage" style="background-image: url('../images/nateportrait.png')"></div>
+            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Nathan Pawelek</h2>
                 <p>
@@ -124,8 +106,9 @@
             </div>
         </div>
         
-        <div class="about" id="bio3">
+        <div class="about abr" id="bio3">
             <div class="aboutimage" style="background-image: url('../images/danielportrait.png')"></div>
+            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Daniel Wood</h2>
                 <p>
@@ -148,24 +131,5 @@
         
         <script>const SHOW_LOGO = false;</script>
         <script src="../index.js"></script>
-        <script>
-            let selected = -1;
-            function showBio(x) {
-                if (selected > -1) {
-                    let temp = selected;
-                    document.getElementById('bio' + selected).style.opacity = 0;
-                    setTimeout(function () {
-                        document.getElementById('bio' + temp).style.display = 'none';
-                    }, 100);
-                }
-                selected = x === selected ? -1 : x;
-                if (selected > -1) {
-                    setTimeout(function() {
-                        document.getElementById('bio' + selected).style.opacity = 1;
-                        document.getElementById('bio' + selected).style.display = 'block';
-                    }, 100);
-                }
-            }
-        </script>
     </body>
 </html>
