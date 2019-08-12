@@ -61,9 +61,14 @@ button {
     background: none;
     border: 2px solid #ccc;
     border-radius: 2px;
+    cursor: pointer;
     font-size: 16px;
     margin-top: 25px;
     padding: 10px;
+    transition: 0.1s;
+}
+button:hover {
+    border: 2px solid #999;
 }
 
 #loader {
@@ -294,7 +299,6 @@ button {
 .landingtext {
     border-bottom: 10px solid #eee;
     flex-basis: calc(100% - 600px);
-    margin-bottom: -10px;
     margin-right: 150px;
     padding: 75px 0 50px 0;
     transition: 0.1s;
@@ -315,11 +319,7 @@ button {
     margin-left: 25px;
 }
 .frontimage {
-    box-shadow: 10px 10px 0 0 #eee;
     flex-grow: 1;
-}
-.lir {
-    box-shadow: -10px 10px 0 0 #eee;
 }
 @media only screen and (max-width: 1024px) {
    .landingtext {
@@ -520,6 +520,7 @@ button {
 
 #donatetext {
     flex-basis: calc(100% - 200px);
+    padding-right: 50px;
 }
 #donatelist {
     background-color: #f7f7f7;
