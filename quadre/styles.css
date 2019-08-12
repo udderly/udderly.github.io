@@ -132,12 +132,20 @@ button {
     height: 100%;
     position: relative;
 }
-#landingimage {
-    background-image: url("images/car.jpg");
+.landingimage {
+    opacity: 0;
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
     transition: 1s;
     z-index: -1;
+}
+#landingquote {
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    bottom: 50px; left: 50px;
+    width: 500px;
+    z-index: 100;
 }
 #landingtitle {
     color: #fff;
@@ -160,13 +168,6 @@ button {
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
     z-index: -1;
-}
-#landingquote {
-    color: #fff;
-    font-size: 30px;
-    position: absolute;
-    bottom: 50px; left: 50px;
-    width: 500px;
 }
 @media only screen and (max-width: 1024px) {
     #landingtitle {
@@ -313,7 +314,7 @@ button {
 .ltr p {
     margin-left: 25px;
 }
-.landingimage {
+.frontimage {
     box-shadow: 10px 10px 0 0 #eee;
     flex-grow: 1;
 }

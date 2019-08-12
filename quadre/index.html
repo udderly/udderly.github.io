@@ -13,11 +13,14 @@
         </div>
         
         <div id="landingbanner">
-            <div id="landingimage"></div>
+            <div class="landingimage" style="background-image: url('images/car.jpg')" id="li0">
+                <p id="landingquote">&ldquo;The performance was a visceral journey, conjuring untapped emotions. I was transported.&rdquo; -Audience Member</p>
+            </div>
+            <div class="landingimage" style="background-image: url('images/brick.jpg')" id="li1"></div>
+            <div class="landingimage" style="background-image: url('images/concert.jpg')" id="li2"></div>
             <h1 id="landingtitle">Quadre</h1>
             <p id="landingsub">The Voice of Four Horns</p>
             <div id="landingcover"></div>
-            <p id="landingquote">&ldquo;The performance was a visceral journey, conjuring untapped emotions. I was transported.&rdquo; -Audience Member</p>
         </div>
         
         <div class="nav">
@@ -37,7 +40,7 @@
                     </p>
                     <button>Read more</button>
                 </div>
-                <div class="landingimage" style="background-image: url('images/windowstanding.jpg')"></div>
+                <div class="frontimage" style="background-image: url('images/windowstanding.jpg')"></div>
             </div>
         </div>
         
@@ -45,7 +48,7 @@
         
         <div class="fullcont">
             <div class="flex">
-                <div class="landingimage lir" style="background-image: url('images/streetfront.jpg')"></div>
+                <div class="frontimage lir" style="background-image: url('images/streetfront.jpg')"></div>
                 <div class="landingtext ltr">
                     <h1>Music</h1>
                     <p>
@@ -67,7 +70,7 @@
                     </p>
                     <button>Read more</button>
                 </div>
-                <div class="landingimage" style="background-image: url('images/brickclose.jpg')"></div>
+                <div class="frontimage" style="background-image: url('images/brickclose.jpg')"></div>
             </div>
         </div>
         
@@ -75,7 +78,7 @@
         
         <div class="fullcont">
             <div class="flex">
-                <div class="landingimage lir" style="background-image: url('images/horns.jpg')"></div>
+                <div class="frontimage lir" style="background-image: url('images/horns.jpg')"></div>
                 <div class="landingtext ltr">
                     <h1>Connect</h1>
                     <p>
@@ -87,7 +90,7 @@
         </div>
         <div class="pad"></div>
         
-        <div class="fullcont" style="background-color: #f7f7f7">
+        <div class="fullcont">
             <div class="flex">
                 <div class="flexhalf">
                     <h2>Booking</h2>
@@ -105,12 +108,25 @@
         <div id="footer">
             <p style="margin-top: 10px">&copy; 2019 Quadre</p>
             <p>Photography by <a href="https://www.carlinmaphotography.com/" target="_blank">Carlin Ma</a></p>
-            <p style="margin-bottom: -20px">Website by <a href="https://udderly.github.io/" target="_blank">Udderly</a></p>
+            <p style="margin-bottom: -20px">Website by <a href="https://udderly.github.io/" target="_blank">Brandon Chung</a></p>
             <button>Book</button>
             <button>Donate</button>
         </div>
         
         <script>const SHOW_LOGO = true;</script>
         <script src="index.js"></script>
+        
+        <script>
+            let selected = 2;
+            function nextImage() {
+                document.getElementById('li' + selected).style.opacity = 0;
+                selected = selected == 2 ? 0 : selected + 1;
+                document.getElementById('li' + selected).style.opacity = 1;
+                setTimeout(function() {
+                    nextImage();
+                }, 10000);
+            }
+            nextImage();
+        </script>
     </body>
 </html>
