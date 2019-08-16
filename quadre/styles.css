@@ -31,6 +31,22 @@ h1 {
     font-size: 50px;
     font-weight: 900;
     padding-top: 50px;
+    transition: 0.1s;
+}
+@media only screen and (max-width: 1024px) {
+    h1 {
+        font-size: 45px;
+    }
+}
+@media only screen and (max-width: 896px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    h1 {
+        font-size: 35px;
+    }
 }
 h2 {
     font-size: 35px;
@@ -195,6 +211,9 @@ button:hover {
     }
 }
 @media only screen and (max-width: 596px) {
+    #landingquote {
+        display: none;
+    }
     #landingtitle {
         font-size: 72px;
         bottom: 64px;
@@ -210,9 +229,8 @@ button:hover {
     background-color: #fff;
     box-shadow: 0 10px 0 0 #eee;
     display: flex;
-    height: 25px;
     justify-content: center;
-    padding: 25px;
+    padding: 10px 25px;
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 99;
@@ -239,7 +257,13 @@ button:hover {
     }
 }
 @media only screen and (max-width: 596px) {
-    /* special case */
+    .nav {
+        flex-wrap: wrap;
+    }
+    .navtitle,
+    .navtext {
+        margin: 0;
+    }
 }
 
 #popup {
@@ -253,6 +277,8 @@ button:hover {
 }
 
 .fullcont {
+    margin: auto;
+    max-width: 1132px;
     padding: 50px 100px 0;
     transition: 0.1s;
 }
@@ -297,12 +323,21 @@ button:hover {
     }
 }
 @media only screen and (max-width: 596px) {
+    .flex {
+        flex-wrap: wrap;
+    }
     .fullcont {
         padding: 12.5px 25px 0;
     }
     .flextext,
     .flex .right {
         /* special case */
+    }
+    .flexhalf {
+        width: 100%;
+    }
+    .flexhalf p {
+        padding-right: 0;
     }
 }
 
@@ -314,7 +349,6 @@ button:hover {
     transition: 0.1s;
 }
 .ltr {
-    flex-basis: calc(100% - 600px);
     margin-left: 50px;
     margin-right: 100px;
 }
@@ -325,19 +359,20 @@ button:hover {
     margin-right: -100px;
     transition: 0.1s;
 }
-.ltr p {
-    margin-left: 25px;
-}
 .frontimage {
     flex-grow: 1;
 }
+.pad {
+    padding: 50px;
+}
+
+.flexbreak {
+    display: none;
+}
 @media only screen and (max-width: 1024px) {
-   .landingtext {
+    .landingtext {
         flex-basis: calc(100% - 500px);
         padding: 50px 0 50px 0;
-    }
-    .ltr {
-        flex-basis: calc(100% - 400px);
     }
     .landingtext p {
         font-size: 22.5px;
@@ -345,12 +380,9 @@ button:hover {
     }
 }
 @media only screen and (max-width: 896px) {
-   .landingtext {
+    .landingtext {
         flex-basis: calc(100% - 400px);
         padding: 25px 0 50px 0;
-    }
-    .ltr {
-        flex-basis: calc(100% - 300px);
     }
     .landingtext p {
         font-size: 20px;
@@ -358,16 +390,29 @@ button:hover {
     }
 }
 @media only screen and (max-width: 596px) {
-    .sectionimage {
-        flex-basis: calc(100% - 100px);
+    .landingtext,
+    .ltr {
+        flex-basis: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
-    .sectiontitle {
-        font-size: 70px;
+    .landingtext p {
+        font-size: 17.5px;
+        line-height: 28px;
+        margin-right: 0;
     }
-}
-
-.pad {
-    padding: 50px;
+    .frontimage {
+        height: 200px;
+        margin-top: 50px;
+        width: 100%;
+    }
+    .flexbreak {
+        display: block;
+        flex-basis: 100%;
+    }
+    .pad {
+        display: none;
+    }
 }
 
 .section {
@@ -447,14 +492,20 @@ button:hover {
 }
 
 .about {
+    display: flex;
+    margin: 200px auto 0;
+    max-width: 1232px;
     position: relative;
     transition: 0.1s;
 }
+.abr {
+    flex-direction: row-reverse;
+}
 .aboutimage {
     background-position: top left;
-    height: calc(100% + 300px);
+    height: calc(100% + 100px);
     position: absolute;
-    top: -300px; right: 0;
+    top: -100px; right: 0;
     transition: 0.1s;
     width: 600px;
     z-index: -1;
@@ -465,9 +516,9 @@ button:hover {
 }
 .aboutcover {
     background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
-    height: calc(100% + 300px);
+    height: calc(100% + 100px);
     position: absolute;
-    top: -300px; right: 0;
+    top: -100px; right: 0;
     transition: 0.1s;
     width: 600px;
     z-index: -1;
@@ -477,24 +528,30 @@ button:hover {
 }
 .abouttext {
     background-color: #f7f7f7;
-    margin: 400px 0 0 100px;
+    margin: 200px 0 0 100px;
     padding: 50px;
     transition: 0.1s;
     width: calc(100% - 500px);
 }
 .abr .abouttext {
-    margin: 400px 0 0 calc(100% - 850px);
+    margin: 200px 100px 0 0;
 }
 @media only screen and (max-width: 1024px) {
     .abouttext {
-        margin: 400px 0 0 75px;
+        margin: 200px 0 0 75px;
         width: calc(100% - 400px);
+    }
+    .abr .abouttext {
+        margin: 200px 75px 0 0;
     }
 }
 @media only screen and (max-width: 896px) {
     .abouttext {
-        margin: 400px 0 0 50px;
+        margin: 200px 0 0 50px;
         width: calc(100% - 300px);
+    }
+    .abr .abouttext {
+        margin: 200px 50px 0 0;
     }
 }
 @media only screen and (max-width: 596px) {
