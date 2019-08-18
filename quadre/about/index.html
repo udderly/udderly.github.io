@@ -6,6 +6,12 @@
         <title>Quadre &ndash; About</title>
         <link href="../styles.css" rel="stylesheet">
         <link href="../images/icon.png" rel="icon">
+        
+        <style>
+            #easteregg {
+                display: none;
+            }
+        </style>
     </head>
 
     <body>
@@ -61,20 +67,26 @@
             </div>
         </div>
         
-        <div class="section" id="secstory">
-            <div class="sectionimage" style="background-image: url('../images/familyS.jpg')"></div>
-            <h1 class="sectiontitle">Our Story</h1>
+        <div class="fullcont">
+            <p onclick="eastereggthing()">To see an "easter egg" read here:</p>
         </div>
         
-        <div class="fullcont">
-            <p style="padding-bottom: 50px">
-                &ldquo;Wouldn’t it be nice if&hellip;
-                <br><br>
-                Daniel sent letters with these words to horn players all across Los Angeles. Twenty replies were received and after a few weeks of rehearsals, four French horn players committed to establishing Quadre &ndash; The Voice of Four Horns.
-                <br><br>
-                From the start, Quadre&rsquo;s sound emanated from music and ideas beyond the traditional French horn experience. Our perpetually buoyant founder, Daniel, caught a bug when he watched in youthful awe, the off-beat musical &ldquo;Forever Plaid.&rdquo; That propelled him into the world of what he describes as &ldquo;solo boy bands&rdquo; (an oxymoron he explains &ndash; &ldquo;They were four guys in a band but together they created one singular voice&rdquo;) of the 50s and 60s, like the Hi-Lo&rsquo;s and the Four Freshmen.
-                We continue to do what chamber groups do: record albums, tour, collaborate with other artists &amp; ensembles, commission new work, and engage in educational and community programs. But what drives us onwards is our vision: to create and perform music as a means to enact transformable change. We don’t need to play at the most prestigious or biggest concert halls to accomplish this. We just need to touch one person at a time.
-            </p>
+        <div id="easteregg">
+            <div class="section" id="secstory">
+                <div class="sectionimage" style="background-image: url('../images/familyS.jpg')"></div>
+                <h1 class="sectiontitle">Our Story</h1>
+            </div>
+
+            <div class="fullcont">
+                <p style="padding-bottom: 50px">
+                    &ldquo;Wouldn’t it be nice if&hellip;
+                    <br><br>
+                    Daniel sent letters with these words to horn players all across Los Angeles. Twenty replies were received and after a few weeks of rehearsals, four French horn players committed to establishing Quadre &ndash; The Voice of Four Horns.
+                    <br><br>
+                    From the start, Quadre&rsquo;s sound emanated from music and ideas beyond the traditional French horn experience. Our perpetually buoyant founder, Daniel, caught a bug when he watched in youthful awe, the off-beat musical &ldquo;Forever Plaid.&rdquo; That propelled him into the world of what he describes as &ldquo;solo boy bands&rdquo; (an oxymoron he explains &ndash; &ldquo;They were four guys in a band but together they created one singular voice&rdquo;) of the 50s and 60s, like the Hi-Lo&rsquo;s and the Four Freshmen.
+                    We continue to do what chamber groups do: record albums, tour, collaborate with other artists &amp; ensembles, commission new work, and engage in educational and community programs. But what drives us onwards is our vision: to create and perform music as a means to enact transformable change. We don’t need to play at the most prestigious or biggest concert halls to accomplish this. We just need to touch one person at a time.
+                </p>
+            </div>
         </div>
         
         <div class="fullcont" id="secmembers">
@@ -167,5 +179,13 @@
         
         <script>const SHOW_LOGO = false;</script>
         <script src="../index.js"></script>
+        
+        <script>
+            let easteregg = false;
+            function eastereggthing() {
+                document.getElementById("easteregg").style.display = easteregg ? "none" : "initial";
+                easteregg = !easteregg;
+            }
+        </script>
     </body>
 </html>
