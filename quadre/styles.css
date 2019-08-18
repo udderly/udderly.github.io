@@ -579,22 +579,14 @@ button:hover {
 
 .album {
     flex-grow: 1;
-    height: 400px;
-    margin-top: 50px;
-    transition: 0.1s;
-}
-.albumtext {
-    flex-basis: calc(100% - 450px);
-    margin-top: 50px;
-    padding-left: 50px;
+    height: 0;
+    margin-right: 25px;
+    padding-bottom: calc(25% - 25px);
     transition: 0.1s;
 }
 @media only screen and (max-width: 1024px) {
     .album {
         height: 300px;
-    }
-    .albumtext {
-        flex-basis: calc(100% - 350px);
     }
 }
 @media only screen and (max-width: 896px) {
@@ -622,4 +614,16 @@ button:hover {
 }
 #footer p {
     margin-top: -5px;
+}
+
+#gallery {
+    font-size: 0;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.galleryimage {
+    display: inline-block;
+    height: 200px;
+    margin-right: 25px;
+    width: 300px;
 }
