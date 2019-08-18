@@ -14,31 +14,32 @@
         </div>
         
         <div id="landingbanner">
-            <div class="landingimage" style="background-image: url('images/carS.jpg')" id="li0">
-                <p id="landingquote">&ldquo;The performance was a visceral journey, conjuring untapped emotions. I was transported.&rdquo; -Audience Member</p>
-            </div>
+            <div class="landingimage" style="background-image: url('images/carS.jpg')" id="li0"></div>
             <div class="landingimage" style="background-image: url('images/brickcloseS.jpg')" id="li1"></div>
             <div class="landingimage" style="background-image: url('images/concertS.jpg')" id="li2"></div>
             <h1 id="landingtitle">Quadre</h1>
             <p id="landingsub">The Voice of Four Horns</p>
+            <p class="landingquote" id="lq0">&ldquo;The performance was a visceral journey, conjuring untapped emotions. I was transported.&rdquo; -Audience Member</p>
+            <p class="landingquote" id="lq1">&ldquo;Here are four amazingly talented hornists with some very hip music - moments of inspiration, sorrow&hellip; love and virtuosic display.&rdquo; -International Horn Call</p>
+            <p class="landingquote" id="lq2">&ldquo;The range of brilliant playing keeps the evening exciting from the start to the last encore.&rdquo; -Recital Presenter</p>
             <div id="landingcover"></div>
         </div>
         
         <div class="nav">
             <h3 class="navtitle">Quadre</h3>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('about/')">About</p>
-            <div class="flexbreak"></div>
+            <div>
+                <p class="navtext" onclick="goTo('about/')">About</p>
+                <div class="navdrop">
+                    <p class="navtext" onclick="goTo('about/')">Bio</p>
+                    <p class="navtext" onclick="goTo('about/')">Members</p>
+                    <p class="navtext" onclick="goTo('about/')">Repertoire</p>
+                </div>
+            </div>
             <p class="navtext" onclick="goTo('tour/')">Tour</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('media/')">Media</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('mission/')">Mission</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('projects/')">Projects</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('connect/')">Connect</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('support/')" style="margin-right: 0">Support</p>
         </div>
         
@@ -136,8 +137,10 @@
             let selected = 2;
             function nextImage() {
                 document.getElementById('li' + selected).style.opacity = 0;
+                document.getElementById('lq' + selected).style.opacity = 0;
                 selected = selected == 2 ? 0 : selected + 1;
                 document.getElementById('li' + selected).style.opacity = 1;
+                document.getElementById('lq' + selected).style.opacity = 1;
                 setTimeout(function() {
                     nextImage();
                 }, 10000);

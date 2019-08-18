@@ -160,11 +160,13 @@ button:hover {
     transition: 1s;
     z-index: -1;
 }
-#landingquote {
+.landingquote {
     color: #fff;
     font-size: 30px;
+    opacity: 0;
     position: absolute;
     bottom: 50px; left: 50px;
+    transition: 1s;
     width: 500px;
     z-index: 100;
 }
@@ -211,7 +213,7 @@ button:hover {
     }
 }
 @media only screen and (max-width: 596px) {
-    #landingquote {
+    .landingquote {
         display: none;
     }
     #landingtitle {
@@ -245,6 +247,23 @@ button:hover {
     cursor: pointer;
     margin: 10px 20px 0;
     transition: 0.1s;
+}
+.navdrop {
+    background-color: #f7f7f7;
+    opacity: 0;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 55px;
+    transition: 0.1s;
+    visibility: hidden;
+}
+.navdrop:hover {
+    opacity: 1;
+    visibility: visible;
+}
+.navtext:hover + .navdrop {
+    opacity: 1;;
+    visibility: visible;
 }
 @media only screen and (max-width: 1024px) {
     .navtext {
