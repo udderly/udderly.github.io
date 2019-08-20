@@ -11,6 +11,70 @@
             #easteregg {
                 display: none;
             }
+            
+            .about {
+                display: flex;
+                margin: 200px auto 0;
+                max-width: 1232px;
+                position: relative;
+            }
+            .abr {
+                flex-direction: row-reverse;
+            }
+            .aboutimage {
+                background-position: top left;
+                height: calc(100% + 100px);
+                position: absolute;
+                top: -100px; right: 0;
+                width: 600px;
+                z-index: -1;
+            }
+            .abr .aboutimage {
+                background-position: top right;
+                left: 0;
+            }
+            .aboutcover {
+                background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
+                height: calc(100% + 100px);
+                position: absolute;
+                top: -100px; right: 0;
+                width: 600px;
+                z-index: -1;
+            }
+            .abr .aboutcover {
+                left: 0;
+            }
+            .abouttext {
+                background-color: #f7f7f7;
+                margin: 200px 0 0 100px;
+                padding: 50px;
+                transition: 0.1s;
+                width: calc(100% - 500px);
+            }
+            .abr .abouttext {
+                margin: 200px 100px 0 0;
+            }
+            @media only screen and (max-width: 1024px) {
+                .abouttext {
+                    margin: 200px 0 0 75px;
+                    width: calc(100% - 400px);
+                }
+                .abr .abouttext {
+                    margin: 200px 75px 0 0;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                .abouttext {
+                    margin: 200px 0 0 50px;
+                    width: calc(100% - 300px);
+                }
+                .abr .abouttext {
+                    margin: 200px 50px 0 0;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                /* special case */
+            }
         </style>
     </head>
 
@@ -19,27 +83,27 @@
         
         <div class="nav">
             <h3 class="navtitle" onclick="goTo('../')">Quadre</h3>
-            <div class="flexbreak"></div>
-            <p class="navtext">About</p>
-            <div class="flexbreak"></div>
+            <div>
+                <p class="navtext">About</p>
+                <div class="navdrop">
+                    <p class="navtext">Bio</p>
+                    <p class="navtext">Members</p>
+                    <p class="navtext">Repertoire</p>
+                </div>
+            </div>
             <p class="navtext" onclick="goTo('../tour/')">Tour</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../media/')">Media</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../mission/')">Mission</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../projects/')">Projects</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../connect/')">Connect</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../support/')" style="margin-right: 0">Support</p>
         </div>
         
         <div id="popup">
-            <p>Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
+            <p id="popuptext">Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
         </div>
         
-        <div class="section secright" style="margin-top: 85px" id="secabout">
+        <div class="section" style="margin-top: 85px">
             <div class="sectionimage" style="background-image: url('../images/muralS.jpg')"></div>
             <h1 class="sectiontitle">About</h1>
         </div>
@@ -72,7 +136,7 @@
         </div>
         
         <div id="easteregg">
-            <div class="section" id="secstory">
+            <div class="section">
                 <div class="sectionimage" style="background-image: url('../images/familyS.jpg')"></div>
                 <h1 class="sectiontitle">Our Story</h1>
             </div>
@@ -89,7 +153,7 @@
             </div>
         </div>
         
-        <div class="fullcont" id="secmembers">
+        <div class="fullcont">
             <h1>Members</h1>
         </div>
         

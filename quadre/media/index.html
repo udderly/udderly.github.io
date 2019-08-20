@@ -6,6 +6,39 @@
         <title>Quadre &ndash; Media</title>
         <link href="../styles.css" rel="stylesheet">
         <link href="../images/icon.png" rel="icon">
+        
+        <style>
+            .album {
+                flex-grow: 1;
+                height: 0;
+                margin-right: 25px;
+                padding-bottom: calc(25% - 25px);
+                transition: 0.1s;
+            }
+            @media only screen and (max-width: 1024px) {
+                .album {
+                    height: 300px;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                /* special case */
+            }
+            @media only screen and (max-width: 596px) {
+                /* special case */
+            }
+            
+            #gallery {
+                font-size: 0;
+                overflow-x: scroll;
+                white-space: nowrap;
+            }
+            .galleryimage {
+                display: inline-block;
+                height: 200px;
+                margin-right: 25px;
+                width: 300px;
+            }
+        </style>
     </head>
 
     <body>
@@ -13,24 +46,24 @@
         
         <div class="nav">
             <h3 class="navtitle" onclick="goTo('../')">Quadre</h3>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('../about/')">About</p>
-            <div class="flexbreak"></div>
+            <div>
+                <p class="navtext" onclick="goTo('../about/')">About</p>
+                <div class="navdrop">
+                    <p class="navtext" onclick="goTo('../about/')">Bio</p>
+                    <p class="navtext" onclick="goTo('../about/')">Members</p>
+                    <p class="navtext" onclick="goTo('../about/')">Repertoire</p>
+                </div>
+            </div>
             <p class="navtext" onclick="goTo('../tour/')">Tour</p>
-            <div class="flexbreak"></div>
             <p class="navtext">Media</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../mission/')">Mission</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../projects/')">Projects</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../connect/')">Connect</p>
-            <div class="flexbreak"></div>
             <p class="navtext" onclick="goTo('../support/')" style="margin-right: 0">Support</p>
         </div>
         
         <div id="popup">
-            <p>Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
+            <p id="popuptext">Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
         </div>
         
         <div class="section" style="margin-top: 85px" id="secmusic">

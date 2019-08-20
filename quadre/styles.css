@@ -20,11 +20,11 @@
     background-color: #ccc;
 }
 
-html,
-body {
+html {
     height: 100%;
 }
 body {
+    height: 100%;
     overflow-x: hidden;
 }
 h1 {
@@ -33,25 +33,35 @@ h1 {
     padding-top: 50px;
     transition: 0.1s;
 }
-@media only screen and (max-width: 1024px) {
-    h1 {
-        font-size: 45px;
-    }
-}
-@media only screen and (max-width: 896px) {
-    h1 {
-        font-size: 40px;
-    }
-}
-@media only screen and (max-width: 596px) {
-    h1 {
-        font-size: 35px;
-    }
-}
 h2 {
     font-size: 35px;
     font-weight: 900;
     padding-top: 25px;
+}
+h3 {
+    font-size: 25px;
+    font-weight: 900;
+    padding-top: 10px;
+}
+@media only screen and (max-width: 1024px) {
+    h1 {
+        font-size: 47.5px;
+    }
+}
+@media only screen and (max-width: 896px) {
+    h1 {
+        font-size: 45px;
+    }
+}
+@media only screen and (max-width: 596px) {
+    h1 {
+        font-size: 42.5px;
+    }
+}
+
+div {
+    background-position: center;
+    background-size: cover;
 }
 p,
 li {
@@ -59,19 +69,15 @@ li {
     line-height: 35px;
     margin-top: 35px;
 }
-li {
-    margin-top: 0;
-}
-ul {
-    list-style: square;
-}
 a {
     color: #03c;
     text-decoration: none;
 }
-div {
-    background-position: center;
-    background-size: cover;
+ul {
+    list-style: square;
+}
+li {
+    margin-top: 0;
 }
 button {
     background: none;
@@ -107,30 +113,6 @@ button:hover {
     transition: 1s;
     opacity: 0;
 }
-
-.loadanimation {
-    animation-duration: 1s;
-    animation-name: lan;
-}
-.loadout {
-    animation-duration: 1s;
-    animation-name: lot;
-}
-@media only screen and (max-width: 1024px) {
-    #loadlogo {
-        font-size: 150px;
-    }
-}
-@media only screen and (max-width: 896px) {
-    #loadlogo {
-        font-size: 100px;
-    }
-}
-@media only screen and (max-width: 596px) {
-    #loadlogo {
-        font-size: 50px;
-    }
-}
 .logoanimation {
     animation-duration: 1s;
     animation-name: gan;
@@ -148,81 +130,19 @@ button:hover {
         opacity: 0;
     }
 }
-
-#landingbanner {
-    height: 100%;
-    position: relative;
-}
-.landingimage {
-    opacity: 0;
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    transition: 1s;
-    z-index: -1;
-}
-.landingquote {
-    color: #fff;
-    font-size: 30px;
-    opacity: 0;
-    position: absolute;
-    bottom: 50px; left: 50px;
-    transition: 1s;
-    width: 500px;
-    z-index: 100;
-}
-#landingtitle {
-    color: #fff;
-    font-size: 180px;
-    font-weight: 100;
-    position: absolute;
-    bottom: 100px; right: 50px;
-    transition: 0.1s;
-}
-#landingsub {
-    color: #fff;
-    font-size: 50px;
-    font-weight: 100;
-    position: absolute;
-    bottom: 50px; right: 50px;
-    transition: 0.1s;
-}
-#landingcover {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.125) 75%, rgba(0, 0, 0, 0.5));
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    z-index: -1;
-}
 @media only screen and (max-width: 1024px) {
-    #landingtitle {
-        font-size: 144px;
-        bottom: 88px;
-    }
-    #landingsub {
-        font-size: 40px;
-        bottom: 45px;
+    #loadlogo {
+        font-size: 150px;
     }
 }
 @media only screen and (max-width: 896px) {
-    #landingtitle {
-        font-size: 108px;
-        bottom: 76px;
-    }
-    #landingsub {
-        font-size: 30px;
-        bottom: 40px;
+    #loadlogo {
+        font-size: 100px;
     }
 }
 @media only screen and (max-width: 596px) {
-    .landingquote {
-        display: none;
-    }
-    #landingtitle {
-        font-size: 72px;
-        bottom: 64px;
-    }
-    #landingsub {
-        font-size: 20px;
-        bottom: 35px;
+    #loadlogo {
+        font-size: 50px;
     }
 }
 
@@ -281,7 +201,7 @@ button:hover {
     }
     .navtitle,
     .navtext {
-        margin: 0;
+        margin: 0; /* fix later */
     }
 }
 
@@ -289,10 +209,14 @@ button:hover {
     position: fixed;
     bottom: 0; left: 0; right: 0;
 }
-#popup p {
+#popuptext {
     background-color: #f7f7f7;
     text-align: center;
     padding: 10px;
+}
+
+.flexbreak {
+    display: none;
 }
 
 .fullcont {
@@ -301,8 +225,27 @@ button:hover {
     padding: 50px 100px 0;
     transition: 0.1s;
 }
+@media only screen and (max-width: 1024px) {
+    .fullcont {
+        padding: 37.5px 75px 0;
+    }
+}
+@media only screen and (max-width: 896px) {
+    .fullcont {
+        padding: 25px 50px 0;
+    }
+}
+@media only screen and (max-width: 596px) {
+    .fullcont {
+        padding: 12.5px 25px 0;
+    }
+}
+
 .flex {
     display: flex;
+}
+.fleximage {
+    flex-grow: 1;
 }
 .flextext {
     flex-basis: calc(100% - 425px);
@@ -315,27 +258,20 @@ button:hover {
     padding-right: 50px;
 }
 .flexhalf {
+    transition: 0.1s;
     width: 50%;
 }
 .flexhalf p {
     padding-right: 25px;
-}
-.fleximage {
-    flex-grow: 1;
+    transition: 0.1s;
 }
 @media only screen and (max-width: 1024px) {
-    .fullcont {
-        padding: 37.5px 75px 0;
-    }
     .flextext,
     .flex .right {
         flex-basis: calc(100% - 350px);
     }
 }
 @media only screen and (max-width: 896px) {
-    .fullcont {
-        padding: 25px 50px 0;
-    }
     .flextext,
     .flex .right {
         flex-basis: calc(100% - 275px);
@@ -344,9 +280,6 @@ button:hover {
 @media only screen and (max-width: 596px) {
     .flex {
         flex-wrap: wrap;
-    }
-    .fullcont {
-        padding: 12.5px 25px 0;
     }
     .flextext,
     .flex .right {
@@ -357,80 +290,6 @@ button:hover {
     }
     .flexhalf p {
         padding-right: 0;
-    }
-}
-
-.landingtext {
-    border-bottom: 10px solid #eee;
-    flex-basis: calc(100% - 600px);
-    margin-right: 150px;
-    padding: 75px 0 50px 0;
-    transition: 0.1s;
-}
-.ltr {
-    margin-left: 50px;
-    margin-right: 100px;
-}
-.landingtext p {
-    font-size: 25px;
-    line-height: 40px;
-    margin-left: 25px;
-    margin-right: -100px;
-    transition: 0.1s;
-}
-.frontimage {
-    flex-grow: 1;
-}
-.pad {
-    padding: 50px;
-}
-
-.flexbreak {
-    display: none;
-}
-@media only screen and (max-width: 1024px) {
-    .landingtext {
-        flex-basis: calc(100% - 500px);
-        padding: 50px 0 50px 0;
-    }
-    .landingtext p {
-        font-size: 22.5px;
-        line-height: 36px;
-    }
-}
-@media only screen and (max-width: 896px) {
-    .landingtext {
-        flex-basis: calc(100% - 400px);
-        padding: 25px 0 50px 0;
-    }
-    .landingtext p {
-        font-size: 20px;
-        line-height: 32px;
-    }
-}
-@media only screen and (max-width: 596px) {
-    .landingtext,
-    .ltr {
-        flex-basis: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .landingtext p {
-        font-size: 17.5px;
-        line-height: 28px;
-        margin-right: 0;
-    }
-    .frontimage {
-        height: 200px;
-        margin-top: 50px;
-        width: 100%;
-    }
-    .flexbreak {
-        display: block;
-        flex-basis: 100%;
-    }
-    .pad {
-        display: none;
     }
 }
 
@@ -474,138 +333,6 @@ button:hover {
     }
 }
 
-.fullimage {
-    box-shadow: 10px 10px 0 0 #eee;
-    height: 600px;
-    margin: 50px 200px -100px 0;
-    transition: 0.1s;
-}
-.fullpanel {
-    background-color: #fff;
-    margin-left: 200px;
-    padding: 50px;
-}
-@media only screen and (max-width: 1024px) {
-    .fullimage {
-        margin: 50px 150px -100px 0;
-    }
-    .fullpanel {
-        margin-left: 150px;
-    }
-}
-@media only screen and (max-width: 896px) {
-    .fullimage {
-        margin: 50px 100px -100px 0;
-    }
-    .fullpanel {
-        margin-left: 100px;
-    }
-}
-@media only screen and (max-width: 596px) {
-    .fullimage {
-        margin: 0 50px -100px 0;
-    }
-    .fullpanel {
-        margin-left: 50px;
-    }
-}
-
-.about {
-    display: flex;
-    margin: 200px auto 0;
-    max-width: 1232px;
-    position: relative;
-    transition: 0.1s;
-}
-.abr {
-    flex-direction: row-reverse;
-}
-.aboutimage {
-    background-position: top left;
-    height: calc(100% + 100px);
-    position: absolute;
-    top: -100px; right: 0;
-    transition: 0.1s;
-    width: 600px;
-    z-index: -1;
-}
-.abr .aboutimage {
-    background-position: top right;
-    left: 0;
-}
-.aboutcover {
-    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
-    height: calc(100% + 100px);
-    position: absolute;
-    top: -100px; right: 0;
-    transition: 0.1s;
-    width: 600px;
-    z-index: -1;
-}
-.abr .aboutcover {
-    left: 0;
-}
-.abouttext {
-    background-color: #f7f7f7;
-    margin: 200px 0 0 100px;
-    padding: 50px;
-    transition: 0.1s;
-    width: calc(100% - 500px);
-}
-.abr .abouttext {
-    margin: 200px 100px 0 0;
-}
-@media only screen and (max-width: 1024px) {
-    .abouttext {
-        margin: 200px 0 0 75px;
-        width: calc(100% - 400px);
-    }
-    .abr .abouttext {
-        margin: 200px 75px 0 0;
-    }
-}
-@media only screen and (max-width: 896px) {
-    .abouttext {
-        margin: 200px 0 0 50px;
-        width: calc(100% - 300px);
-    }
-    .abr .abouttext {
-        margin: 200px 50px 0 0;
-    }
-}
-@media only screen and (max-width: 596px) {
-    /* special case */
-}
-
-.album {
-    flex-grow: 1;
-    height: 0;
-    margin-right: 25px;
-    padding-bottom: calc(25% - 25px);
-    transition: 0.1s;
-}
-@media only screen and (max-width: 1024px) {
-    .album {
-        height: 300px;
-    }
-}
-@media only screen and (max-width: 896px) {
-    /* special case */
-}
-@media only screen and (max-width: 596px) {
-    /* special case */
-}
-
-#donatetext {
-    flex-basis: calc(100% - 200px);
-    padding-right: 50px;
-}
-#donatelist {
-    background-color: #f7f7f7;
-    flex-grow: 1;
-    padding: 25px;
-}
-
 #footer {
     background-color: #eee;
     margin-top: 50px;
@@ -614,16 +341,4 @@ button:hover {
 }
 #footer p {
     margin-top: -5px;
-}
-
-#gallery {
-    font-size: 0;
-    overflow-x: scroll;
-    white-space: nowrap;
-}
-.galleryimage {
-    display: inline-block;
-    height: 200px;
-    margin-right: 25px;
-    width: 300px;
 }

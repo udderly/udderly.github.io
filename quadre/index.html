@@ -6,6 +6,156 @@
         <title>Quadre &ndash; Home</title>
         <link href="styles.css" rel="stylesheet">
         <link href="images/icon.png" rel="icon">
+        
+        <style>
+            #landingbanner {
+                height: 100%;
+                position: relative;
+            }
+            .landingimage {
+                opacity: 0;
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                transition: 1s;
+                z-index: -1;
+            }
+            #landingtitle {
+                color: #fff;
+                font-size: 180px;
+                font-weight: 100;
+                position: absolute;
+                bottom: 100px; right: 50px;
+                transition: 0.1s;
+            }
+            #landingsub {
+                color: #fff;
+                font-size: 50px;
+                font-weight: 100;
+                position: absolute;
+                bottom: 50px; right: 50px;
+                transition: 0.1s;
+            }
+            .landingquote {
+                color: #fff;
+                font-size: 30px;
+                opacity: 0;
+                position: absolute;
+                bottom: 50px; left: 50px;
+                transition: 1s;
+                width: 500px;
+                z-index: 100;
+            }
+            #landingcover {
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.125) 75%, rgba(0, 0, 0, 0.5));
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                z-index: -1;
+            }
+            @media only screen and (max-width: 1024px) {
+                #landingtitle {
+                    font-size: 144px;
+                    bottom: 88px;
+                }
+                #landingsub {
+                    font-size: 40px;
+                    bottom: 45px;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                #landingtitle {
+                    font-size: 108px;
+                    bottom: 76px;
+                }
+                #landingsub {
+                    font-size: 30px;
+                    bottom: 40px;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                .landingquote {
+                    display: none; /* fix later */
+                }
+                #landingtitle {
+                    font-size: 72px;
+                    bottom: 64px;
+                }
+                #landingsub {
+                    font-size: 20px;
+                    bottom: 35px;
+                }
+            }
+            
+            .landingtext {
+                border-bottom: 10px solid #eee;
+                flex-basis: calc(100% - 600px);
+                margin-right: 150px;
+                padding: 75px 0 50px 0;
+                transition: 0.1s;
+            }
+            .ltr {
+                margin-left: 50px;
+                margin-right: 100px;
+            }
+            .landingtext p {
+                font-size: 25px;
+                line-height: 40px;
+                margin-left: 25px;
+                margin-right: -100px;
+                transition: 0.1s;
+            }
+            .frontimage {
+                flex-grow: 1;
+                transition: 0.1s;
+            }
+            .pad {
+                padding: 50px;
+            }
+            @media only screen and (max-width: 1024px) {
+                .landingtext {
+                    flex-basis: calc(100% - 500px);
+                    padding: 50px 0 50px 0;
+                }
+                .landingtext p {
+                    font-size: 22.5px;
+                    line-height: 36px;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                .landingtext {
+                    flex-basis: calc(100% - 400px);
+                    padding: 25px 0 50px 0;
+                }
+                .landingtext p {
+                    font-size: 20px;
+                    line-height: 32px;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                .landingtext,
+                .ltr {
+                    flex-basis: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                .landingtext p {
+                    font-size: 17.5px;
+                    line-height: 28px;
+                    margin-right: 0;
+                }
+                .frontimage {
+                    height: 200px;
+                    margin-top: 50px;
+                    width: 100%;
+                }
+                .flexbreak {
+                    display: block;
+                    flex-basis: 100%;
+                }
+                .pad {
+                    display: none;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -44,7 +194,7 @@
         </div>
         
         <div id="popup">
-            <p>Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
+            <p id="popuptext">Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
         </div>
         
         <div class="fullcont">
