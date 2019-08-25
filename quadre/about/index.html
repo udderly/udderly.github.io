@@ -23,7 +23,8 @@
             }
             .aboutimage {
                 background-position: top left;
-                height: calc(100% + 100px);
+                border-bottom: 10px solid #eee;
+                height: calc(100% - 200px);
                 position: absolute;
                 top: -100px; right: 0;
                 width: 600px;
@@ -31,17 +32,6 @@
             }
             .abr .aboutimage {
                 background-position: top right;
-                left: 0;
-            }
-            .aboutcover {
-                background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
-                height: calc(100% + 100px);
-                position: absolute;
-                top: -100px; right: 0;
-                width: 600px;
-                z-index: -1;
-            }
-            .abr .aboutcover {
                 left: 0;
             }
             .abouttext {
@@ -154,12 +144,11 @@
         </div>
         
         <div class="fullcont">
-            <h1>Members</h1>
+            <h1 style="margin-bottom: -350px">Members</h1>
         </div>
         
         <div class="about" id="bio0">
             <div class="aboutimage" style="background-image: url('../images/amyjoportraitT.png')"></div>
-            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Amy Jo Rhine</h2>
                 <p>
@@ -176,7 +165,6 @@
         
         <div class="about abr" id="bio1">
             <div class="aboutimage" style="background-image: url('../images/lydiaportraitT.png')"></div>
-            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Lydia Van Dreel</h2>
                 <p>
@@ -195,7 +183,6 @@
         
         <div class="about" id="bio2">
             <div class="aboutimage" style="background-image: url('../images/nateportraitT.png')"></div>
-            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Nathan Pawelek</h2>
                 <p>
@@ -214,7 +201,6 @@
         
         <div class="about abr" id="bio3">
             <div class="aboutimage" style="background-image: url('../images/danielportraitT.png')"></div>
-            <div class="aboutcover"></div>
             <div class="abouttext">
                 <h2>Daniel Wood</h2>
                 <p>
