@@ -11,27 +11,8 @@
     <body>
         <div id="loader"></div>
         
-        <div class="nav">
-            <h3 class="navtitle" onclick="goTo('../')">Quadre</h3>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('../about/')">About</p>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('../tour/')">Tour</p>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('../media/')">Media</p>
-            <div class="flexbreak"></div>
-            <p class="navtext">Mission</p>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('../projects/')">Projects</p>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('../connect/')">Connect</p>
-            <div class="flexbreak"></div>
-            <p class="navtext" onclick="goTo('../support/')" style="margin-right: 0">Support</p>
-        </div>
-        
-        <div id="popup">
-            <p>Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
-        </div>
+        <script>const PATH = '../';</script>
+        <script src="../nav.js"></script>
         
         <div class="section" style="margin-top: 85px" id="secmission">
             <div class="sectionimage" style="background-image: url('../images/streetS.jpg')"></div>
@@ -145,13 +126,7 @@
             </div>
         </div>
         
-        <div id="footer">
-            <p style="margin-top: 10px">&copy; 2019 Quadre</p>
-            <p>Photography by <a href="https://www.carlinmaphotography.com/" target="_blank">Carlin Ma</a></p>
-            <p style="margin-bottom: -20px">Website by <a href="https://udderly.github.io/" target="_blank">Udderly</a></p>
-            <button>Book</button>
-            <button>Donate</button>
-        </div>
+        <script src="../footer.js"></script>
         
         <script>const SHOW_LOGO = false;</script>
         <script src="../index.js"></script>
