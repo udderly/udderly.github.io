@@ -72,6 +72,10 @@ li {
 a {
     color: #03c;
     text-decoration: none;
+    transition: 0.1s;
+}
+a:hover {
+    color: #009;
 }
 ul {
     list-style: square;
@@ -91,6 +95,9 @@ button {
 }
 button:hover {
     border: 2px solid #999;
+}
+button:focus {
+    outline: none;
 }
 
 #loader {
@@ -206,12 +213,14 @@ button:hover {
 }
 
 #popup {
+    height: 50px;
     position: fixed;
     bottom: 0; left: 0; right: 0;
 }
 #popuptext {
     background-color: #f7f7f7;
     text-align: center;
+    margin-top: 0;
     padding: 10px;
 }
 
@@ -335,7 +344,7 @@ button:hover {
 
 #footer {
     background-color: #eee;
-    margin-top: 50px;
+    margin: 50px 0;
     padding: 25px;
     text-align: center;
 }

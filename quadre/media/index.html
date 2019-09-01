@@ -11,7 +11,7 @@
             .album {
                 flex-grow: 1;
                 height: 0;
-                margin-right: 25px;
+                margin: 50px 25px 0 0;
                 padding-bottom: calc(25% - 25px);
                 transition: 0.1s;
             }
@@ -30,13 +30,44 @@
             #gallery {
                 font-size: 0;
                 overflow-x: scroll;
+                padding: 50px 0 10px;
                 white-space: nowrap;
             }
             .galleryimage {
                 display: inline-block;
                 height: 200px;
                 margin-right: 25px;
-                width: 300px;
+                width: 250px;
+            }
+            
+            .bigimage {
+                opacity: 0;
+                position: fixed;
+                top: 0; bottom: 0; left: 0; right: 0;
+                transition: 0.25s;
+                visibility: hidden;
+                z-index: 100;
+            }
+            .bigcover {
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                top: 0; bottom: 0; left: 0; right: 0;
+            }
+            .bigpreview {
+                margin: 50px;
+                position: fixed;
+                top: 25px; bottom: 25px; left: 25px; right: 25px;
+            }
+            .bigimage img {
+                opacity: 0;
+                position: fixed;
+                top: 0; bottom: 0; left: 0; right: 0;
+            }
+            .bigimage button {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                position: fixed;
+                top: 60px; right: 90px;
             }
         </style>
     </head>
@@ -53,6 +84,7 @@
         </div>
         
         <div class="fullcont">
+            <h2>Discography</h2>
             <div class="flex">
                 <div class="album" style="background-image: url('../images/ourtimealbum.jpg')"></div>
                 <div class="album" style="background-image: url('../images/holidayalbum.jpg')"></div>
@@ -62,18 +94,66 @@
         </div>
         
         <div class="fullcont">
+            <h2>Gallery</h2>
             <div id="gallery">
-                <div class="galleryimage" style="background-image: url('../images/carS.jpg')"></div>
-                <div class="galleryimage" style="background-image: url('../images/brickcloseS.jpg')"></div>
-                <div class="galleryimage" style="background-image: url('../images/muralS.jpg')"></div>
-                <div class="galleryimage" style="background-image: url('../images/windowstandingS.jpg')"></div>
-                <div class="galleryimage" style="background-image: url('../images/concertS.jpg'); margin-right: 0"></div>
+                <div class="galleryimage" onclick="showImage('icar')" style="background-image: url('../images/carS.jpg')"></div>
+                <div class="galleryimage" onclick="showImage('ibrickclose')" style="background-image: url('../images/brickcloseS.jpg')"></div>
+                <div class="galleryimage" onclick="showImage('imural')" style="background-image: url('../images/muralS.jpg')"></div>
+                <div class="galleryimage" onclick="showImage('iwindowstanding')" style="background-image: url('../images/windowstandingS.jpg')"></div>
+                <div class="galleryimage" onclick="showImage('iconcert')" style="background-image: url('../images/concertS.jpg'); margin-right: 0"></div>
             </div>
+        </div>
+        
+        <div class="bigimage" id="icar">
+            <div class="bigcover"></div>
+            <div class="bigpreview" style="background-image: url('../images/carS.jpg')"></div>
+            <img src="../images/carS.jpg" alt="car">
+            <button onclick="hideImage('icar')">Close</button>
+        </div>
+        
+        <div class="bigimage" id="ibrickclose">
+            <div class="bigcover"></div>
+            <div class="bigpreview" style="background-image: url('../images/brickcloseS.jpg')"></div>
+            <img src="../images/brickcloseS.jpg" alt="car">
+            <button onclick="hideImage('ibrickclose')">Close</button>
+        </div>
+        
+        <div class="bigimage" id="imural">
+            <div class="bigcover"></div>
+            <div class="bigpreview" style="background-image: url('../images/muralS.jpg')"></div>
+            <img src="../images/muralS.jpg" alt="car">
+            <button onclick="hideImage('imural')">Close</button>
+        </div>
+        
+        <div class="bigimage" id="iwindowstanding">
+            <div class="bigcover"></div>
+            <div class="bigpreview" style="background-image: url('../images/windowstandingS.jpg')"></div>
+            <img src="../images/windowstandingS.jpg" alt="car">
+            <button onclick="hideImage('iwindowstanding')">Close</button>
+        </div>
+        
+        <div class="bigimage" id="iconcert">
+            <div class="bigcover"></div>
+            <div class="bigpreview" style="background-image: url('../images/concertS.jpg')"></div>
+            <img src="../images/concertS.jpg" alt="car">
+            <button onclick="hideImage('iconcert')">Close</button>
         </div>
         
         <script src="../footer.js"></script>
         
         <script>const SHOW_LOGO = false;</script>
         <script src="../index.js"></script>
+        
+        <script>
+            function showImage(id) {
+                document.getElementById(id).style.opacity = 1;
+                document.getElementById(id).style.visibility = 'visible';
+            }
+            
+            function hideImage(id) {
+                document.getElementById(id).style.opacity = 0;
+                document.getElementById(id).style.visibility = 'hidden';
+            }
+        </script>
     </body>
 </html>
