@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gunn TARC</title>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Oswald');
+            @import url('https://fonts.googleapis.com/css?family=Poppins');
+            * {
+                font-family: Poppins;
+                margin: 0;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            p {
+                font-size: 17.5px;
+                line-height: 35px;
+            }
+            h1 {
+                font-family: Oswald;
+            }
+            div {
+                background-position: center;
+                background-size: cover;
+            }
+            #navigation {
+                align-items: flex-end;
+                background-color: #111;
+                display: flex;
+                height: 50px;
+                position: fixed;
+                top: 0; left: 0; right: 0;
+                transition: 0.1s;
+                z-index: 1;
+            }
+            #navigation p {
+                color: #fff;
+                font-family: Oswald;
+                font-size: 20px;
+                margin-right: 20px;
+            }
+            #navigation p:first-child {
+                margin-left: 50px;
+            }
+            #navigation p:last-child {
+                margin-right: 0;
+            }
+            .landing {
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 50px;
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+            }
+            .landingimage {
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                z-index: -1;
+            }
+            .landingcover {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.375) 12.5%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.375) 87.5%, rgba(0, 0, 0, 0.5));
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                z-index: -1;
+            }
+            .landingtitle {
+                font-size: 100px;
+                line-height: 100px;
+            }
+            .landingsub {
+                font-family: Oswald;
+                font-size: 30px;
+            }
+            #ntrit {
+                height: 50px;
+                position: fixed;
+                top: 50px; left: 0; right: 0;
+                width: 100%;
+                z-index: 1;
+            }
+            #ntritp {
+                transition: 0.1s;
+            }
+            #ltrib {
+                height: 50px;
+                position: absolute;
+                bottom: 0; left: 0; right: 0;
+                width: 100%;
+            }
+            .pad {
+                height: 100%;
+            }
+            
+            .contain {
+                padding: 50px;
+            }
+            .par {
+                margin: auto;
+                max-width: 960px;
+            }
+            .par h1 {
+                color: #666;
+                font-size: 50px;
+                margin: 50px 0 25px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="navigation">
+            <p>Home</p>
+            <p>About</p>
+            <p>Events</p>
+            <p>Resources</p>
+            <p>Donate</p>
+        </div>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="ntrit" preserveAspectRatio="none">
+            <polygon points="0 0, 100 0, 0 100" fill="#111" id="ntritp" />
+        </svg>
+        <div class="landing">
+            <div class="landingimage" style="background-image: url('images/team.png')"></div>
+            <div class="landingcover"></div>
+            <h1 class="landingtitle">Gunn TARC</h1>
+            <p class="landingsub">Making ourselves as smart humans.</p>
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="ltrib" preserveAspectRatio="none">
+                <polygon points="100 0, 100 100, 0 100" fill="#fff" />
+            </svg>
+        </div>
+        <div class="pad"></div>
+        <div class="contain">
+            <div class="par">
+                <h1>Who we are</h1>
+                <p>
+                    We are a Gunn High School club dedicated to designing, building, and flying rockets! We participate in the yearly Team America Rocket Competition, or TARC, a national competition for model rocketeers. Meetings are held every Saturday 3-5 at MakeX in Cubberly Community Center.
+                </p>
+            </div>
+        </div>
+        
+        <script>
+            document.onscroll = scrall;
+            scrall();
+            function scrall() {
+                if (window.scrollY !== 0) {
+                    document.getElementById('navigation').style.backgroundColor = '#111';
+                    document.getElementById('ntritp').style.fill = '#111';
+                } else {
+                    document.getElementById('navigation').style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+                    document.getElementById('ntritp').style.fill = 'rgba(0, 0, 0, 0.75)';
+                }
+            }
+        </script>
+    </body>
+</html>
