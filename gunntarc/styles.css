@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+* {
+    font-family: Poppins;
+    margin: 0;
+}
+html,
+body {
+    height: 100%;
+}
+p {
+    font-size: 17.5px;
+    line-height: 35px;
+}
+h1 {
+    color: #666;
+    font-family: Oswald;
+    font-size: 50px;
+    margin: 50px 0 25px;
+}
+div {
+    background-position: center;
+    background-size: cover;
+}
+#navigation {
+    align-items: flex-end;
+    background-color: #111;
+    display: flex;
+    height: 50px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    transition: 0.1s;
+    z-index: 1;
+}
+#navigation p {
+    color: #fff;
+    font-family: Oswald;
+    font-size: 20px;
+    margin-right: 20px;
+}
+#navigation p:first-child {
+    margin-left: 50px;
+}
+#navigation p:last-child {
+    margin-right: 0;
+}
+#ntrit {
+    height: 50px;
+    position: fixed;
+    top: 50px; left: 0; right: 0;
+    width: 100%;
+    z-index: 1;
+}
+#ntritp {
+    transition: 0.1s;
+}
+#ltrib {
+    height: 50px;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    width: 100%;
+}
+
+.banner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    position: absolute;
+    top: 0; bottom: 50%; left: 0; right: 0;
+}
+.bannerimage {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -1;
+}
+.bannercover {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.375) 12.5%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.375) 87.5%, rgba(0, 0, 0, 0.5));
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -1;
+}
+.bannertitle {
+    color: #fff;
+    font-size: 100px;
+    line-height: 100px;
+}
+.bannerpad {
+    height: 50%;
+}
+            
+.contain {
+    padding: 50px;
+}
+.par {
+    margin: auto;
+    max-width: 960px;
+}
+
+.flex {
+    display: flex;
+}
+.panelpar {
+    flex-basis: 60%;
+    margin-right: 25px;
+}
+.panelimage {
+    flex-grow: 1;
+}

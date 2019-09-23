@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>About | Gunn TARC</title>
+        
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+
+    <body>
+        <div id="navigation">
+            <p>Home</p>
+            <p>About</p>
+            <p>Events</p>
+            <p>Resources</p>
+            <p>Donate</p>
+        </div>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="ntrit" preserveAspectRatio="none">
+            <polygon points="0 0, 100 0, 0 100" fill="#111" id="ntritp" />
+        </svg>
+        <div class="banner">
+            <div class="bannerimage" style="background-image: url('../images/rocket.png')"></div>
+            <div class="bannercover"></div>
+            <h1 class="bannertitle">About</h1>
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="ltrib" preserveAspectRatio="none">
+                <polygon points="100 0, 100 100, 0 100" fill="#fff" />
+            </svg>
+        </div>
+        <div class="bannerpad"></div>
+        <div class="contain">
+            <div class="par">
+                <h1>Who we are</h1>
+                <p>
+                    We are a Gunn High School club dedicated to designing, building, and flying rockets! We participate in the yearly Team America Rocket Competition, or TARC, a national competition for model rocketeers. Meetings are held every Saturday 3-5 at MakeX in Cubberly Community Center.
+                </p>
+                <br>
+                <p>
+                    This year, we are building a rocket that goes to (800) ft and lands safely in one piece with (3) intact raw eggs in (42) seconds out of cardboard tubing, laser-cut wood, polyethelene foam, and a machine-controlled mechanism that releases the parachutes.
+                </p>
+            </div>
+        </div>
+        
+        <script>
+            document.onscroll = scrall;
+            scrall();
+            function scrall() {
+                if (window.scrollY !== 0) {
+                    document.getElementById('navigation').style.backgroundColor = '#111';
+                    document.getElementById('ntritp').style.fill = '#111';
+                } else {
+                    document.getElementById('navigation').style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+                    document.getElementById('ntritp').style.fill = 'rgba(0, 0, 0, 0.75)';
+                }
+            }
+        </script>
+    </body>
+</html>
