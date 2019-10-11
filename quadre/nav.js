@@ -4,12 +4,16 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}about/')">About</p>
             <div class="navdrop">
-                <p class="navtext" onclick="goTo('${PATH}about/')">Bio</p>
-                <p class="navtext" onclick="goTo('${PATH}about/')">Members</p>
-                <p class="navtext" onclick="goTo('${PATH}about/')">Repertoire</p>
+                <p class="navtext" onclick="goTo('${PATH}about/?p=members')">Members</p>
+                <p class="navtext" onclick="goTo('${PATH}about/?p=repertoire')">Repertoire</p>
             </div>
         </div>
-        <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
+        <div>
+            <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
+            <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}about/?p=past')">Past Events</p>
+            </div>
+        </div>
         <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
         <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
         <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>

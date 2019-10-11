@@ -22,3 +22,13 @@ const DISABLE_LOADER = false;
 if (DISABLE_LOADER) {
     document.getElementById('loader').style.visibility = 'hidden';
 }
+
+const urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.get('p')) {
+    window.scroll({
+        top: document.getElementById('q' + urlParams.get('p')).offsetTop,
+        left: 0,
+        behavior: 'smooth'
+    });
+}
