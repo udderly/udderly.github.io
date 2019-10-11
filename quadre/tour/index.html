@@ -1,12 +1,232 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Quadre &ndash; Tour</title>
+        <link href="../styles.css" rel="stylesheet">
+        <link href="../images/icon.png" rel="icon">
+        
+        <style>
+            .tableimage {
+                height: 200px;
+                margin-top: 50px;
+            }
+            .table {
+                display: flex;
+                flex-direction: column;
+            }
+            .table p {
+                margin-top: 0;
+            }
+            .tablerow {
+                display: flex;
+            }
+            .tabledate {
+                flex-basis: 50px;
+                margin-left: 25px;
+            }
+        </style>
+    </head>
 
-<body>
-    <h1>Upcoming Events</h1>
-    <h1>Past Events</h1>
-</body>
+    <body>
+        <div id="loader"></div>
+        
+        <script>const PATH = '../';</script>
+        <script src="../nav.js"></script>
+        
+        <div class="section" style="margin-top: 70px">
+            <div class="sectionimage" style="background-image: url('../images/brickcloseS.jpg')"></div>
+            <h1 class="sectiontitle">Tour</h1>
+        </div>
+        
+        <div class="fullcont">
+            <div class="tableimage" style="background-image: url('../images/event.jpg'); margin-top: 0"></div>
+            <p>
+                <span style="font-size: 24px">International Horn Symposium</span>
+                <br>Eugene, OR
+            </p>
+            <ul>
+                <li>August 3-8, 2020</li>
+                <li><a href="http://www.ihs52.com/" target="_blank">http://www.ihs52.com/</a></li>
+            </ul>
+            <div class="tableimage" style="background-image: url('../images/streetfrontS.jpg')"></div>
+            <p>
+                <span style="font-size: 24px">Fall California Tour</span>
+                <br>October 15-18, 2020
+            </p>
+            <div class="table">
+                <div class="tablerow">
+                    <p class="tabledate">Thu</p>
+                    <p>Community Day &ndash; 3 events (South Bay):<br>Food Pantry Line, Youth Center, Women&rsquo;s Shelter</p>
+                </div>
+                <div class="tablerow">
+                    <p class="tabledate">Fri</p>
+                    <p>University Masterclass (East Bay)<br>Church Concert (SF)</p>
+                </div>
+                <div class="tablerow">
+                    <p class="tabledate">Sat</p>
+                    <p>Benefit Concert (South Bay)</p>
+                </div>
+                <div class="tablerow">
+                    <p class="tabledate">Sun</p>
+                    <p>House Concert (South Bay)</p>
+                </div>
+            </div>
+            <div class="tableimage" style="background-image: url('../images/windowS.jpg')"></div>
+            <p>
+                <span style="font-size: 24px">Spring California Tour</span>
+                <br>March 25-28, 2021
+            </p>
+            <div class="table">
+                <div class="tablerow">
+                    <p class="tabledate">Thu</p>
+                    <p>Community Day &ndash; 3 events (South Bay):<br>School for Deaf, Prison, Low-Cost Housing affect on children</p>
+                </div>
+                <div class="tablerow">
+                    <p class="tabledate">Fri</p>
+                    <p>University Masterclass (East Bay)<br>University Concert (SF)</p>
+                </div>
+                <div class="tablerow">
+                    <p class="tabledate">Sat</p>
+                    <p>MVCPA (South Bay)</p>
+                </div>
+                <div class="tablerow">
+                    <p class="tabledate">Sun</p>
+                    <p>House Concert (South Bay)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fullcont" id="qpast">
+            <h1>Past Events</h1>
+        </div>
+        
+        <div class="fullcont">
+            <p>
+                <span style="font-size: 24px">2018</span>
+            </p>
+            <ul>
+                <li>San Francisco Conservatory | David Garner Faculty Recital | Nov 26 | San Francisco, CA</li>
+                <li>Sunshine Villa | Nov 25 | Santa Cruz, CA</li>
+                <li>La Posada | Nov 25 | Santa Cruz, CA</li>
+                <li>House Concert | Nov 24 | Palo Alto, CA</li>
+                <li>Golden State Youth Symphony Space | Masterclass | Nov 23 | Palo Alto, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2017</span>
+            </p>
+            <ul>
+                <li>South Bay Horn Day | Mar 25 | Mountain View, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2016</span>
+            </p>
+            <ul>
+                <li>South Bay Horn Day | Apr 2 | Mountain View, CA</li>
+                <li>Flint Center | Concerto with Peninsula Symphony | Mar 19 | Cupertino, CA</li>
+                <li>San Mateo Performing Arts Center | Concerto with Peninsula Sym. | Mar 18 | San Mateo, CA</li>
+                <li>Community Services Agency | Food Pantry Line | Mar 16 | Mountain View, CA</li>
+                <li>Weingarten Children&rsquo;s Center | Mar 16 | Redwood City, CA</li>
+                <li>Mountain View High School | Mar 16 | Mountain View, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2015</span>
+            </p>
+            <ul>
+                <li>South Bay Horn Day | Apr 4 | Mountain View, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2014</span>
+            </p>
+            <ul>
+                <li>South Bay Horn Day | Apr 5 | Mountain View, CA</li>
+                <li>McAfee Center | Feb 2 | Saratoga, CA</li>
+                <li>House Concert | Feb 1 | Mountain View, CA</li>
+                <li>Community Services Agency | Jan 31 | Mountain View, CA</li>
+                <li>Costano Elementary School | Jan 31 | East Palo Alto, CA</li>
+                <li>Crittenden Middle School | Jan 31 | Mountain View, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2013</span>
+            </p>
+            <ul>
+                <li>University of Memphis | Aug 3 | Memphis, TN</li>
+                <li>University of Memphis | Aug 2 | Memphis, TN</li>
+                <li>South Bay Horn Day | Apr 6 | Mountain View, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2012</span>
+            </p>
+            <ul>
+                <li>South Bay Horn Day | Apr 21 | Mountain View, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2011</span>
+            </p>
+            <ul>
+                <li>North Orange County Community Concerts Assocation | Dec 12 | Fullerton, CA</li>
+                <li>Trinity Lutheran Concerts | Dec 11 | Manhattan Beach, CA</li>
+                <li>Bethany Lutheran Church | Dec 11 | Menlo Park, CA</li>
+                <li>Bethany Lutheran Church | Dec 10 | Menlo Park, CA</li>
+                <li>Katherine Hepburn Theater | Sep 26 | Old Saybrook, CT</li>
+                <li>All Souls Unitarian Universalist | Sep 26 | New London, CT</li>
+                <li>Grace Episcopal Church | Jun 25 | Madison, WI</li>
+                <li>Ripon College | Green Lake Festival of Music | Jun 24 | Green Lakes, WI</li>
+                <li>San Francisco State University | Jun 22 | San Francisco, CA</li>
+                <li>Mountain View Center for the Performing Arts | May 12 | Mountain View, CA</li>
+                <li>Community School of Music and Arts | May 11 | Mountain View, CA</li>
+                <li>Mountain View High School | May 11 | Mountain View, CA</li>
+                <li>Revolution Caf&eacute; | May 9 | San Francisco, CA</li>
+                <li>Denver Unitarian Universalist | Mar 6 | Denver, CO</li>
+                <li>House Concert | Mar 5 | Boulder, CO</li>
+                <li>Grand County Concert Series | Mar 4 | Tabernash, CO</li>
+                <li>Colorado State University | Mar 3 | Fort Collins, CO</li>
+                <li>Columbine Elementary | Mar 3 | Boulder, CO</li>
+                <li>Folsom Street Caf&eacute; | Mar 2 | Boulder, CO</li>
+                <li>Colorado University | Entrepreneurial Class | Mar 2 | Boulder, CO</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2010</span>
+            </p>
+            <ul>
+                <li>Bethany Lutheran Church | Dec 24 | Menlo Park, CA</li>
+                <li>Bethany Lutheran Church | Dec 19 | Menlo Park, CA</li>
+                <li>Butler University | Sept 13 | Indianapolis, IN</li>
+                <li>Ball State University | Sep 12 | Muncie, IN</li>
+                <li>First Presbyterian Chapel | Sep 10 | Kirkwood, MO</li>
+                <li>University of Oregon | Apr 25 | Eugene, OR</li>
+                <li>University of Oregon | Apr 24 | Eugene, OR</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2009</span>
+            </p>
+            <ul>
+                <li>Bethany Lutheran Church | Dec 24 | Menlo Park, CA</li>
+                <li>Bethany Lutheran Church | Dec 23 | Menlo Park, CA</li>
+                <li>St. Francis High School | Dec 8 | Mountain View, CA</li>
+                <li>Pilgrim Haven | Dec 7 | Los Altos, CA</li>
+                <li>Bethany Lutheran Church | Dec 6 | Menlo Park, CA</li>
+                <li>Unitarian Society of New Haven | Aug 28 | Hamden, CT</li>
+                <li>Shoreline Unitarian Universalist Society | Aug 27 | Madison, CT</li>
+                <li>Mountain View Center for the Performing Arts | Feb 11 | Mountain View, CA</li>
+                <li>Mountain View High School | Feb 10 | Mountain View, CA</li>
+                <li>Lucie Stern Theater | Jan 10 | Palo Alto, CA</li>
+            </ul>
+            <p>
+                <span style="font-size: 24px">2008 and prior (Highlights)</span>
+            </p>
+            <ul>
+                <li>Toured throughout the United States to Alabama, California, Colorado, Connecticut, North Dakota, South Dakota, Oregon, Nevada, New York, Washington</li>
+                <li>Performed for the San Francisco Symphony&rsquo;s Adventures in Music Program 2001 and 2003</li>
+        	    <li>Played hundreds of concerts for every 1st and 2nd grader in San Francisco</li>
+                <li>Awarded 9 month Rural Residency in Alabama by Chamber Music America in 1999</li>
+            </ul>
+        </div>
+        
+        <script src="../footer.js"></script>
+        
+        <script>const SHOW_LOGO = false;</script>
+        <script src="../index.js"></script>
+    </body>
 </html>
