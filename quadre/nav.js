@@ -15,7 +15,13 @@ document.write(`
             </div>
         </div>
         <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
-        <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
+        <div>
+            <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
+            <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}about/?p=community')">Community Engagement</p>
+                <p class="navtext" onclick="goTo('${PATH}about/?p=testimonials')">Testimonials</p>
+            </div>
+        </div>
         <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
         <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
         <p class="navtext" onclick="goTo('${PATH}support/')" style="margin-right: 0">Support</p>
