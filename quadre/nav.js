@@ -11,7 +11,7 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
             <div class="navdrop">
-                <p class="navtext" onclick="goTo('${PATH}about/?p=past')">Past Events</p>
+                <p class="navtext" onclick="goTo('${PATH}tour/?p=past')">Past Events</p>
             </div>
         </div>
         <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
@@ -28,6 +28,6 @@ document.write(`
     </div>
         
     <div id="popup">
-        <p id="popuptext">Our album Our Time is availible <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
+        <p id="popuptext">Our album Our Time is available <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
     </div>
 `);

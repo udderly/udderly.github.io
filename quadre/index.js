@@ -31,4 +31,10 @@ if (urlParams.get('p')) {
         left: 0,
         behavior: 'smooth'
     });
+} else {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
 }
