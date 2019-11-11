@@ -4,6 +4,7 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}about/')">About</p>
             <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}about/?p=bio')">Bio</p>
                 <p class="navtext" onclick="goTo('${PATH}about/?p=members')">Members</p>
                 <p class="navtext" onclick="goTo('${PATH}about/?p=repertoire')">Repertoire</p>
             </div>
@@ -11,6 +12,7 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
             <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}tour/?p=upcoming')">Past Events</p>
                 <p class="navtext" onclick="goTo('${PATH}tour/?p=past')">Past Events</p>
             </div>
         </div>
@@ -18,6 +20,7 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
             <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}about/?p=education')">Education</p>
                 <p class="navtext" onclick="goTo('${PATH}about/?p=community')">Community Engagement</p>
                 <p class="navtext" onclick="goTo('${PATH}about/?p=testimonials')">Testimonials</p>
             </div>

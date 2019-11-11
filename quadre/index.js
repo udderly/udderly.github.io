@@ -4,7 +4,7 @@ window.onload = function() {
         document.getElementById('loadlogo').classList.add('logoanimation');
         setTimeout(function() {
             loader.style.opacity = 0;
-        }, 1000);
+        }, 2000);
     } else {
         loader.style.opacity = 0;
     }
