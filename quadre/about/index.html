@@ -14,7 +14,7 @@
             
             .about {
                 display: flex;
-                margin: 200px auto 0;
+                margin: 50px auto 0;
                 max-width: 1232px;
                 position: relative;
             }
@@ -22,27 +22,24 @@
                 flex-direction: row-reverse;
             }
             .aboutimage {
-                background-position: top left;
+                background-position: top;
                 border-bottom: 10px solid #eee;
-                height: 600px;
+                height: 400px;
                 position: absolute;
-                top: -100px; right: 0;
-                width: 400px;
-                z-index: -1;
+                top: 0; right: 100px;
+                width: 300px;
             }
             .abr .aboutimage {
-                background-position: top right;
-                left: 0;
+                background-position: top;
+                left: 100px;
             }
             .abouttext {
-                background-color: #f7f7f7;
-                margin: 200px 0 0 100px;
-                padding: 50px;
+                margin: 50px 0 0 100px;
                 transition: 0.1s;
-                width: calc(100% - 400px);
+                width: calc(100% - 550px);
             }
             .abr .abouttext {
-                margin: 200px 100px 0 0;
+                margin: 50px 100px 0 0;
             }
             @media only screen and (max-width: 1024px) {
                 .abouttext {
@@ -103,7 +100,7 @@
         </div>
         
         <div class="fullcont">
-            <p onclick="eastereggthing()">To read our full story, click here.</p>
+            <p onclick="eastereggthing()">To read our full story, click <a>here</a>.</p>
         </div>
         
         <div id="easteregg">
@@ -134,7 +131,7 @@
         </div>
         
         <div class="fullcont" id="qmembers">
-            <h1 style="margin-bottom: -350px; margin-top: 100px">Members</h1>
+            <h1 style="margin-bottom: -100px">Members</h1>
         </div>
         
         <div class="about">

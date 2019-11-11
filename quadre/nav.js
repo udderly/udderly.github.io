@@ -12,7 +12,7 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
             <div class="navdrop">
-                <p class="navtext" onclick="goTo('${PATH}tour/?p=upcoming')">Past Events</p>
+                <p class="navtext" onclick="goTo('${PATH}tour/?p=upcoming')">Upcoming</p>
                 <p class="navtext" onclick="goTo('${PATH}tour/?p=past')">Past Events</p>
             </div>
         </div>
@@ -20,9 +20,9 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
             <div class="navdrop">
-                <p class="navtext" onclick="goTo('${PATH}about/?p=education')">Education</p>
-                <p class="navtext" onclick="goTo('${PATH}about/?p=community')">Community Engagement</p>
-                <p class="navtext" onclick="goTo('${PATH}about/?p=testimonials')">Testimonials</p>
+                <p class="navtext" onclick="goTo('${PATH}mission/?p=education')">Education</p>
+                <p class="navtext" onclick="goTo('${PATH}mission/?p=community')">Community Engagement</p>
+                <p class="navtext" onclick="goTo('${PATH}mission/?p=testimonials')">Testimonials</p>
             </div>
         </div>
         <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
@@ -31,6 +31,6 @@ document.write(`
     </div>
         
     <div id="popup">
-        <p id="popuptext">Our album Our Time is available <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
+        <p id="popuptext">Our album &ldquo;Our Time&rdquo; is available <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
     </div>
 `);
