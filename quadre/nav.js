@@ -1,6 +1,7 @@
 document.write(`
     <div class="nav">
-        <h3 class="navtitle" onclick="goTo('${PATH}')">Quadre</h3>
+        <div id="navicon" style="background-image: url('${PATH}images/iconorange.png')" onclick="goTo('${PATH}')"></div>
+        <div id="navtitle" style="background-image: url('${PATH}images/nameblack.png')" onclick="goTo('${PATH}')"></div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}about/')">About</p>
             <div class="navdrop">
@@ -25,7 +26,13 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}mission/?p=testimonials')">Testimonials</p>
             </div>
         </div>
-        <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
+        <div>
+            <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
+            <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}projects/?p=message')">Music with a Message</p>
+                <p class="navtext" onclick="goTo('${PATH}projects/?p=competition')">Q Competition</p>
+            </div>
+        </div>
         <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
         <p class="navtext" onclick="goTo('${PATH}support/')" style="margin-right: 0">Support</p>
     </div>

@@ -6,18 +6,16 @@
     font-weight: 300;
     margin: 0;
 }
-*::-webkit-scrollbar-track
-{
+*::-webkit-scrollbar-track {
     background-color: #e6e6e6;
 }
 
-*::-webkit-scrollbar
-{
+*::-webkit-scrollbar {
+    height: 10px;
     width: 10px;
 }
 
-*::-webkit-scrollbar-thumb
-{
+*::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: #ccc;
 }
@@ -166,31 +164,46 @@ button:focus {
     top: 0; left: 0; right: 0;
     z-index: 99;
 }
-.navtitle {
+#navicon {
+    background-repeat: no-repeat;
+    background-size: contain;
     cursor: pointer;
-    font-size: 30px;
-    margin-right: 30px;
+    height: 30px;
+    margin: 0 5px 0 0;
+    width: 30px;
+}
+#navtitle {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    height: 20px;
+    margin: 5px 15px 0 0;
+    width: 100px;
 }
 .navtext {
     cursor: pointer;
-    margin: 10px 20px 0;
+    margin: 10px 15px 0;
     transition: 0.1s;
 }
 .navdrop {
     background-color: #f7f7f7;
     opacity: 0;
-    padding-bottom: 10px;
+    padding: 10px 15px;
     position: absolute;
     top: 55px;
     transition: 0.1s;
     visibility: hidden;
+}
+.navdrop p {
+    margin: 0;
 }
 .navdrop:hover {
     opacity: 1;
     visibility: visible;
 }
 .navtext:hover + .navdrop {
-    opacity: 1;;
+    opacity: 1;
     visibility: visible;
 }
 @media only screen and (max-width: 1024px) {
@@ -268,14 +281,6 @@ button:focus {
     padding-left: 0;
     padding-right: 50px;
 }
-.flexhalf {
-    transition: 0.1s;
-    width: 50%;
-}
-.flexhalf p {
-    padding-right: 25px;
-    transition: 0.1s;
-}
 @media only screen and (max-width: 1024px) {
     .flextext,
     .flex .right {
@@ -295,12 +300,6 @@ button:focus {
     .flextext,
     .flex .right {
         /* special case */
-    }
-    .flexhalf {
-        width: 100%;
-    }
-    .flexhalf p {
-        padding-right: 0;
     }
 }
 
