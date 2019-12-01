@@ -40,4 +40,12 @@ document.write(`
     <div id="popup">
         <p id="popuptext">Our album &ldquo;Our Time&rdquo; is available <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank">here</a>!</p>
     </div>
+
+    <div id="footer">
+        <p style="margin-top: 10px">&copy; 2019 Quadre</p>
+        <p>Photography by <a href="https://www.carlinmaphotography.com/" target="_blank">Carlin Ma</a></p>
+        <p style="margin-bottom: -20px">Website by <a href="https://udderly.github.io/" target="_blank">Brandon Chung</a></p>
+        <button onclick="window.location.href = '${PATH}connect/'">Book</button>
+        <button onclick="window.location.href = '${PATH}support/'">Donate</button>
+    </div>
 `);
