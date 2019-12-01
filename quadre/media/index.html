@@ -11,9 +11,17 @@
             .album {
                 flex-grow: 1;
                 height: 0;
-                margin: 50px 25px 0 0;
+                margin: 50px 25px 50px 0;
                 padding-bottom: calc(25% - 25px);
+                position: relative;
                 transition: 0.1s;
+            }
+            .album:hover {
+                transform: scale(1.025);
+            }
+            .album a {
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
             }
             @media only screen and (max-width: 1024px) {
                 .album {
@@ -27,6 +35,10 @@
                 /* special case */
             }
             
+            iframe {
+                margin: 50px 0;
+            }
+            
             #gallery {
                 font-size: 0;
                 overflow-x: scroll;
@@ -37,7 +49,11 @@
                 display: inline-block;
                 height: 200px;
                 margin-right: 25px;
+                transition: 0.1s;
                 width: 250px;
+            }
+            .galleryimage:hover {
+                transform: scale(1.025);
             }
             
             .bigimage {
@@ -82,16 +98,28 @@
         
         <div class="fullcont">
             <h2>Discography</h2>
+            
             <div class="flex">
-                <div class="album" style="background-image: url('../images/ourtimealbum.jpg')"></div>
-                <div class="album" style="background-image: url('../images/holidayalbum.jpg')"></div>
-                <div class="album" style="background-image: url('../images/citrusalbum.png')"></div>
-                <div class="album" style="background-image: url('../images/vofhalbum.png'); margin-right: 0; box-shadow: 0 0 0 5px #eee"></div>
+                <div class="album" style="background-image: url('../images/ourtimealbum.jpg')">
+                    <a href="https://store.cdbaby.com/cd/quadrethevoiceoffourhorn" target="_blank"></a>
+                </div>
+                <div class="album" style="background-image: url('../images/holidayalbum.jpg')">
+                    <a href="https://store.cdbaby.com/cd/quadre2" target="_blank"></a>
+                </div>
+                <div class="album" style="background-image: url('../images/citrusalbum.png')">
+                    <a href="https://store.cdbaby.com/cd/quadre" target="_blank"></a>
+                </div>
+                <div class="album" style="background-image: url('../images/vofhalbum.png'); margin-right: 0; box-shadow: 0 0 0 5px #eee">
+                    <a href="https://soundcloud.com/quadre4horns/sets/the-voice-of-four-horns" target="_blank"></a>
+                </div>
             </div>
-        </div>
         
-        <div class="fullcont">
+            <h2>Audio</h2>
+            
+            <iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/934569838&color=%23ee7711&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        
             <h2>Gallery</h2>
+            
             <div id="gallery">
                 <div class="galleryimage" onclick="showImage('icar')" style="background-image: url('../images/carS.jpg')"></div>
                 <div class="galleryimage" onclick="showImage('ibrickclose')" style="background-image: url('../images/brickcloseS.jpg')"></div>
