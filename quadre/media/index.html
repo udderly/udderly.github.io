@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Quadre &ndash; Media</title>
         <link href="../styles.css" rel="stylesheet">
-        <link href="../images/icon.png" rel="icon">
+        <link href="../images/logos/icon-favicon.png" rel="icon">
         
         <style>
             .album {
@@ -25,18 +25,40 @@
             }
             @media only screen and (max-width: 1024px) {
                 .album {
-                    height: 300px;
+                    margin: 37.5px 18.75px 37.5px 0;
+                    padding-bottom: calc(25% - 18.75px);
                 }
             }
             @media only screen and (max-width: 896px) {
-                /* special case */
+                .album {
+                    margin: 25px 12.5px 25px 0;
+                    padding-bottom: calc(25% - 12.5px);
+                }
             }
             @media only screen and (max-width: 596px) {
-                /* special case */
+                .album {
+                    margin: 12.5px 6.25px 12.5px 0;
+                    padding-bottom: calc(25% - 6.25px);
+                }
             }
             
             iframe {
                 margin: 50px 0;
+            }
+            @media only screen and (max-width: 1024px) {
+                iframe {
+                    margin: 37.5px 0;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                iframe {
+                    margin: 25px 0;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                iframe {
+                    margin: 12.5px 0;
+                }
             }
             
             #gallery {
@@ -54,6 +76,21 @@
             }
             .galleryimage:hover {
                 transform: scale(1.025);
+            }
+            @media only screen and (max-width: 1024px) {
+                #gallery {
+                    padding: 37.5px 0 10px;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                #gallery {
+                    padding: 25px 0 10px;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                #gallery {
+                    padding: 12.5px 0 10px;
+                }
             }
             
             .bigimage {
@@ -91,7 +128,7 @@
     <body>
         <div id="loader"></div>
         
-        <div class="section" style="margin-top: 70px" id="secmusic">
+        <div class="section" id="top">
             <div class="sectionimage" style="background-image: url('../images/small/window3.jpg')"></div>
             <h1 class="sectiontitle">Media</h1>
         </div>
