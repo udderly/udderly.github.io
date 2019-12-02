@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Quadre &ndash; About</title>
         <link href="../styles.css" rel="stylesheet">
-        <link href="../images/icon.png" rel="icon">
+        <link href="../images/logos/icon-favicon.png" rel="icon">
         
         <style>
             #easteregg {
@@ -13,54 +13,54 @@
             }
             
             .about {
-                display: flex;
-                margin: 50px auto 0;
-                max-width: 1232px;
+                flex-direction: row-reverse;
                 position: relative;
             }
             .abr {
-                flex-direction: row-reverse;
+                flex-direction: row;
             }
             .aboutimage {
                 background-position: top;
                 border-bottom: 10px solid #eee;
                 height: 400px;
-                position: absolute;
-                top: 0; right: 100px;
                 width: 300px;
             }
-            .abr .aboutimage {
-                background-position: top;
-                left: 100px;
-            }
             .abouttext {
-                margin: 50px 0 0 100px;
+                flex-basis: calc(100% - 300px);
+                margin: 50px 50px 0 0;
                 transition: 0.1s;
-                width: calc(100% - 550px);
             }
             .abr .abouttext {
-                margin: 50px 100px 0 0;
+                margin: 50px 0 0 50px;
+                transition: 0.1s;
             }
             @media only screen and (max-width: 1024px) {
                 .abouttext {
-                    margin: 200px 0 0 75px;
-                    width: calc(100% - 400px);
+                    margin: 37.5px 37.5px 0 0;
                 }
                 .abr .abouttext {
-                    margin: 200px 75px 0 0;
+                    margin: 37.5px 0 0 37.5px;
                 }
             }
             @media only screen and (max-width: 896px) {
+                .about {
+                    flex-direction: row;
+                }
                 .abouttext {
-                    margin: 200px 0 0 50px;
-                    width: calc(100% - 300px);
+                    flex-basis: 100%;
+                    margin: 25px 0 0 0;
                 }
                 .abr .abouttext {
-                    margin: 200px 50px 0 0;
+                    margin: 25px 0 0 0;
                 }
             }
             @media only screen and (max-width: 596px) {
-                /* special case */
+                .abouttext {
+                    margin: 12.5px 0 0 0;
+                }
+                .abr .abouttext {
+                    margin: 12.5px 0 0 0;
+                }
             }
         </style>
     </head>
@@ -68,7 +68,7 @@
     <body>
         <div id="loader"></div>
         
-        <div class="section" style="margin-top: 70px">
+        <div class="section" id="top">
             <div class="sectionimage" style="background-image: url('../images/small/mural1.jpg')"></div>
             <h1 class="sectiontitle">About</h1>
         </div>
@@ -87,6 +87,7 @@
         <div class="fullcont">
             <div class="flex">
                 <div class="fleximage" style="background-image: url('../images/small/konzertstuck.jpg')"></div>
+                <div class="flexbreak"></div>
                 <div class="flextext">
                     <p style="padding-bottom: 50px;">
                         Keenly embracing its leadership role as music ambassadors, Quadre has been honored to have performed for the Helen Keller School for the Deaf and Blind and the Weingarten Children&rsquo;s Center for the Deaf, and regularly performs at youth centers, soup kitchens and homeless shelters. Twice, the San Francisco Symphony selected Quadre to participate in its unique educational outreach program, Adventures in Music.
@@ -129,10 +130,10 @@
         </div>
         
         <div class="fullcont" id="qmembers">
-            <h1 style="margin-bottom: -100px">Members</h1>
+            <h1>Members</h1>
         </div>
         
-        <div class="about">
+        <div class="fullcont flex about">
             <div class="aboutimage" style="background-image: url('../images/small/portrait-amyjo.jpg')"></div>
             <div class="abouttext">
                 <h2>Amy Jo Rhine</h2>
@@ -148,8 +149,9 @@
             </div>
         </div>
         
-        <div class="about abr">
+        <div class="fullcont flex about abr">
             <div class="aboutimage" style="background-image: url('../images/small/portrait-lydia.jpg')"></div>
+            <div class="flexbreak"></div>
             <div class="abouttext">
                 <h2>Lydia Van Dreel</h2>
                 <p>
@@ -166,8 +168,9 @@
             </div>
         </div>
         
-        <div class="about">
+        <div class="fullcont flex about">
             <div class="aboutimage" style="background-image: url('../images/small/portrait-nate.jpg')"></div>
+            <div class="flexbreak"></div>
             <div class="abouttext">
                 <h2>Nathan Pawelek</h2>
                 <p>
@@ -184,8 +187,9 @@
             </div>
         </div>
         
-        <div class="about abr">
+        <div class="fullcont flex about abr">
             <div class="aboutimage" style="background-image: url('../images/small/portrait-daniel.jpg')"></div>
+            <div class="flexbreak"></div>
             <div class="abouttext">
                 <h2>Daniel Wood</h2>
                 <p>

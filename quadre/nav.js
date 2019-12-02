@@ -1,5 +1,5 @@
 document.write(`
-    <div class="nav">
+    <div id="nav">
         <div style="text-align: center">
             <div id="navicon" style="background-image: url('${PATH}images/logos/icon-orange.png')" onclick="goTo('${PATH}')"></div>
             <div id="navtitle" style="background-image: url('${PATH}images/logos/name-black.png')" onclick="goTo('${PATH}')"></div>

@@ -38,3 +38,13 @@ if (urlParams.get('p')) {
         behavior: 'smooth'
     });
 }
+
+function updateTop() {
+    if (document.getElementById('top')) {
+        document.getElementById('top').style.marginTop = (document.getElementById('nav').clientHeight + 10) + 'px';
+    }
+}
+updateTop();
+window.onresize = function() {
+    updateTop();
+}
