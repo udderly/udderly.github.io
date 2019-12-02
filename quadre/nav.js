@@ -1,7 +1,7 @@
 document.write(`
     <div class="nav">
-        <div id="navicon" style="background-image: url('${PATH}images/iconorange.png')" onclick="goTo('${PATH}')"></div>
-        <div id="navtitle" style="background-image: url('${PATH}images/nameblack.png')" onclick="goTo('${PATH}')"></div>
+        <div id="navicon" style="background-image: url('${PATH}images/logos/icon-orange.png')" onclick="goTo('${PATH}')"></div>
+        <div id="navtitle" style="background-image: url('${PATH}images/logos/name-black.png')" onclick="goTo('${PATH}')"></div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}about/')">About</p>
             <div class="navdrop">
