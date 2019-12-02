@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Quadre &ndash; Home</title>
         <link href="styles.css" rel="stylesheet">
-        <link href="images/icon.png" rel="icon">
+        <link href="images/logos/icon-favicon.png" rel="icon">
         
         <style>
             #landingbanner {
@@ -23,7 +23,7 @@
                 background-position: bottom right;
                 background-repeat: no-repeat;
                 background-size: contain;
-                height: 100px;
+                height: 150px;
                 position: absolute;
                 bottom: 100px; right: 50px;
                 transition: 0.1s;
@@ -34,6 +34,27 @@
                 position: absolute;
                 top: 0; bottom: 0; left: 0; right: 0;
                 z-index: -1;
+            }
+            @media only screen and (max-width: 1024px) {
+                #landingtitle {
+                    height: 125px;
+                    bottom: 90px; right: 37.5px;
+                    width: 60%;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                #landingtitle {
+                    height: 100px;
+                    bottom: 80px; right: 25px;
+                    width: 70%;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                #landingtitle {
+                    height: 75px;
+                    bottom: 70px; right: 12.5px;
+                    width: 80%;
+                }
             }
             
             .landingtext {
@@ -68,12 +89,6 @@
                 }
             }
             @media only screen and (max-width: 896px) {
-                .landingtext {
-                    flex-basis: calc(100% - 400px);
-                    padding: 25px 0 50px 0;
-                }
-            }
-            @media only screen and (max-width: 596px) {
                 .landingtext,
                 .ltr {
                     flex-basis: 100%;
@@ -84,16 +99,18 @@
                     margin-right: 0;
                 }
                 .frontimage {
-                    height: 200px;
+                    height: 300px;
                     margin-top: 50px;
                     width: 100%;
                 }
-                .flexbreak {
-                    display: block;
-                    flex-basis: 100%;
-                }
                 .pad {
                     display: none;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                .frontimage {
+                    height: 200px;
+                    margin-top: 25px;
                 }
             }
         </style>
