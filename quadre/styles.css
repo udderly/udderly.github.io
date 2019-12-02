@@ -262,7 +262,7 @@ button:focus {
     flex-grow: 1;
 }
 .flextext {
-    flex-basis: calc(100% - 425px);
+    flex-basis: calc(100% - 400px);
     padding-left: 50px;
     transition: 0.1s;
 }
@@ -348,5 +348,6 @@ button:focus {
     text-align: center;
 }
 #footer p {
-    margin-top: -5px;
+    line-height: 16px;
+    margin-top: 10px;
 }

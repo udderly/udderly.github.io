@@ -5,16 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Quadre &ndash; Tour</title>
         <link href="../styles.css" rel="stylesheet">
-        <link href="../images/icon.png" rel="icon">
+        <link href="../images/logos/icon-favicon.png" rel="icon">
         
         <style>
             .tableflex {
-                display: flex;
                 margin-top: 50px;
-            }
-            .tableimage {
-                flex-basis: 300px;
-                margin-right: 50px;
             }
             .table {
                 display: flex;
@@ -25,10 +20,14 @@
             }
             .tablerow {
                 display: flex;
+                margin-left: 25px;
             }
             .tabledate {
-                flex-basis: 50px;
-                margin-left: 25px;
+                flex-grow: 1;
+            }
+            .tablelist {
+                flex-basis: calc(100% - 50px);
+                padding-left: 10px;
             }
         </style>
     </head>
@@ -36,7 +35,7 @@
     <body>
         <div id="loader"></div>
         
-        <div class="section" style="margin-top: 70px">
+        <div class="section" id="top">
             <div class="sectionimage" style="background-image: url('../images/small/brick2.jpg')"></div>
             <h1 class="sectiontitle">Tour</h1>
         </div>
@@ -46,9 +45,10 @@
         </div>
         
         <div class="fullcont">
-            <div class="tableflex" style="margin-top: 0">
-                <div class="tableimage" style="background-image: url('../images/small/oregon.jpg')"></div>
-                <div>
+            <div class="flex tableflex" style="margin-top: 0">
+                <div class="fleximage" style="background-image: url('../images/small/oregon.jpg')"></div>
+                <div class="flexbreak"></div>
+                <div class="flextext">
                     <p>
                         <span style="font-size: 24px">International Horn Symposium</span>
                         <br>Eugene, OR
@@ -60,9 +60,10 @@
                 </div>
             </div>
             
-            <div class="tableflex">
-                <div class="tableimage" style="background-image: url('../images/small/pillars.jpg')"></div>
-                <div>
+            <div class="flex tableflex">
+                <div class="fleximage" style="background-image: url('../images/small/pillars.jpg')"></div>
+                <div class="flexbreak"></div>
+                <div class="flextext">
                     <p>
                         <span style="font-size: 24px">Fall California Tour</span>
                         <br>October 15-18, 2020
@@ -70,27 +71,28 @@
                     <div class="table">
                         <div class="tablerow">
                             <p class="tabledate">Thu</p>
-                            <p>Community Day &ndash; 3 events (South Bay):<br>Food Pantry Line, Youth Center, Women&rsquo;s Shelter</p>
+                            <p class="tablelist">Community Day &ndash; 3 events (South Bay):<br>Food Pantry Line, Youth Center, Women&rsquo;s Shelter</p>
                         </div>
                         <div class="tablerow">
                             <p class="tabledate">Fri</p>
-                            <p>University Masterclass (East Bay)<br>Church Concert (SF)</p>
+                            <p class="tablelist">University Masterclass (East Bay)<br>Church Concert (SF)</p>
                         </div>
                         <div class="tablerow">
                             <p class="tabledate">Sat</p>
-                            <p>Benefit Concert (South Bay)</p>
+                            <p class="tablelist">Benefit Concert (South Bay)</p>
                         </div>
                         <div class="tablerow">
                             <p class="tabledate">Sun</p>
-                            <p>House Concert (South Bay)</p>
+                            <p class="tablelist">House Concert (South Bay)</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="tableflex">
-                <div class="tableimage" style="background-image: url('../images/small/mountainview.jpg')"></div>
-                <div>
+            <div class="flex tableflex">
+                <div class="fleximage" style="background-image: url('../images/small/mountainview.jpg')"></div>
+                <div class="flexbreak"></div>
+                <div class="flextext">
                     <p>
                         <span style="font-size: 24px">Spring California Tour</span>
                         <br>March 25-28, 2021
@@ -98,19 +100,19 @@
                     <div class="table">
                         <div class="tablerow">
                             <p class="tabledate">Thu</p>
-                            <p>Community Day &ndash; 3 events (South Bay):<br>School for Deaf, Prison, Low-Cost Housing affect on children</p>
+                            <p class="tablelist">Community Day &ndash; 3 events (South Bay):<br>School for Deaf, Prison, Low-Cost Housing affect on children</p>
                         </div>
                         <div class="tablerow">
                             <p class="tabledate">Fri</p>
-                            <p>University Masterclass (East Bay)<br>University Concert (SF)</p>
+                            <p class="tablelist">University Masterclass (East Bay)<br>University Concert (SF)</p>
                         </div>
                         <div class="tablerow">
                             <p class="tabledate">Sat</p>
-                            <p>MVCPA (South Bay)</p>
+                            <p class="tablelist">MVCPA (South Bay)</p>
                         </div>
                         <div class="tablerow">
                             <p class="tabledate">Sun</p>
-                            <p>House Concert (South Bay)</p>
+                            <p class="tablelist">House Concert (South Bay)</p>
                         </div>
                     </div>
                 </div>
