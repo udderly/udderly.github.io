@@ -5,11 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Quadre &ndash; Connect</title>
         <link href="../styles.css" rel="stylesheet">
-        <link href="../images/icon.png" rel="icon">
+        <link href="../images/logos/icon-favicon.png" rel="icon">
         
         <style>
             .flexhalf {
-                flex-basis: 50%;
+                flex-basis: calc(50% - 25px);
+                margin-right: 50px;
+                transition: 0.1s;
+            }
+            @media only screen and (max-width: 1024px) {
+                .flexhalf {
+                    flex-basis: calc(50% - 18.75px);
+                    margin-right: 37.5px;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                .flexhalf {
+                    flex-basis: 100%;
+                    margin-right: 0;
+                }
             }
         </style>
     </head>
@@ -17,7 +31,7 @@
     <body>
         <div id="loader"></div>
         
-        <div class="section" style="margin-top: 70px" id="secmission">
+        <div class="section" id="top">
             <div class="sectionimage" style="background-image: url('../images/small/window1.jpg')"></div>
             <h1 class="sectiontitle">Connect</h1>
         </div>
@@ -37,7 +51,8 @@
                         Fax: 650.969.4227
                     </p>
                 </div>
-                <div class="flexhalf">
+                <div class="flexbreak"></div>
+                <div class="flexhalf" style="margin-right: 0">
                     <h2>General Inquiries</h2>
                     <p>
                         General Information<br>
