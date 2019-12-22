@@ -19,7 +19,15 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}tour/?p=past')">Past Events</p>
             </div>
         </div>
-        <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
+        <div>
+            <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
+            <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}media/?p=albums')">Albums</p>
+                <p class="navtext" onclick="goTo('${PATH}media/?p=audio')">Audio</p>
+                <p class="navtext" onclick="goTo('${PATH}media/?p=photos')">Photos</p>
+                <p class="navtext" onclick="goTo('${PATH}media/?p=video')">Video</p>
+            </div>
+        </div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
             <div class="navdrop">
@@ -45,8 +53,8 @@ document.write(`
 
     <div id="footer">
         <p style="margin-top: 10px">&copy; 2019 Quadre</p>
-        <p>Photography by <a href="https://www.carlinmaphotography.com/" target="_blank">Carlin Ma</a></p>
-        <p style="margin-bottom: -10px">Website by <a href="https://udderly.github.io/" target="_blank">Brandon Chung</a></p>
+        <p>Primary Photo Credit: <a href="https://www.carlinmaphotography.com/" target="_blank">Carlin Ma</a></p>
+        <p style="margin-bottom: -10px">Website Design: <a href="https://udderly.github.io/" target="_blank">Brandon Chung</a></p>
         <button onclick="window.location.href = '${PATH}connect/'">Book</button>
         <button onclick="window.location.href = '${PATH}support/'">Donate</button>
     </div>

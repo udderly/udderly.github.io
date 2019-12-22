@@ -47,7 +47,13 @@
                 All donations are tax deductible; Quadre is a 501(c)(3) nonprofit organization. You make our contributions to the musical enrichment of our immediate community possible, and you permit us to expand beyond!
             </p>
             
-            <div id="paypalcont"></div>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="dw@quadre.org" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/LetterA.svg/1200px-LetterA.svg.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+            </form>
         </div>
         
         <script>const PATH = '../';</script>
