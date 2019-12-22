@@ -109,20 +109,46 @@
                 top: 0; bottom: 0; left: 0; right: 0;
             }
             .bigpreview {
+                align-items: center;
+                display: flex;
+                justify-content: center;
                 margin: 50px;
                 position: fixed;
                 top: 25px; bottom: 25px; left: 25px; right: 25px;
+                transition: 0.1s;
             }
-            .bigimage img {
-                opacity: 0;
-                position: fixed;
-                top: 0; bottom: 0; left: 0; right: 0;
+            .bigpreview svg {
+                cursor: pointer;
+                margin: 20px;
             }
-            .bigimage button {
-                background-color: rgba(0, 0, 0, 0.5);
-                color: #fff;
-                position: fixed;
-                top: 60px; right: 90px;
+            .bigpreview .spacer {
+                flex-grow: 1;
+            }
+            .bigimage .close {
+                position: absolute;
+                top: 0; right: 0;
+            }
+            .bigimage .download {
+                position: absolute;
+                bottom: 0; right: 0;
+            }
+            @media only screen and (max-width: 1024px) {
+                .bigpreview {
+                    margin: 37.5px;
+                    top: 18.75px; bottom: 18.75px; left: 18.75px; right: 18.75px;
+                }
+            }
+            @media only screen and (max-width: 896px) {
+                .bigpreview {
+                    margin: 25px;
+                    top: 12.5px; bottom: 12.5px; left: 12.5px; right: 12.5px;
+                }
+            }
+            @media only screen and (max-width: 596px) {
+                .bigpreview {
+                    margin: 12.5px;
+                    top: 6.25px; bottom: 6.25px; left: 6.25px; right: 6.25px;
+                }
             }
         </style>
     </head>
@@ -136,7 +162,7 @@
         </div>
         
         <div class="fullcont">
-            <h2>Discography</h2>
+            <h2 id="qalbums">Albums</h2>
             
             <div class="flex">
                 <div class="album" style="background-image: url('../images/logos/album-ourtime.jpg')">
@@ -153,11 +179,11 @@
                 </div>
             </div>
         
-            <h2>Audio</h2>
+            <h2 id="qaudio">Audio</h2>
             
             <iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/934569838&color=%23ee7711&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
         
-            <h2>Gallery</h2>
+            <h2 id="qphotos">Photos</h2>
             
             <div id="gallery">
                 <div class="galleryimage" onclick="showImage('icar')" style="background-image: url('../images/small/car.jpg')"></div>
@@ -170,37 +196,127 @@
         
         <div class="bigimage" id="icar">
             <div class="bigcover"></div>
-            <div class="bigpreview" style="background-image: url('../images/small/car.jpg')"></div>
-            <img src="../images/small/car.jpg" alt="car">
-            <button onclick="hideImage('icar')">Close</button>
+            <div class="bigpreview" style="background-image: url('../images/small/car.jpg')">
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(-1)">
+                    <line x1="50" y1="5" x2="5" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="5" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <div class="spacer"></div>
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(1)">
+                    <line x1="50" y1="5" x2="95" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="95" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="hideImage('icar')" class="close">
+                    <line x1="5" y1="5" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="95" y1="5" x2="5" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="download('car.jpg')" class="download">
+                    <line x1="50" y1="5" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="30" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="70" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="5" y1="95" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+            </div>
         </div>
         
         <div class="bigimage" id="ibrick2">
             <div class="bigcover"></div>
-            <div class="bigpreview" style="background-image: url('../images/small/brick2.jpg')"></div>
-            <img src="../images/small/brick2.jpg" alt="brick2">
-            <button onclick="hideImage('ibrick2')">Close</button>
+            <div class="bigpreview" style="background-image: url('../images/small/brick2.jpg')">
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(-1)">
+                    <line x1="50" y1="5" x2="5" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="5" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <div class="spacer"></div>
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(1)">
+                    <line x1="50" y1="5" x2="95" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="95" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="hideImage('ibrick2')" class="close">
+                    <line x1="5" y1="5" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="95" y1="5" x2="5" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="download('brick2.jpg')" class="download">
+                    <line x1="50" y1="5" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="30" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="70" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="5" y1="95" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+            </div>
         </div>
         
         <div class="bigimage" id="imural1">
             <div class="bigcover"></div>
-            <div class="bigpreview" style="background-image: url('../images/small/mural1.jpg')"></div>
-            <img src="../images/small/mural1.jpg" alt="mural1">
-            <button onclick="hideImage('imural1')">Close</button>
+            <div class="bigpreview" style="background-image: url('../images/small/mural1.jpg')">
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(-1)">
+                    <line x1="50" y1="5" x2="5" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="5" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <div class="spacer"></div>
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(1)">
+                    <line x1="50" y1="5" x2="95" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="95" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="hideImage('imural1')" class="close">
+                    <line x1="5" y1="5" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="95" y1="5" x2="5" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="download('mural1.jpg')" class="download">
+                    <line x1="50" y1="5" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="30" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="70" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="5" y1="95" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+            </div>
         </div>
         
         <div class="bigimage" id="iwindow2">
             <div class="bigcover"></div>
-            <div class="bigpreview" style="background-image: url('../images/small/window2.jpg')"></div>
-            <img src="../images/small/window2.jpg" alt="window2">
-            <button onclick="hideImage('iwindow2')">Close</button>
+            <div class="bigpreview" style="background-image: url('../images/small/window2.jpg')">
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(-1)">
+                    <line x1="50" y1="5" x2="5" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="5" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <div class="spacer"></div>
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(1)">
+                    <line x1="50" y1="5" x2="95" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="95" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="hideImage('iwindow2')" class="close">
+                    <line x1="5" y1="5" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="95" y1="5" x2="5" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="download('window2.jpg')" class="download">
+                    <line x1="50" y1="5" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="30" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="70" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="5" y1="95" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+            </div>
         </div>
         
         <div class="bigimage" id="ihall">
             <div class="bigcover"></div>
-            <div class="bigpreview" style="background-image: url('../images/small/hall.jpg')"></div>
-            <img src="../images/small/hall.jpg" alt="hall">
-            <button onclick="hideImage('ihall')">Close</button>
+            <div class="bigpreview" style="background-image: url('../images/small/hall.jpg')">
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(-1)">
+                    <line x1="50" y1="5" x2="5" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="5" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <div class="spacer"></div>
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(1)">
+                    <line x1="50" y1="5" x2="95" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="95" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="hideImage('ihall')" class="close">
+                    <line x1="5" y1="5" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="95" y1="5" x2="5" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="download('hall.jpg')" class="download">
+                    <line x1="50" y1="5" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="30" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="70" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="5" y1="95" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+            </div>
         </div>
         
         <script>const PATH = '../';</script>
@@ -210,14 +326,36 @@
         <script src="../index.js"></script>
         
         <script>
+            let current;
+            let images = ['icar', 'ibrick2', 'imural1', 'iwindow2', 'ihall'];
+            
             function showImage(id) {
                 document.getElementById(id).style.opacity = 1;
                 document.getElementById(id).style.visibility = 'visible';
+                current = id;
             }
             
             function hideImage(id) {
                 document.getElementById(id).style.opacity = 0;
                 document.getElementById(id).style.visibility = 'hidden';
+            }
+            
+            function nextImage(x) {
+                hideImage(current);
+                let currIndex = images.indexOf(current);
+                currIndex += x;
+                currIndex = currIndex === -1 ? 4 : currIndex === 5 ? 0 : currIndex;
+                current = images[currIndex];
+                showImage(current);
+            }
+            
+            function download(path) {
+                let element = document.createElement('a');
+                element.setAttribute('href', '../images/small/' + path);
+                element.setAttribute('download', '');
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
             }
         </script>
     </body>
