@@ -35,6 +35,24 @@
                 top: 0; bottom: 0; left: 0; right: 0;
                 z-index: -1;
             }
+            #landingcontrols {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 60px; left: 0; right: 0;
+            }
+            #landingcontrols div {
+                border: 2px solid #eee;
+                border-radius: 10px;
+                cursor: pointer;
+                height: 15px;
+                margin-right: 10px;
+                transition: 1s;
+                width: 15px;
+            }
+            #landingcontrols div.selected {
+                background-color: #eee;
+            }
             @media only screen and (max-width: 1024px) {
                 #landingtitle {
                     height: 125px;
@@ -127,6 +145,11 @@
             <div class="landingimage" style="background-image: url('images/small/hall.jpg')" id="li2"></div>
             <div id="landingtitle" style="background-image: url('images/logos/name-white.png')"></div>
             <div id="landingcover"></div>
+            <div id="landingcontrols">
+                <div id="control0" class="selected" onclick="select(0)"></div>
+                <div id="control1" onclick="select(1)"></div>
+                <div id="control2" style="margin-right: 0" onclick="select(2)"></div>
+            </div>
         </div>
 
         
@@ -137,7 +160,7 @@
                     <p>
                         Listen to Grammy award-winning Molly Barth perform Mark Carlson’s “Night Music” on Quadre’s fourth album, “Our Time.”
                     </p>
-                    <button onclick="window.location.href = 'media/'">Listen</button>
+                    <button onclick="window.location.href = 'media/?p=audio'">Listen</button>
                 </div>
                 <div class="flexbreak"></div>
                 <div class="frontimage" style="background-image: url('images/small/mollybarth.jpg')"></div>
@@ -182,16 +205,24 @@
         <script src="index.js"></script>
         
         <script>
-            let selected = 2;
+            let selected = 0;
+            let timeout;
             function nextImage() {
-                document.getElementById('li' + selected).style.opacity = 0;
+                for (let i = 0; i < 3; i++) {
+                    document.getElementById('li' + i).style.opacity = selected === i ? 1 : 0;
+                    document.getElementById('control' + i).style.backgroundColor = selected === i ? '#eee' : 'rgba(0, 0, 0, 0)';
+                }
                 selected = selected == 2 ? 0 : selected + 1;
-                document.getElementById('li' + selected).style.opacity = 1;
-                setTimeout(function() {
-                    nextImage();
-                }, 4000);
+                timeout = setTimeout(function() { nextImage(); }, 4000);
             }
             nextImage();
+            
+            function select(x) {
+                clearTimeout(timeout);
+                selected = x;
+                console.log(selected);
+                nextImage();
+            }
         </script>
     </body>
 </html>
