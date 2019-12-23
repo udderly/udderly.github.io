@@ -8,8 +8,11 @@
         <link href="../images/logos/icon-favicon.png" rel="icon">
         
         <style>
-            #paypalcont {
-                width: 100%;
+            .donate {
+                border-color: #ef7216;
+            }
+            .donate:hover {
+                border-color: #de6105;
             }
         </style>
     </head>
@@ -20,6 +23,15 @@
         <div class="section" id="top">
             <div class="sectionimage" style="background-image: url('../images/small/horn2.jpg')"></div>
             <h1 class="sectiontitle">Support</h1>
+        </div>
+        
+        <div class="fullcont">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="dw@quadre.org" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <button name="submit" class="donate">Donate</button>
+            </form>
         </div>
         
         <div class="fullcont">
@@ -51,7 +63,7 @@
                 <input type="hidden" name="cmd" value="_donations" />
                 <input type="hidden" name="business" value="dw@quadre.org" />
                 <input type="hidden" name="currency_code" value="USD" />
-                <button name="submit">Donate</button>
+                <button name="submit" class="donate">Donate</button>
             </form>
         </div>
         
