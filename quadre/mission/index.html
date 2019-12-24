@@ -6,6 +6,16 @@
         <title>Quadre &ndash; Mission</title>
         <link href="../styles.css" rel="stylesheet">
         <link href="../images/logos/icon-favicon.png" rel="icon">
+        
+        <style>
+            .stack {
+                display: flex;
+                flex-direction: column;
+            }
+            .stack div {
+                margin-bottom: 50px;
+            }
+        </style>
     </head>
 
     <body>
@@ -41,7 +51,11 @@
                     </p>
                 </div>
                 <div class="flexbreak"></div>
-                <div class="fleximage" style="background-image: url('../images/small/class.jpg'); max-height: 300px"></div>
+                <div class="fleximage stack">
+                    <div style="background-image: url('../images/small/class1.jpg'); flex-basis: 300px"></div>
+                    <div style="background-image: url('../images/small/class2.jpg'); flex-basis: 300px"></div>
+                    <div style="background-image: url('../images/small/education.jpg'); flex-basis: 300px"></div>
+                </div>
             </div>
         </div>
         

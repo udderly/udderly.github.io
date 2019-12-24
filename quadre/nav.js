@@ -25,7 +25,6 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}media/?p=albums')">Albums</p>
                 <p class="navtext" onclick="goTo('${PATH}media/?p=audio')">Audio</p>
                 <p class="navtext" onclick="goTo('${PATH}media/?p=photos')">Photos</p>
-                <p class="navtext" onclick="goTo('${PATH}media/?p=video')">Video</p>
             </div>
         </div>
         <div>
