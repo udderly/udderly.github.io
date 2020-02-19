@@ -32,11 +32,11 @@ if (urlParams.get('p')) {
         behavior: 'smooth'
     });
 } else {
-    window.scroll({
+    /*window.scroll({
         top: 0,
         left: 0,
         behavior: 'smooth'
-    });
+    });*/
 }
 
 function updateTop() {
