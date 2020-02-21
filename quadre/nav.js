@@ -23,6 +23,7 @@ document.write(`
             <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
             <div class="navdrop">
                 <p class="navtext" onclick="goTo('${PATH}media/?p=albums')">Albums</p>
+                <p class="navtext" onclick="goTo('${PATH}media/?p=videos')">Videos</p>
                 <p class="navtext" onclick="goTo('${PATH}media/?p=audio')">Audio</p>
                 <p class="navtext" onclick="goTo('${PATH}media/?p=photos')">Photos</p>
             </div>
