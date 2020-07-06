@@ -45,6 +45,27 @@ function updateTop() {
     }
 }
 updateTop();
-window.onresize = function() {
-    updateTop();
+window.addEventListener('resize', updateTop);
+
+let laststate = true;
+let expanded = true; expand(); toggleEx();
+
+function expand() {
+	expanded = !expanded;
+	let links = document.getElementsByClassName('navtext');
+	for (let i = 0; i < links.length; i++) {
+		links[i].style.display = expanded ? 'block' : 'none';
+	}
 }
+
+function toggleEx() {
+	if (document.body.clientWidth > 596) {
+		expanded = false; expand();
+		laststate = true;
+	} else if (laststate) {
+		expanded = true; expand();
+		laststate = false;
+	}
+}
+
+window.addEventListener('resize', toggleEx);

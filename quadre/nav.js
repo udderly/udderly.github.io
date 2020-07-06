@@ -1,9 +1,12 @@
 document.write(`
-    <div id="nav">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<div id="nav">
+		<div id="navexpand" onclick="expand()"><i class="material-icons">menu</i></div>
         <div style="text-align: center">
             <div id="navicon" style="background-image: url('${PATH}images/logos/icon-orange.png')" onclick="goTo('${PATH}')"></div>
             <div id="navtitle" style="background-image: url('${PATH}images/logos/name-black.png')" onclick="goTo('${PATH}')"></div>
         </div>
+		<div class="navbreak"></div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}about/')">About</p>
             <div class="navdrop">
@@ -12,6 +15,7 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}about/?p=repertoire')">Repertoire</p>
             </div>
         </div>
+		<div class="navbreak"></div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
             <div class="navdrop">
@@ -19,6 +23,7 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}tour/?p=past')">Past Events</p>
             </div>
         </div>
+		<div class="navbreak"></div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
             <div class="navdrop">
@@ -28,6 +33,7 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}media/?p=photos')">Photos</p>
             </div>
         </div>
+		<div class="navbreak"></div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
             <div class="navdrop">
@@ -36,6 +42,7 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}mission/?p=testimonials')">Testimonials</p>
             </div>
         </div>
+		<div class="navbreak"></div>
         <div>
             <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
             <div class="navdrop">
@@ -43,7 +50,9 @@ document.write(`
                 <p class="navtext" onclick="goTo('${PATH}projects/?p=competition')">Q Competition</p>
             </div>
         </div>
+		<div class="navbreak"></div>
         <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
+		<div class="navbreak"></div>
         <p class="navtext" onclick="goTo('${PATH}support/')" style="margin-right: 0">Support</p>
     </div>
         
@@ -52,13 +61,10 @@ document.write(`
     </div>
 
     <div id="footer">
-        <p style="margin-top: 10px">&copy; 2019 Quadre</p>
-        <p>Primary Photo Credit: <a href="https://www.carlinmaphotography.com/" target="_blank">Carlin Ma</a></p>
-        <p>Website Design: <a href="https://udderly.github.io/" target="_blank">Brandon Chung</a></p>
         <div id="mc_embed_signup">
             <form
                   action="https://quadre.us4.list-manage.com/subscribe/post?u=3459a01b1afb8464293158ecb&amp;id=6d3ee7a1d9" 
-                  m ethod="post"
+                  method="post"
                   id="mc-embedded-subscribe-form"
                   name="mc-embedded-subscribe-form"
                   class="validate"
@@ -87,12 +93,8 @@ document.write(`
                 </div>
             </form>
         </div>
-        <button onclick="window.location.href = '${PATH}connect/'">Book</button>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="fd">
-            <input type="hidden" name="cmd" value="_donations" />
-            <input type="hidden" name="business" value="dw@quadre.org" />
-            <input type="hidden" name="currency_code" value="USD" />
-            <button name="submit">Donate</button>
-        </form>
+        <p style="margin-top: 50px">&copy; 2020 Quadre</p>
+        <p>Primary Photo Credit: <a href="https://www.carlinmaphotography.com/" target="_blank">Carlin Ma</a></p>
+        <p>Website Design: Brandon Chung</p>
     </div>
 `);
