@@ -7,6 +7,10 @@
     margin: 0;
 }
 
+input::-webkit-input-placeholder {
+     line-height: normal !important;
+}
+
 *::-webkit-scrollbar-track {
     background-color: #e6e6e6;
 }
@@ -72,6 +76,8 @@ input {
     margin-top: 35px;
 }
 input {
+    -webkit-appearance: none;
+    border-radius: 0;
     line-height: 0;
 }
 a {
@@ -386,8 +392,8 @@ input[type=submit]:focus {
 
 #footer {
     background-color: #eee;
-    margin: 50px 0;
-    padding: 25px;
+    margin-top: 50px;
+    padding: 25px 25px 75px 25px;
     text-align: center;
 }
 #footer p {
