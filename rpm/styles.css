@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 * {
-	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	font-family: Manrope, "sans-serif";
 	font-weight: lighter;
 	letter-spacing: 1px;
 }
@@ -24,46 +25,42 @@ html, body {
 .pad div {
 	padding: 25%;
 }
-.image {
-	align-items: center;
-	background-size: cover;
-	background-position: center;
-	display: flex;
-	flex-direction: column;
-    justify-content: center;
-	height: 100%;
-	position: relative;
+.content {
+    background-color: #fff;
+    box-shadow: inset 0 -5px 0 0 #ccc;
+    height: calc(100% - 150px);
+    margin: 25px;
+    max-width: 600px;
+    min-width: 500px;
+    overflow: hidden;
+    padding: 50px;
+    width: 40%;
 }
 .contain {
-	display: flex;
-	height: 100%;
-	position: relative;
-	width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
-.content {
-	background-color: rgba(255, 255, 255, 0.9);
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	left: 10px;
-	right: 10px;
-	bottom: 0;
-	top: 0;
-	transition: 1s;
-	overflow-x: hidden;
-	overflow-y: auto;
-	padding: 75px 0;
-    align-items: flex-start;  /* ADD THIS! */
+.conttext {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 50px);
+    transition: 0.25s ease-out;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%
+}
+.image {
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -1;
 }
 .navigation {
+	align-items: center;
 	display: flex;
     justify-content: center;
-	align-items: center;
-	padding: 10px;
-	z-index: 1;
-	background-color: rgba(255, 255, 255, 0.9);
-	margin: 10px 0;
-	width: calc(100% - 40px);
 }
 .navigation * {
 	font-size: 15px;
@@ -75,11 +72,6 @@ html, body {
 	background-color: #666;
 	margin: 10px;
 }
-.content *:not(a) {
-	margin: 20px auto;
-	max-width: 600px;
-	width: 90%;
-}
 p {
 	text-align: left;
 }
@@ -88,13 +80,23 @@ a {
 	text-decoration: none;
 }
 .over {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: center;
-	animation: fade 1s;
-	opacity: 0;
+    background-position: center;
+    background-size: cover;
+	opacity: 1;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -1;
+}
+.show {
+    animation: fade 1s;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 p,
 a {
@@ -109,8 +111,4 @@ h2 {
 }
 hr {
 	border: 1px solid #ccc;
-}
-@keyframes fade {
-	0% {opacity: 1}
-	100% {opacity: 0}
 }
