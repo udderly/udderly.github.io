@@ -37,9 +37,9 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
             <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}mission/?p=new')">New Works</p>
                 <p class="navtext" onclick="goTo('${PATH}mission/?p=education')">Education</p>
                 <p class="navtext" onclick="goTo('${PATH}mission/?p=community')">Community Engagement</p>
-                <p class="navtext" onclick="goTo('${PATH}mission/?p=testimonials')">Testimonials</p>
             </div>
         </div>
 		<div class="navbreak"></div>
@@ -47,11 +47,17 @@ document.write(`
             <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
             <div class="navdrop">
                 <p class="navtext" onclick="goTo('${PATH}projects/?p=message')">Music with a Message</p>
-                <p class="navtext" onclick="goTo('${PATH}projects/?p=competition')">Q Competition</p>
+                <p class="navtext" onclick="goTo('${PATH}projects/?p=competition')">Quadre Competition</p>
             </div>
         </div>
 		<div class="navbreak"></div>
-        <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
+        <div>
+            <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
+            <div class="navdrop">
+                <p class="navtext" onclick="goTo('${PATH}projects/?p=booking')">Booking &amp; Inquiries</p>
+                <p class="navtext" onclick="goTo('${PATH}mission/?p=testimonials')">Testimonials</p>
+            </div>
+        </div>
 		<div class="navbreak"></div>
         <p class="navtext" onclick="goTo('${PATH}support/')" style="margin-right: 0">Support</p>
     </div>
