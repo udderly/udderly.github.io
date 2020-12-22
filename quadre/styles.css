@@ -431,3 +431,20 @@ input[type=submit]:focus {
     display: inline;
     width: 0;
 }
+#socials {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+#socials svg {
+	margin-left: 16px;
+	opacity: 0.3;
+	transition: 0.1s;
+}
+#socials svg:first-child {
+	margin: none;
+}
+#socials svg:hover {
+	opacity: 0.5;
+}
