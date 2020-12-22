@@ -54,8 +54,8 @@ document.write(`
         <div>
             <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
             <div class="navdrop">
-                <p class="navtext" onclick="goTo('${PATH}projects/?p=booking')">Booking &amp; Inquiries</p>
-                <p class="navtext" onclick="goTo('${PATH}mission/?p=testimonials')">Testimonials</p>
+                <p class="navtext" onclick="goTo('${PATH}connect/?p=booking')">Booking &amp; Inquiries</p>
+                <p class="navtext" onclick="goTo('${PATH}connect/?p=testimonials')">Testimonials</p>
             </div>
         </div>
 		<div class="navbreak"></div>
