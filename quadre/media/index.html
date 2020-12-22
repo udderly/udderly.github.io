@@ -196,6 +196,8 @@
                 <div class="galleryimage" onclick="showImage('iperformance')" style="background-image: url('../images/small/performance.jpg')"></div>
                 <div class="galleryimage" onclick="showImage('iprojects')" style="background-image: url('../images/small/projects.jpg')"></div>
                 <div class="galleryimage" onclick="showImage('iegg')" style="background-image: url('../images/small/egg.jpg'); margin-right: 0"></div>
+                <div class="galleryimage" onclick="showImage('itravel2')" style="background-image: url('../images/small/travel2.jpg')"></div>
+                <div class="galleryimage" onclick="showImage('ibillwatson')" style="background-image: url('../images/small/billwatson.jpg'); margin-right: 0"></div>
             </div>
         </div>
         
@@ -324,6 +326,56 @@
             </div>
         </div>
         
+        <div class="bigimage" id="itravel2">
+            <div class="bigcover"></div>
+            <div class="bigpreview" style="background-image: url('../images/small/travel2.jpg')">
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(-1)">
+                    <line x1="50" y1="5" x2="5" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="5" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <div class="spacer"></div>
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(1)">
+                    <line x1="50" y1="5" x2="95" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="95" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="hideImage('travel2')" class="close">
+                    <line x1="5" y1="5" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="95" y1="5" x2="5" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="download('travel2.jpg')" class="download">
+                    <line x1="50" y1="5" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="30" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="70" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="5" y1="95" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="bigimage" id="ibillwatson">
+            <div class="bigcover"></div>
+            <div class="bigpreview" style="background-image: url('../images/small/billwatson.jpg')">
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(-1)">
+                    <line x1="50" y1="5" x2="5" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="5" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <div class="spacer"></div>
+                <svg viewBox="0 0 100 100" width="50" height="50" onclick="nextImage(1)">
+                    <line x1="50" y1="5" x2="95" y2="50" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                    <line x1="95" y1="50" x2="50" y2="95" stroke="#fff" style="stroke-width: 5px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="hideImage('billwatson')" class="close">
+                    <line x1="5" y1="5" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="95" y1="5" x2="5" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+                <svg viewBox="0 0 100 100" width="25" height="25" onclick="download('billwatson.jpg')" class="download">
+                    <line x1="50" y1="5" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="30" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="70" y1="55" x2="50" y2="75" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                    <line x1="5" y1="95" x2="95" y2="95" stroke="#fff" style="stroke-width: 10px" stroke-linecap="round"></line>
+                </svg>
+            </div>
+        </div>
+        
         <script>const PATH = '../';</script>
         <script src="../nav.js"></script>
         
@@ -332,7 +384,7 @@
         
         <script>
             let current;
-            let images = ['itravel1', 'imission1', 'iperformance', 'iprojects', 'iegg'];
+            let images = ['itravel1', 'imission1', 'iperformance', 'iprojects', 'iegg', 'itravel2', 'billwatson'];
             
             function showImage(id) {
                 document.getElementById(id).style.opacity = 1;
@@ -349,7 +401,7 @@
                 hideImage(current);
                 let currIndex = images.indexOf(current);
                 currIndex += x;
-                currIndex = currIndex === -1 ? 4 : currIndex === 5 ? 0 : currIndex;
+                currIndex = currIndex === -1 ? 6 : currIndex === 7 ? 0 : currIndex;
                 current = images[currIndex];
                 showImage(current);
             }
