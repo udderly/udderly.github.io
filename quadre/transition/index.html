@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Quadre &ndash; Transition</title>
+        <link href="../styles.css" rel="stylesheet">
+        <link href="../images/logos/icon-favicon.png" rel="icon">
+    </head>
+
+    <body>
+        <div id="loader"></div>
+        
+        <div class="section" id="top">
+            <div class="sectionimage" style="background-image: url('../images/small/mission1.jpg')"></div>
+            <h1 class="sectiontitle">Transition</h1>
+        </div>
+        
+        <div class="fullcont">
+            <h1>Adam Unsworth joins Quadre while Nathan Pawelek retires after 18 years</h1>
+            <p>
+                Quadre &ndash; The Voice of Four Horns is delighted to announce that award-winning chamber musician Adam Unsworth will be joining the ensemble this February 2021. Amy Jo Rhine, Lydia Van Dreel and founding member Daniel Wood, &ldquo;are thrilled to welcome our good friend, Adam, whose musicianship and artistry we hold in such high esteem.&rdquo;
+            </p>
+        </div>
+        
+        <div class="fullcont">
+            <div class="flex">
+                <div class="fleximage stack">
+                    <div style="background-image: url('../images/small/standing-adam.jpg'); flex-basis: 250px"></div>
+                    <div style="background-image: url('../images/small/landscape-nate.jpg'); flex-basis: 250px"></div>
+                </div>
+                <div class="flexbreak"></div>
+                <div class="flextext">
+                    <p style="padding-bottom: 50px;">
+                        Renowned as both a classical artist and jazz soloist, Unsworth is &ldquo;excited to join Quadre and share in its mission of creating and performing music focused on community, education and social change. Quadre&rsquo;s two decades of creativity and artistic excellence along with this common objective make it a group of particularly energized musicians. I look forward to our meaningful and adventurous collaborations!&rdquo;
+                        <br><br>
+                        Horn player Nathan Pawelek will retire from the group after an amazing 18 years. &ldquo;All of us in Quadre are incredibly grateful for everything Nate provided as an artist, composer and advocate since 2003,&rdquo; say the continuing members of Quadre, &ldquo;and we wish him a heartfelt farewell.&rdquo;
+                        <br><br>
+                        Looking back on his time with the group, Pawelek says, &ldquo;I loved being a member of Quadre and am appreciative of all the friends I have made during my time with the ensemble. I likewise feel fortunate to have had the opportunity to work with an array of such wonderful artists and to have traveled to some pretty cool places, too! It is time for me to step down and let someone else have all the fun! Adam Unsworth is a perfect fit for Quadre, an incredible horn player and composer. I wish him and the group success in their future music making!&rdquo;
+                    </p>
+                </div>
+            </div>
+            
+            <iframe width="100%" height="300" src="https://www.youtube.com/embed/oMdiyg2k-es" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 500px; margin-left: 50%; transform: translate(-50%, 0)"></iframe>
+        </div>
+        
+        <div class="fullcont">
+            <h1>About Adam Unsworth</h1>
+            <p>
+                Unsworth is an established recording artist with five solo albums&mdash;three jazz and two classical&mdash;to his name. Prior to his present appointment as Professor of Horn at the University of Michigan&rsquo;s School of Music, Theatre and Dance, he was a member of The Philadelphia Orchestra and the Detroit Symphony Orchestra. 
+                <br><br>
+                He has toured Asia and Europe with the San Francisco Symphony, frequently guests with the Detroit Symphony and is Principal Horn of the Ann Arbor Symphony Orchestra. Unsworth enjoys exploring and creating new music, as a member of the New York based Gil Evans Project and Miho Hazama&rsquo;s M-Unit Band, both Grammy Award-nominated jazz ensembles.
+                <br><br>
+                A former faculty member at Temple University, Adam has appeared as a recitalist and clinician at universities across the United States, and has made several solo and chamber music appearances at Carnegie&rsquo;s Weill Recital Hall. He received his formal training at Northwestern University and the University of Wisconsin&ndash;Madison.
+            </p>
+        </div>
+        
+        <div class="fullcont">
+            <div class="flex">
+                <div class="flextext right">
+                    <h1>About Quadre</h1>
+                    <p style="padding-bottom: 50px;">
+                        Unsworth joins at an incredible time for the quartet. Quadre was awarded the 2020 Heart Prize by the Ariel Avant organization in recognition of its artistic programming tied to social justice issues. The genesis of this life-changing artistic work came within the first two years of Quadre&rsquo;s inception in 1998 when the quartet was selected for a year-long rural residency program in Selma, Alabama sponsored by Chamber Music America.
+                        <br><br>
+                        Fellow members Amy Jo Rhine, Lydia Van Dreel and Daniel Wood are members of the Los Angeles Philharmonic Orchestra and teach at the University of Oregon and the San Francisco Conservatory, respectively. As individuals, they received their training from the Eastman School of Music, Juilliard and UCLA.
+                        <br><br>
+                        For the 2021&ndash;2022 season, Quadre will present <em>Nature: Calls for Harmony</em>, which includes collaboration with local agencies to highlight the incredible work being done to address a host of environmental issues in our community. Visual artists and poets will partner with the ensemble and a work for horn quartet, piano and gospel choir has been commissioned from Jeff Scott, horn player with Imani Winds and professor of horn at Oberlin Conservatory of Music.
+                        <br><br>
+                        Concurrently, Quadre continues its music programs from the previous season, <em>Homelessness: Hope, Humanity and Heart</em>, working with the clients served by local homeless shelters, food pantries, and low-cost housing facilities.
+                        <br><br>
+                        For more information about Quadre, visit <a href="//www.quadre.org">www.quadre.org</a>.
+                    </p>
+                </div>
+                <div class="flexbreak"></div>
+                <div class="fleximage" style="background-image: url('../images/small/travel1.jpg'); background-position: 50% 25%; max-height: 250px"></div>
+            </div>
+        </div>
+        
+        <script>const PATH = '../';</script>
+        <script src="../nav.js"></script>
+        
+        <script>const SHOW_LOGO = false;</script>
+        <script src="../index.js"></script>
+        
+        <script>
+            let easteregg = false;
+            function eastereggthing() {
+                document.getElementById("easteregg").style.display = easteregg ? "none" : "initial";
+                easteregg = !easteregg;
+                
+                if (easteregg) {
+                    window.scroll({
+                        top: document.getElementById('easteregg').offsetTop,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>
