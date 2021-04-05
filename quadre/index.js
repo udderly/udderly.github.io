@@ -17,6 +17,12 @@ function goTo(name) {
     }, 1000);
 }
 
+function drop(name, icon) {
+    let state = document.getElementById('n' + name).style.display;
+    icon.innerHTML = state === 'block' ? 'expand_more' : 'expand_less';
+    document.getElementById('n' + name).style.display = state === 'block' ? 'none' : 'block';
+}
+
 const DISABLE_LOADER = false;
 
 if (DISABLE_LOADER) {
@@ -48,24 +54,10 @@ updateTop();
 window.addEventListener('resize', updateTop);
 
 let laststate = true;
-let expanded = true; expand(); toggleEx();
+let expanded = true; expand();
 
 function expand() {
 	expanded = !expanded;
-	let links = document.getElementsByClassName('navtext');
-	for (let i = 0; i < links.length; i++) {
-		links[i].style.display = expanded ? 'block' : 'none';
-	}
+    document.getElementById('navelms').style.left = expanded ? '0' : '-100%';
+    document.getElementById('navcover').style.opacity = expanded ? '1' : '0';
 }
-
-function toggleEx() {
-	if (document.body.clientWidth > 596) {
-		expanded = false; expand();
-		laststate = true;
-	} else if (laststate) {
-		expanded = true; expand();
-		laststate = false;
-	}
-}
-
-window.addEventListener('resize', toggleEx);

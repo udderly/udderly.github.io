@@ -1,64 +1,78 @@
 document.write(`
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<div id="nav">
-		<div id="navexpand" onclick="expand()"><i class="material-icons">menu</i></div>
-        <div style="text-align: center">
+		<div id="navexpand"><i class="material-icons" onclick="expand()">menu</i></div>
+        <div id="navtw" style="text-align: center">
             <div id="navicon" style="background-image: url('${PATH}images/logos/icon-orange.png')" onclick="goTo('${PATH}')"></div>
             <div id="navtitle" style="background-image: url('${PATH}images/logos/name-black.png')" onclick="goTo('${PATH}')"></div>
         </div>
-		<div class="navbreak"></div>
+    </div>
+    <div id="navcover"></div>
+    <div id="navelms">
         <div>
-            <p class="navtext" onclick="goTo('${PATH}about/')">About</p>
-            <div class="navdrop">
+            <div class="navhead">
+                <p class="navtext" onclick="goTo('${PATH}about/')">About</p>
+                <i class="material-icons" onclick="drop('about', this)">expand_more</i>
+            </div>
+            <div class="navdrop" id="nabout">
                 <p class="navtext" onclick="goTo('${PATH}about/?p=bio')">Bio</p>
                 <p class="navtext" onclick="goTo('${PATH}about/?p=members')">Members</p>
                 <p class="navtext" onclick="goTo('${PATH}about/?p=repertoire')">Repertoire</p>
             </div>
         </div>
-		<div class="navbreak"></div>
         <div>
-            <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
-            <div class="navdrop">
+            <div class="navhead">
+                <p class="navtext" onclick="goTo('${PATH}tour/')">Tour</p>
+                <i class="material-icons" onclick="drop('tour', this)">expand_more</i>
+            </div>
+            <div class="navdrop" id="ntour">
                 <p class="navtext" onclick="goTo('${PATH}tour/?p=upcoming')">Upcoming</p>
                 <p class="navtext" onclick="goTo('${PATH}tour/?p=past')">Past Events</p>
             </div>
         </div>
-		<div class="navbreak"></div>
         <div>
-            <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
-            <div class="navdrop">
+            <div class="navhead">
+                <p class="navtext" onclick="goTo('${PATH}media/')">Media</p>
+                <i class="material-icons" onclick="drop('media', this)">expand_more</i>
+            </div>
+            <div class="navdrop" id="nmedia">
                 <p class="navtext" onclick="goTo('${PATH}media/?p=albums')">Albums</p>
                 <p class="navtext" onclick="goTo('${PATH}media/?p=videos')">Videos</p>
                 <p class="navtext" onclick="goTo('${PATH}media/?p=audio')">Audio</p>
                 <p class="navtext" onclick="goTo('${PATH}media/?p=photos')">Photos</p>
             </div>
         </div>
-		<div class="navbreak"></div>
         <div>
-            <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
-            <div class="navdrop">
+            <div class="navhead">
+                <p class="navtext" onclick="goTo('${PATH}mission/')">Mission</p>
+                <i class="material-icons" onclick="drop('mission', this)">expand_more</i>
+            </div>
+            <div class="navdrop" id="nmission">
                 <p class="navtext" onclick="goTo('${PATH}mission/?p=new')">New Works</p>
                 <p class="navtext" onclick="goTo('${PATH}mission/?p=education')">Education</p>
                 <p class="navtext" onclick="goTo('${PATH}mission/?p=community')">Community Engagement</p>
             </div>
         </div>
-		<div class="navbreak"></div>
         <div>
-            <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
-            <div class="navdrop">
+            <div class="navhead">
+                <p class="navtext" onclick="goTo('${PATH}projects/')">Projects</p>
+                <i class="material-icons" onclick="drop('projects', this)">expand_more</i>
+            </div>
+            <div class="navdrop" id="nprojects">
                 <p class="navtext" onclick="goTo('${PATH}projects/?p=message')">Music with a Message</p>
                 <p class="navtext" onclick="goTo('${PATH}projects/?p=competition')">Quadre Competition</p>
             </div>
         </div>
-		<div class="navbreak"></div>
         <div>
-            <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
-            <div class="navdrop">
+            <div class="navhead">
+                <p class="navtext" onclick="goTo('${PATH}connect/')">Connect</p>
+                <i class="material-icons" onclick="drop('connect', this)">expand_more</i>
+            </div>
+            <div class="navdrop" id="nconnect">
                 <p class="navtext" onclick="goTo('${PATH}connect/?p=booking')">Booking &amp; Inquiries</p>
                 <p class="navtext" onclick="goTo('${PATH}connect/?p=testimonials')">Testimonials</p>
             </div>
         </div>
-		<div class="navbreak"></div>
         <p class="navtext" onclick="goTo('${PATH}support/')" style="margin-right: 0">Support</p>
     </div>
         

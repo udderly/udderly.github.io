@@ -212,99 +212,72 @@ iframe {
 #nav {
     align-items: center;
     background-color: #fff;
-    box-shadow: 0 10px 0 0 #eee;
+    border-bottom: 10px solid #eee;
     display: flex;
     justify-content: center;
-    padding: 10px 25px;
+    padding: 10px;
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 99;
+    z-index: 1;
 }
 #navexpand {
-	cursor: pointer;
-	display: none;
-	position: absolute;
-	top: 15px; left: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 10px;
+    width: 30px;
 }
-#navexpand i::selection {
-	background: none;
+#navtw {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 #navicon {
     background-repeat: no-repeat;
     background-size: contain;
-    display: inline-block;
-    cursor: pointer;
     height: 30px;
-	margin: 5px -5px 5px 0;
     width: 30px;
 }
 #navtitle {
-    background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 20px;
-	margin: 5px 10px 5px 0;
+    height: 25px;
+    margin: 5px 0 0 10px;
     width: 100px;
 }
-.navtext {
-    cursor: pointer;
-	margin: 10px 15px 0;
+#navcover {
+    background-color: #0006;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
     transition: 0.1s;
+}
+#navelms {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    padding: 10px 0;
+    position: fixed;
+    top: 60px; bottom: 0;
+    transition: 0.1s;
+    width: 400px;
+    z-index: 1;
+}
+.navhead {
+    display: flex;
 }
 .navdrop {
-    background-color: #f7f7f7;
-    opacity: 0;
-    padding: 10px 15px;
-    position: absolute;
-    top: 55px;
-    transition: 0.1s;
-    visibility: hidden;
-}
-.navdrop p {
-    margin: 0;
-}
-.navdrop:hover {
-    opacity: 1;
-    visibility: visible;
-}
-.navtext:hover + .navdrop {
-    opacity: 1;
-    visibility: visible;
-}
-@media only screen and (max-width: 1024px) {
-    .navtext {
-        margin: 10px 8.75px 0;
-    }
-}
-@media only screen and (max-width: 896px) {
-    .navtext {
-        margin: 10px 2.5px 0;
-    }
-}
-@media only screen and (max-width: 596px) {
-    #nav {
-        flex-wrap: wrap;
-    }
-	#navexpand {
-		display: block;
-	}
-	#navtitle {
-		margin: 5px 0px;
-	}
-}
-
-.navbreak {
     display: none;
+    padding-left: 20px;
 }
-@media only screen and (max-width: 596px) {
-    .navbreak {
-        display: block;
-        flex-basis: 100%;
-    }
+.navtext {
+    flex-grow: 1;
+    margin: 2.5px 20px;
 }
-
+.navhead i {
+    margin: 2.5px 20px;
+}
 
 #popup {
     height: 50px;
