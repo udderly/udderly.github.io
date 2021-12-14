@@ -4,7 +4,7 @@ class Texture {
         this.dim = dim;
         this.reverse = reverse;
 
-        this.image = this.generate('./' + this.url, this.reverse);
+        this.image = this.generate(this.url, this.reverse);
     }
 
     generate(url, dir = false) {
